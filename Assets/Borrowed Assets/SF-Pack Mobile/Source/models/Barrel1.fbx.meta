@@ -3,7 +3,12 @@ guid: dea22c6b1d65cef41bd5c313ce9936b6
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: SF_barrel1
+    11100000: //RootNode
   materials:
     importMaterials: 0
     materialName: 0
