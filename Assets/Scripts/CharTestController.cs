@@ -39,6 +39,8 @@ public class CharTestController : MonoBehaviour {
             animator.SetBool("Running", false);
         }
 
+
+        /*
         if (Input.GetButtonDown("Fire1"))
         {
             animator.SetTrigger("Attack1Trigger");
@@ -50,6 +52,7 @@ public class CharTestController : MonoBehaviour {
             else
                 StartCoroutine(COStunPause(.6f));
         }
+        */
 
         UpdateMovement();  //update character position and facing
     }
@@ -114,9 +117,11 @@ public class CharTestController : MonoBehaviour {
             else
                 StartCoroutine(COStunPause(.6f));
         }
+        /*
         else
         {
             animator.SetBool("Attacking", false);
         }
+        */
     }
 }

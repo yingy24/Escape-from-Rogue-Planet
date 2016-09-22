@@ -5,15 +5,16 @@ public class EnemyActions : MonoBehaviour
 {
 
     //public member variables
-    public GameObject pos1, pos2, pos3;
+    public GameObject pos1, pos2, pos3, bulletPrefab, spawnPoint;
     public Transform targetPos;
     public Transform target;
     public bool inRangeOfPlayer;
-    public float speed;
+    public float speed, timePassed, timeWait;
 
     // Use this for initialization
     void Start()
     {
+        timePassed = Time.time;
         targetPos = pos2.transform;
         Vector3 targetDir = targetPos.position - transform.position;
         float step = speed * Time.deltaTime;
@@ -29,11 +30,24 @@ public class EnemyActions : MonoBehaviour
     {
         if (inRangeOfPlayer)
         {
+            // Determines which way to turn towards enemy
             Vector3 targetDir = target.position - transform.position;
             float step = speed * Time.deltaTime;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
             newDir.y = 0;
             transform.rotation = Quaternion.LookRotation(newDir);
+
+            // If Enemy is facing player, it shoots player
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            if (Vector3.Dot(forward, targetDir) > 0)
+            {
+                if (timePassed < Time.time)
+                {
+                    timePassed = Time.time + timeWait;
+                    GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity) as GameObject;
+                }
+            }
+            
         }
 
         if (!inRangeOfPlayer)
@@ -52,7 +66,7 @@ public class EnemyActions : MonoBehaviour
             Vector3 targetDir = targetPos.position - transform.position;
             float step = speed * Time.deltaTime;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
-            //newDir.y = 0;
+            newDir.y = 0;
             transform.rotation = Quaternion.LookRotation(newDir);
 
             transform.position = Vector3.MoveTowards(transform.position, targetPos.position, 0.05f);
