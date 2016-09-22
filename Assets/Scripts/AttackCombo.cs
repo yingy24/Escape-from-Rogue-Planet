@@ -10,11 +10,17 @@ public class AttackCombo : MonoBehaviour {
     public bool hasWeapon;
     //public float comboTime;
 
+    void Start()
+    {
+        hasWeapon = false;
+    }
+    
     // Update is called once per frame
     void Update()
     {
+        hasWeapon = GetComponent<PlayerAttributes>().hasWeapon;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && hasWeapon)
         {
             animator.SetBool("Attacking", true);
             animator.SetTrigger("Attack1Trigger");
@@ -58,7 +64,7 @@ public class AttackCombo : MonoBehaviour {
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.tag == "Enemy")
         {
@@ -68,7 +74,7 @@ public class AttackCombo : MonoBehaviour {
 
     }
 
-    void OnCollisionStay(Collision collision)
+    void OnTriggerStay(Collider collision)
     {
         if (collision.transform.tag == "Enemy")
         {
@@ -78,7 +84,7 @@ public class AttackCombo : MonoBehaviour {
 
     }
 
-    void OnCollisionExit(Collision collision)
+    void OnTriggerExit(Collider collision)
     {
         if (collision.transform.tag == "Enemy")
         {

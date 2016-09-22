@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 
     //Public Memeber Variables
     public float health = 20;
+    public GameObject player;
     public Transform parentTransform;
     // Use this for initialization
     void Start()
@@ -18,9 +19,11 @@ public class EnemyHealth : MonoBehaviour
     {
 
         if (health <= 0)
+        {
+            player.gameObject.transform.GetComponent<AttackCombo>().enemy = null;
             Destroy(parentTransform.gameObject);
-
-
+        }
+        
     }
 
 }
