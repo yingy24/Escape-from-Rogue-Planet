@@ -52,7 +52,7 @@ public class AttackCombo : MonoBehaviour {
     {
         animator.SetBool("Attacking", false);
     }
-
+    /*
     void AttackOne()
     {
         if (withinEnemRange)
@@ -92,4 +92,5 @@ public class AttackCombo : MonoBehaviour {
         }
 
     }
+    */
 }
