@@ -12,7 +12,7 @@ public class PlayerAttributes : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        hasWeapon = false;
+        hasWeapon = true;
 	}
 	
 	// Update is called once per frame

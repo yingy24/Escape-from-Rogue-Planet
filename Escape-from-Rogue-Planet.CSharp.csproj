@@ -61,7 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Attack1.cs" />
     <Compile Include="Assets\Scripts\AttackCombo.cs" />
+    <Compile Include="Assets\Scripts\AttackOne.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CameraSwitch.cs" />
     <Compile Include="Assets\Scripts\CharMovement.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\NewCameraFollow.cs" />
     <Compile Include="Assets\Scripts\PlayerAttributes.cs" />
+    <Compile Include="Assets\Scripts\WeaponAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Scripts\MobileBloom.shader" />
