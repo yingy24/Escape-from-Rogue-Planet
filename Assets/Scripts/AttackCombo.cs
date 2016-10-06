@@ -3,19 +3,27 @@ using System.Collections;
 
 public class AttackCombo : MonoBehaviour {
 
+    //Class Scripts
+    public PlayerAttributes playerAttributes;
+
+    // Public Member Variables
     public Animator anim;
-    /// <summary>
     public string[] comboParams;
+    public bool hasWeapon, isAttacking;
     public float attackRate;
-    private int comboIndex = 0;
-    private float restTimer;
-    /// </summary>
     public float attackDamage = 10f;
-    public bool hasWeapon;
-    //public float comboTime;
+
+    //Private Member Variables
+    private int comboIndex = 0; //Counter for which Animation is playing
+    private float restTimer; //Reset the time if the player didn't press the attack quick enough
+
 
     void Awake()
     {
+        playerAttributes = GetComponent<PlayerAttributes>();    // Gets the info of player attributes
+        anim = GetComponent<Animator>();                        // gets the animator info
+
+        // Collecting the animations for attacking if there isn't anything already set
         if (comboParams == null || (comboParams != null && comboParams.Length == 0))
         {
             comboParams = new string[]
@@ -26,34 +34,31 @@ public class AttackCombo : MonoBehaviour {
             };
 
         }
-        anim = GetComponent<Animator>();
-        hasWeapon = true;
+        isAttacking = false;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        hasWeapon = GetComponent<PlayerAttributes>().hasWeapon;
-        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && hasWeapon)
+        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && hasWeapon && playerAttributes.stamina > 0)
         {
-            Debug.Log(comboParams[comboIndex] + " Trigged");
             anim.SetTrigger(comboParams[comboIndex]);
             comboIndex++;
+            playerAttributes.stamina -= 5;
+            playerAttributes.restTimer = 0;
             restTimer = 0f;
-
-
+            
         }
         if(comboIndex > 0)
         {
             restTimer += Time.deltaTime;
             if(restTimer > attackRate)
             {
-                anim.SetTrigger("Reset");
+                anim.SetTrigger("AttackReset");
                 comboIndex = 0;
             }
         }
-
     }
 
     void LateUpdate()
@@ -61,19 +66,19 @@ public class AttackCombo : MonoBehaviour {
         //anim.SetBool("Attacking", false);
 
     }
-    
-    void AttackOne()
+
+    void StartedAttacking()
     {
+        isAttacking = true;
+    }
+    void EndedAttacking()
+    {
+        isAttacking = false;
+    }
 
-        /*
-        if (withinEnemRange)
-        {
-            float e = enemy.GetComponent<EnemyHealth>().health;
-            e -= attackDamage;
-            enemy.GetComponent<EnemyHealth>().health = e;
-        }
-        */
-
+    public void SwordObtained()
+    {
+        hasWeapon = true;
     }
 
     void OnTriggerEnter(Collider collision)

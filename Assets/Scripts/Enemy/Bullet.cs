@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour {
 
     // Public Member Variables
     public GameObject player;
+    public Transform playerT;
     public float speed, damage,timeAlive, timeToDie;
 
 
@@ -13,22 +14,24 @@ public class Bullet : MonoBehaviour {
 	void Start () {
         timeAlive = Time.time;
         timeToDie = Time.time + 2;
-        player = GameObject.FindGameObjectWithTag("Player");
-	}
+        playerT = GameObject.Find("Player").transform;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        // print(this.name + " " + playerT.position);
+        // transform.position = Vector3.MoveTowards(transform.position, playerT.position, speed*Time.deltaTime);
+        Rigidbody temp_rigid = this.GetComponent<Rigidbody>();
+        temp_rigid.AddForce(transform.forward * speed);
 
         timeAlive = Time.time;
+        /*
         if (timeAlive > timeToDie)
         {
             Destroy(this.gameObject);
         }
+        */
 
-        this.GetComponent<Rigidbody>().velocity = (player.transform.position - transform.position).normalized * speed;
-        Vector3 vel = this.GetComponent<Rigidbody>().velocity;
-        vel.y = 0;
-        this.GetComponent<Rigidbody>().velocity = vel;
     }
 
     void OnTriggerEnter(Collider other)

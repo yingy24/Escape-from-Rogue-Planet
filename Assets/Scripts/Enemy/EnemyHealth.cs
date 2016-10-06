@@ -20,7 +20,6 @@ public class EnemyHealth : MonoBehaviour
 
         if (health <= 0)
         {
-            //player.gameObject.transform.GetComponent<AttackCombo>().enemy = null;
             Destroy(parentTransform.gameObject);
         }
         

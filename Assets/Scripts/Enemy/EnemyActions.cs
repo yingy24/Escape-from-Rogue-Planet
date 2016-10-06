@@ -22,7 +22,7 @@ public class EnemyActions : MonoBehaviour
         //newDir.y = 0;
         transform.rotation = Quaternion.LookRotation(newDir);
 
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -41,10 +41,12 @@ public class EnemyActions : MonoBehaviour
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             if (Vector3.Dot(forward, targetDir) > 0)
             {
+
                 if (timePassed < Time.time)
                 {
                     timePassed = Time.time + timeWait;
                     GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity) as GameObject;
+                    bullet.transform.rotation = Quaternion.LookRotation(newDir);
                 }
             }
             
