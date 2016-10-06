@@ -20,17 +20,17 @@ public class Bullet : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // print(this.name + " " + playerT.position);
-        // transform.position = Vector3.MoveTowards(transform.position, playerT.position, speed*Time.deltaTime);
-        Rigidbody temp_rigid = this.GetComponent<Rigidbody>();
-        temp_rigid.AddForce(transform.forward * speed);
+      // transform.position = Vector3.MoveTowards(transform.position, playerT.position, speed*Time.deltaTime);
+        transform.Translate(Vector3.up * Time.deltaTime * speed);
+      //  Rigidbody temp_rigid = this.GetComponent<Rigidbody>();
+       // temp_rigid.AddForce(transform.forward * speed);
 
         timeAlive = Time.time;
-        /*
+        
         if (timeAlive > timeToDie)
         {
             Destroy(this.gameObject);
         }
-        */
 
     }
 

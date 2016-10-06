@@ -16,13 +16,18 @@ public class AttackOne : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-
         if (col.transform.tag == "Enemy" && attackCombo.isAttacking)
         {
-            col.transform.GetComponent<EnemyHealth>().health -= 5;
+            col.transform.parent.GetComponent<EnemyHealth>().health -= 5;
         }
-        
-
     }
-
+    /*
+    void OnTriggerStay(Collider col)
+    {
+        if (col.transform.tag == "Enemy" && attackCombo.isAttacking)
+        {
+            col.transform.parent.GetComponent<EnemyHealth>().health -= 5;
+        }
+    }
+    */
 }

@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: e924f3f3b053bb04cbf45c6d750e1d79
+timeCreated: 1475784191
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Axl
+    100002: Ball
+    100004: Body
+    100006: Bullet1
+    100008: Cannon
+    100010: CannonRack
+    100012: Exhaust1
+    100014: Exhaust2
+    100016: Exhaust3
+    100018: LeftWheel
+    100020: LeftWheel1
+    100022: LeftWheel_Cover
+    100024: LeftWheel_Cover1
+    100026: //RootNode
+    100028: SupplyTube
+    100030: ThirdLeg
+    100032: Tube2
+    400000: Axl
+    400002: Ball
+    400004: Body
+    400006: Bullet1
+    400008: Cannon
+    400010: CannonRack
+    400012: Exhaust1
+    400014: Exhaust2
+    400016: Exhaust3
+    400018: LeftWheel
+    400020: LeftWheel1
+    400022: LeftWheel_Cover
+    400024: LeftWheel_Cover1
+    400026: //RootNode
+    400028: SupplyTube
+    400030: ThirdLeg
+    400032: Tube2
+    2300000: Axl
+    2300002: Ball
+    2300004: Body
+    2300006: Bullet1
+    2300008: Cannon
+    2300010: CannonRack
+    2300012: Exhaust1
+    2300014: Exhaust2
+    2300016: Exhaust3
+    2300018: LeftWheel
+    2300020: LeftWheel1
+    2300022: LeftWheel_Cover
+    2300024: LeftWheel_Cover1
+    2300026: SupplyTube
+    2300028: ThirdLeg
+    2300030: Tube2
+    3300000: Axl
+    3300002: Ball
+    3300004: Body
+    3300006: Bullet1
+    3300008: Cannon
+    3300010: CannonRack
+    3300012: Exhaust1
+    3300014: Exhaust2
+    3300016: Exhaust3
+    3300018: LeftWheel
+    3300020: LeftWheel1
+    3300022: LeftWheel_Cover
+    3300024: LeftWheel_Cover1
+    3300026: SupplyTube
+    3300028: ThirdLeg
+    3300030: Tube2
+    4300000: Exhaust1
+    4300002: Exhaust2
+    4300004: Exhaust3
+    4300006: SupplyTube
+    4300008: CannonRack
+    4300010: Cannon
+    4300012: LeftWheel_Cover
+    4300014: LeftWheel
+    4300016: LeftWheel1
+    4300018: LeftWheel_Cover1
+    4300020: Body
+    4300022: Tube2
+    4300024: ThirdLeg
+    4300026: Axl
+    4300028: Ball
+    4300030: Bullet1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharMovement : MonoBehaviour {
+public class CharMovement : MonoBehaviour
+{
 
     [System.Serializable]
     public class MoveSettings
@@ -46,13 +47,13 @@ public class CharMovement : MonoBehaviour {
     {
         return Physics.Raycast(transform.position, Vector3.down, moveSetting.distToGrounded, moveSetting.ground);
     }
-    
+
     IEnumerator WaitForAnimation()
     {
         yield return new WaitForSeconds(0.6f);
         print("Waited 0.6s");
     }
-    
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -60,7 +61,8 @@ public class CharMovement : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         //Get movement inputs
         vMovement = Input.GetAxisRaw("Vertical");
         hMovement = Input.GetAxisRaw("Horizontal");
@@ -72,7 +74,7 @@ public class CharMovement : MonoBehaviour {
         GetCameraRelativeMovement();
         RotateTowardMovementDirection();
 
-        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
         {
             if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") | moving)
             {
@@ -119,7 +121,7 @@ public class CharMovement : MonoBehaviour {
     {
         CheckMoving();
         Jump();
-        
+
         rb.velocity = transform.TransformDirection(velocity);
     }
 
@@ -140,7 +142,7 @@ public class CharMovement : MonoBehaviour {
         }
 
         //Check movement on XZ plane
-        if (vMovement != 0 | hMovement !=0)
+        if (vMovement != 0 | hMovement != 0)
         {
             moving = true;
             anim.SetBool("Moving", true);
@@ -152,7 +154,7 @@ public class CharMovement : MonoBehaviour {
             anim.SetBool("Moving", false);
             anim.SetBool("Running", false);
         }
-        /*
+
         if (Input.GetButton("Sprint"))
         {
             anim.SetBool("Sprinting", true);
@@ -161,7 +163,6 @@ public class CharMovement : MonoBehaviour {
         {
             anim.SetBool("Sprinting", false);
         }
-        */
     }
 
     void MoveCorrection()
@@ -185,9 +186,10 @@ public class CharMovement : MonoBehaviour {
             transform.Translate(vMovement, 0, -hMovement);
         }
     }
-    
+
     void Jump()
     {
+
         //if (Input.GetAxisRaw(inputSetting.JUMP_AXIS) > 0 && Grounded())
         if (Input.GetButtonDown("Jump") && Grounded())
         {
@@ -238,10 +240,10 @@ public class CharMovement : MonoBehaviour {
     //face character along input direction
     void RotateTowardMovementDirection()
     {
-        if (Input.GetAxisRaw("Horizontal") !=0 | Input.GetAxisRaw("Vertical") != 0)
+        if (Input.GetAxisRaw("Horizontal") != 0 | Input.GetAxisRaw("Vertical") != 0)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), Time.deltaTime * rotationSpeed);
         }
     }
-    
+
 }

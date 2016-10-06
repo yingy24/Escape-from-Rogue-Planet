@@ -10,7 +10,7 @@ public class PlayerAttributes : MonoBehaviour {
     //Public Member Variables
     public Slider playerHealth, playerStamina; // Used to display the UI for now...
     public GameObject sword; // Sword object
-    public float health, stamina, regainStamina, restTimer;
+    public float health, stamina, regainStaminaTime, restTimer, staminaRegain;
     public bool hasWeapon;
 
     // Private Member Variables
@@ -41,10 +41,11 @@ public class PlayerAttributes : MonoBehaviour {
         {
             restTimer += Time.deltaTime;    // resets the counter for time
             // if time is greater than the set time, gains 1 stamina per second
-            if (restTimer > regainStamina)
+            if (restTimer > regainStaminaTime)
             {
+                regainStaminaTime = 0.1f;
                 restTimer = 0;
-                stamina += 1;
+                stamina += staminaRegain;
             }
         }
 

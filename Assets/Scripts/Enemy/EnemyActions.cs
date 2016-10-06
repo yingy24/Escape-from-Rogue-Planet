@@ -45,8 +45,9 @@ public class EnemyActions : MonoBehaviour
                 if (timePassed < Time.time)
                 {
                     timePassed = Time.time + timeWait;
-                    GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.identity) as GameObject;
-                    bullet.transform.rotation = Quaternion.LookRotation(newDir);
+                    Vector3 bulletRotate = new Vector3(90, 0, 0);
+                    GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
+                    //bullet.transform.rotation = Quaternion.LookRotation(newDir);
                 }
             }
             
