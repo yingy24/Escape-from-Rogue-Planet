@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyActions : MonoBehaviour
+public class RangedEnemy : MonoBehaviour
 {
 
     //public member variables
@@ -28,6 +28,20 @@ public class EnemyActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Vector3.Distance(target.position, this.transform.position) < 10 && !inRangeOfPlayer)
+        {
+            timePassed = Time.time + 1;
+            inRangeOfPlayer = true;
+        }
+        else if (Vector3.Distance(target.position, this.transform.position) < 10)
+        {
+            inRangeOfPlayer = true;
+        }
+        else
+        {
+            inRangeOfPlayer = false;
+        }
+        
         if (inRangeOfPlayer)
         {
             // Determines which way to turn towards enemy
@@ -77,7 +91,7 @@ public class EnemyActions : MonoBehaviour
 
 
     }
-
+    /*
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -94,5 +108,6 @@ public class EnemyActions : MonoBehaviour
             inRangeOfPlayer = false;
         }
     }
+    */
 }
 

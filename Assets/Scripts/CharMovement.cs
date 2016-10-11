@@ -34,7 +34,7 @@ public class CharMovement : MonoBehaviour
     public Animator anim;
     //public Transform camTransform;
     public float runSpeed;
-    public float sprintSpeed;
+    public float sprintSpeed, sprintStamina;
 
     private bool moving = false;
     private float vMovement;
@@ -164,7 +164,9 @@ public class CharMovement : MonoBehaviour
             anim.SetBool("Sprinting", true);
             if(anim.GetBool("Moving"))
             {
-                playerAttributes.stamina -= 0.5f;
+                playerAttributes.stamina -=  sprintStamina;
+                playerAttributes.restTimer = 0;
+                playerAttributes.regainStaminaTime = 1;
             }
         }
         else
