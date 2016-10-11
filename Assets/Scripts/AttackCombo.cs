@@ -47,7 +47,7 @@ public class AttackCombo : MonoBehaviour {
             comboIndex++;
             playerAttributes.stamina -= 5;
             playerAttributes.restTimer = 0;
-            playerAttributes.regainStaminaTime = 1;
+
             restTimer = 0f;
             
         }

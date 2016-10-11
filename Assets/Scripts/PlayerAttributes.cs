@@ -11,7 +11,7 @@ public class PlayerAttributes : MonoBehaviour {
     public Slider playerHealth, playerStamina; // Used to display the UI for now...
     public GameObject sword; // Sword object
     public float health, stamina, regainStaminaTime, restTimer, staminaRegain;
-    public bool hasWeapon;
+    public bool isDead, hasWon, hasWeapon;
 
     // Private Member Variables
    // private float restTimer; //Reset the time for the player to regain stamina
@@ -21,11 +21,27 @@ public class PlayerAttributes : MonoBehaviour {
     void Awake () {
         attackCombo = GetComponent<AttackCombo>();
         hasWeapon = true;
+        isDead = false;
+        hasWon = false;
 	}
 
     // Update is called once per frame
     void Update()
     {
+        if(isDead)
+        {
+            return; //Make Dead UI
+        }
+        if(hasWon)
+        {
+            return; // Make Winning UI
+        }
+
+        if(health <= 0)
+        {
+            isDead = true;
+        }
+
         // Checks to see if the player has sword
         // if player has sword, then it shows the sword, if not it doesn't show
         if (!hasWeapon)
@@ -62,6 +78,11 @@ public class PlayerAttributes : MonoBehaviour {
             hasWeapon = true;
             attackCombo.SwordObtained();
             Destroy(other.gameObject);
+        }
+
+        if(other.tag == "WinningPlatform")
+        {
+            hasWon = true;
         }
     }
 }

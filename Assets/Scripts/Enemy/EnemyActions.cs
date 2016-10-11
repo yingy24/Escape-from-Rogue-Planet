@@ -83,6 +83,7 @@ public class EnemyActions : MonoBehaviour
         if (other.tag == "Player")
         {
             inRangeOfPlayer = true;
+            timePassed = Time.time + 1;
         }
     }
 

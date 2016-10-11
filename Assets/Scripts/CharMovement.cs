@@ -4,6 +4,9 @@ using System.Collections;
 public class CharMovement : MonoBehaviour
 {
 
+    //Classes
+    public PlayerAttributes playerAttributes;
+
     [System.Serializable]
     public class MoveSettings
     {
@@ -58,6 +61,7 @@ public class CharMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        playerAttributes = GetComponent<PlayerAttributes>();
     }
 
     // Update is called once per frame
@@ -155,9 +159,13 @@ public class CharMovement : MonoBehaviour
             anim.SetBool("Running", false);
         }
 
-        if (Input.GetButton("Sprint"))
+        if (Input.GetButton("Sprint") && playerAttributes.stamina > 0)
         {
             anim.SetBool("Sprinting", true);
+            if(anim.GetBool("Moving"))
+            {
+                playerAttributes.stamina -= 0.5f;
+            }
         }
         else
         {
@@ -189,15 +197,18 @@ public class CharMovement : MonoBehaviour
 
     void Jump()
     {
-
-        //if (Input.GetAxisRaw(inputSetting.JUMP_AXIS) > 0 && Grounded())
-        if (Input.GetButtonDown("Jump") && Grounded())
+    
+        if (Input.GetAxisRaw(inputSetting.JUMP_AXIS) > 0 && Grounded() && playerAttributes.stamina >= 0)
+       // if (Input.GetButtonDown("Jump") && Grounded())
         {
+            print("Jumping Should be activated"); 
             //Jump
             anim.SetTrigger("Jump");
 
             //StartCoroutine("WaitForAnimation");
             velocity.y = moveSetting.jumpVel;
+            playerAttributes.stamina -= 3f;
+            playerAttributes.regainStaminaTime = 1f;
         }
         else if (Input.GetAxisRaw(inputSetting.JUMP_AXIS) == 0 && Grounded())
         {

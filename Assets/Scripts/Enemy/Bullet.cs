@@ -41,6 +41,11 @@ public class Bullet : MonoBehaviour {
             Destroy(this.gameObject);
             other.GetComponent<PlayerAttributes>().health -= 5;
         }
+        else if(other.tag != "BulletSpawn")
+        {
+            Destroy(this.gameObject);
+        }
+        
     }
 }
 
