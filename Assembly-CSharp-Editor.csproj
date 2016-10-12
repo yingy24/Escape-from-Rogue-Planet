@@ -6,10 +6,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9439AED8-E0B3-EB2F-638A-11D0DB9661F0}</ProjectGuid>
+    <ProjectGuid>{CDECE0F7-63B3-F42F-1F85-997097C49BAE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -45,22 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\AttackCombo.cs" />
-     <Compile Include="Assets\Scripts\AttackOne.cs" />
-     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\CameraSwitch.cs" />
-     <Compile Include="Assets\Scripts\CharMovement.cs" />
-     <Compile Include="Assets\Scripts\CharTestController.cs" />
-     <Compile Include="Assets\Scripts\CollisionEffect.cs" />
-     <Compile Include="Assets\Scripts\Enemy\Bullet.cs" />
-     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
-     <Compile Include="Assets\Scripts\Enemy\MeleeEnemyMovement.cs" />
-     <Compile Include="Assets\Scripts\Enemy\RangedEnemy.cs" />
-     <Compile Include="Assets\Scripts\FreeCamera.cs" />
-     <Compile Include="Assets\Scripts\NewCameraFollow.cs" />
-     <Compile Include="Assets\Scripts\PlayerAttributes.cs" />
-     <Compile Include="Assets\Scripts\WeaponAttribute.cs" />
-     <Compile Include="Assets\SelfDestruct.cs" />
+     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
      <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
      <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\Rain.shader" />
      <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
@@ -104,16 +89,42 @@
      <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\ParticleBlend.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\InterlacePatternAdditive.shader" />
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>C:/Users/CAGD Student/Desktop/Escape-from-Rogue-Planet/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.EditorTestsRunner">
+ <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TreeEditor">
+ <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
       <Project>{6946257A-3F3F-E378-54DD-7FB4F97A3EA3}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{9439AED8-E0B3-EB2F-638A-11D0DB9661F0}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

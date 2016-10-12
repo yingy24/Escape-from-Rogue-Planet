@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MeleeEnemy : MonoBehaviour {
+public class MeleeEnemyMovement : MonoBehaviour {
 
     //Public Member Variables
+    public Animator anim;
     public Transform target, origin;
-    public bool seePlayer;
-    public float turnSpeed, maxTurn, lineOfSight, maxSight;
+    public bool seePlayer, followingPlayer;
+    public float turnSpeed, maxTurn, lineOfSight, maxSight, moveSpeed;
 
 	// Use this for initialization
 	void Start () {
-	
+        anim = GetComponent<Animator>();
+
 	}
 	
 	// Update is called once per frame
@@ -19,36 +21,38 @@ public class MeleeEnemy : MonoBehaviour {
 
         if(!seePlayer)
         {
-            if (this.transform.position == origin.position)
+            if (!followingPlayer)
             {
-                transform.Rotate(0, turnSpeed, 0);
-
-                if ((transform.rotation.eulerAngles.y > maxTurn && transform.rotation.eulerAngles.y < 180) ||
-                    (transform.rotation.eulerAngles.y < 360 - maxTurn && transform.rotation.eulerAngles.y > 180))
+                if (this.transform.position == origin.position)
                 {
-                    turnSpeed *= -1;
+                    transform.Rotate(0, turnSpeed, 0);
+
+                    if ((transform.rotation.eulerAngles.y > maxTurn && transform.rotation.eulerAngles.y < 180) ||
+                        (transform.rotation.eulerAngles.y < 360 - maxTurn && transform.rotation.eulerAngles.y > 180))
+                    {
+                        turnSpeed *= -1;
+                    }
                 }
             }
 
             else
             {
-
                 Vector3 direction = origin.position - this.transform.position;
                 direction.y = 0;
                 this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
-                transform.position = Vector3.MoveTowards(transform.position, origin.position, 0.05f);
+                transform.position = Vector3.MoveTowards(transform.position, origin.position, moveSpeed);
             }
         }
         else
         {
             transform.LookAt(target);
-
+            followingPlayer = true;
             if (Vector3.Distance(target.position, this.transform.position) < 10)
             {
                 Vector3 direction = target.position - this.transform.position;
-                if (direction.magnitude > 3)
+                if (direction.magnitude > 1)
                 {
-                    this.transform.Translate(0, 0, 0.03f);
+                    this.transform.Translate(0, 0, moveSpeed);
                 }
             }
         }
