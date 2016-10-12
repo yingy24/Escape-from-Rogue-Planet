@@ -4,6 +4,7 @@ using System.Collections;
 public class AttackOne : MonoBehaviour {
 
     public AttackCombo attackCombo;
+    
 	// Use this for initialization
 	void Start () {
 	}
