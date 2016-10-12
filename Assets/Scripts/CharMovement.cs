@@ -80,41 +80,48 @@ public class CharMovement : MonoBehaviour
 
         if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack1"))
         {
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") | moving)
+            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
             {
+                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack3"))
+                {
+                    if (anim.GetCurrentAnimatorStateInfo(0).IsName("idle") | moving)
+                    {
 
-                if (!anim.GetBool("Sprinting"))
-                {
-                    capSpeed = runSpeed;
-                    //Running
-                    if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1 && Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1 | Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.5 && Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.5)
-                    {
-                        capSpeed = Mathf.Sqrt(capSpeed);
+                        if (!anim.GetBool("Sprinting"))
+                        {
+                            capSpeed = runSpeed;
+                            //Running
+                            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1 && Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1 | Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.5 && Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.5)
+                            {
+                                capSpeed = Mathf.Sqrt(capSpeed);
+                            }
+                            else
+                            {
+                                capSpeed = runSpeed;
+                            }
+                            vMovement *= capSpeed * Time.deltaTime;
+                            hMovement *= capSpeed * Time.deltaTime;
+                        }
+                        else
+                        {
+                            capSpeed = sprintSpeed;
+                            //Sprinting
+                            if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1 && Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1 | Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.5 && Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.5)
+                            {
+                                capSpeed = Mathf.Sqrt(capSpeed);
+                            }
+                            else
+                            {
+                                capSpeed = sprintSpeed;
+                            }
+                            vMovement *= capSpeed * Time.deltaTime;
+                            hMovement *= capSpeed * Time.deltaTime;
+                        }
+                        MoveCorrection();
                     }
-                    else
-                    {
-                        capSpeed = runSpeed;
-                    }
-                    vMovement *= capSpeed * Time.deltaTime;
-                    hMovement *= capSpeed * Time.deltaTime;
                 }
-                else
-                {
-                    capSpeed = sprintSpeed;
-                    //Sprinting
-                    if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1 && Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1 | Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0.5 && Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0.5)
-                    {
-                        capSpeed = Mathf.Sqrt(capSpeed);
-                    }
-                    else
-                    {
-                        capSpeed = sprintSpeed;
-                    }
-                    vMovement *= capSpeed * Time.deltaTime;
-                    hMovement *= capSpeed * Time.deltaTime;
-                }
-                MoveCorrection();
             }
+
         }
 
         //OLD - Character rotation when move
