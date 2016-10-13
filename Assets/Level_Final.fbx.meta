@@ -1,0 +1,1292 @@
+fileFormatVersion: 2
+guid: 6a826bd6cb4d0c94b81fab3170ac34e0
+timeCreated: 1476382756
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Back_Stairs
+    100002: Backstairs_Lower1
+    100004: BackStairs_Upper1
+    100006: BackStairs_Upper1 1
+    100008: BackStairs_Upper1 2
+    100010: BackStairs_Upper2
+    100012: BackStairs_Upper2 1
+    100014: Barrel
+    100016: Barrel2
+    100018: BDoor_L
+    100020: BDoor_L 1
+    100022: BDoor_L 2
+    100024: BDoor_L1
+    100026: BDoor_R
+    100028: BDoor_R 1
+    100030: BDoor_R 2
+    100032: BDoor_R1
+    100034: Bed
+    100036: Bed 1
+    100038: Bed 2
+    100040: Bed 3
+    100042: Bed 4
+    100044: Bed 5
+    100046: Bed_Cushion
+    100048: Bed_Cushion 1
+    100050: Bed_Cushion 2
+    100052: Bed_Cushion 3
+    100054: Bed_Cushion 4
+    100056: Bed_Cushion 5
+    100058: Bench
+    100060: Bench 1
+    100062: Bench 2
+    100064: Bench 3
+    100066: Bench 4
+    100068: Bench 5
+    100070: BigRoom
+    100072: BlastDoor3
+    100074: BlastDoor4
+    100076: BlastDoor5
+    100078: BlastDoor6
+    100080: Blocked_corridor_corrner
+    100082: Branching_Path1
+    100084: Broken_Flooring_1
+    100086: Broken_Flooring_1 1
+    100088: Broken_Flooring_1 2
+    100090: Broken_Flooring_2
+    100092: Broken_Flooring_2 1
+    100094: Broken_Flooring_2 2
+    100096: Broken_Flooring_3
+    100098: Broken_Flooring_3 1
+    100100: Broken_Flooring_3 2
+    100102: Broken_Flooring_Base
+    100104: Broken_Flooring_Pieces
+    100106: Broken_Flooring_Pieces1
+    100108: Broken_Flooring_Pieces2
+    100110: Cell1
+    100112: cell1:polySurface14
+    100114: cell1:polySurface14 1
+    100116: cell1:polySurface14 2
+    100118: cell1:polySurface14 3
+    100120: cell1:polySurface14 4
+    100122: cell1:polySurface14 5
+    100124: cell1:polySurface15
+    100126: cell1:polySurface15 1
+    100128: cell1:polySurface15 2
+    100130: cell1:polySurface15 3
+    100132: cell1:polySurface15 4
+    100134: cell1:polySurface15 5
+    100136: cell1:polySurface16
+    100138: cell1:polySurface16 1
+    100140: cell1:polySurface16 2
+    100142: cell1:polySurface16 3
+    100144: cell1:polySurface16 4
+    100146: cell1:polySurface16 5
+    100148: cell1:polySurface18
+    100150: cell1:polySurface18 1
+    100152: cell1:polySurface18 2
+    100154: cell1:polySurface18 3
+    100156: cell1:polySurface18 4
+    100158: cell1:polySurface18 5
+    100160: Cell2
+    100162: Cell3
+    100164: Cell4
+    100166: Cell5Door_pannel
+    100168: Cell6
+    100170: Cell6Door_pannel
+    100172: Cell7
+    100174: CellDoor3
+    100176: CellDoor3 1
+    100178: CellDoor3 2
+    100180: CellDoor3 3
+    100182: CellDoor3 4
+    100184: CellDoor3 5
+    100186: CellDoor3 6
+    100188: CellDoor3 7
+    100190: CellDoor_pannel
+    100192: CellDoor_pannel 1
+    100194: CellDoor_pannel 2
+    100196: CellDoor_pannel 3
+    100198: CellDoor_pannel 4
+    100200: CellDoor_pannel 5
+    100202: Collapsed_Section_Big
+    100204: Collapsed_Section_Small
+    100206: Computer
+    100208: Connections_1_FrontStairs
+    100210: Corridor_1
+    100212: Corridor_2
+    100214: Corridor_3
+    100216: Corridor_4
+    100218: Corridor_5
+    100220: Corridor_6
+    100222: Corridor_7
+    100224: Corridor_8
+    100226: Corridor_Backing
+    100228: Corridor_BackStairs
+    100230: Corridor_BackStairs1
+    100232: Corridor_FrontStairs
+    100234: Crate
+    100236: CryoChamper1
+    100238: CryoChamper2
+    100240: CryoChamper3
+    100242: CryoChamper4
+    100244: CryoChamper5
+    100246: CryoChamper_Glass
+    100248: CryoChamper_Glass 1
+    100250: CryoChamper_Glass 2
+    100252: CryoChamper_Glass 3
+    100254: CryoChamper_Glass 4
+    100256: CryoChampers
+    100258: Cyl_Connection1
+    100260: Cyl_Connection2
+    100262: Cyl_Hallway1
+    100264: Cyl_Hallway2
+    100266: Cyl_Intersec1
+    100268: Cyl_Intersec2
+    100270: Cylinder_Interection1
+    100272: Cylinder_Interection2
+    100274: Door3_L
+    100276: Door3_R
+    100278: Door_BottomPart
+    100280: Door_Chrome
+    100282: Door_TopPart
+    100284: DoorFrame
+    100286: Elevator_LiftWell
+    100288: Elevator_Switch
+    100290: ElevatorControlRoom
+    100292: ElevatorPlatform
+    100294: first_corridor_corrner
+    100296: Floor1
+    100298: Floor2
+    100300: Floor3
+    100302: Front_Stairs
+    100304: FrontStairs_Lower
+    100306: FrontStairs_Upper
+    100308: Grate_1
+    100310: Grating
+    100312: Guide_Line
+    100314: Hallway1
+    100316: Hallway2
+    100318: Halway_Connection1
+    100320: Halway_Connection2
+    100322: Halway_Connection3
+    100324: Halway_Connection4
+    100326: Halway_Connection5
+    100328: Halway_Connection6
+    100330: Halway_Connection7
+    100332: Halway_Connection8
+    100334: IntersectionCube4
+    100336: IntersectionCube7
+    100338: IntersectionCube8
+    100340: IntersectionCube_w_brokenfloor
+    100342: LCD_Panel2
+    100344: LCD_Panel3
+    100346: Level
+    100348: //RootNode
+    100350: Lift1
+    100352: Lift2
+    100354: Locker
+    100356: Middle_Bridge
+    100358: Misc_Rubble
+    100360: Monitor
+    100362: Monitor 1
+    100364: Monitor 2
+    100366: Monitor 3
+    100368: Monitor 4
+    100370: Monitor 5
+    100372: pCube21
+    100374: pCube22
+    100376: pCube49
+    100378: pCube50
+    100380: pCube51
+    100382: pCube52
+    100384: pCube52 1
+    100386: pCube53
+    100388: pCube53 1
+    100390: pCube59
+    100392: pCube61
+    100394: Pipeing_1
+    100396: Pipeing_2
+    100398: Pipeing_2 1
+    100400: Pipeing_3
+    100402: Pipeing_3 1
+    100404: Plane_Bridge1
+    100406: Pneu_Pillar1
+    100408: Pneu_Pillar2
+    100410: polySurface14
+    100412: polySurface14 1
+    100414: polySurface15
+    100416: polySurface15 1
+    100418: polySurface16
+    100420: polySurface16 1
+    100422: polySurface18
+    100424: polySurface18 1
+    100426: Prison_Cells
+    100428: Prison_Corridors
+    100430: RandomWall1
+    100432: Slanted_Connection1
+    100434: Slanted_Connection2
+    100436: Slanted_Connection3
+    100438: Slanted_Connection4
+    100440: Slanted_Connection5
+    100442: Slanted_Connection6
+    100444: Slanted_Connection7
+    100446: Slanted_Connection8
+    100448: Slanted_Connections
+    100450: Slanted_Hallway2
+    100452: Slanted_Hallway3
+    100454: Slanted_Hallway4
+    100456: Slanted_Hallway_w_Connection
+    100458: Stair_connection_Back_Stairs1
+    100460: Stair_connection_Back_Stairs1 1
+    100462: Stair_connection_Back_Stairs1 2
+    100464: Stair_connection_Back_Stairs3
+    100466: Stair_connection_Back_Stairs3 1
+    100468: Stairs1
+    100470: Stairs2
+    100472: Stairs3
+    100474: Stairs_Corner
+    100476: Stairs_Corner_Ext1
+    100478: Storage
+    100480: Storage 1
+    100482: Storage_door
+    100484: Storage_door_pannel
+    100486: Switch_Panel
+    100488: Table
+    100490: Table 1
+    100492: Table 2
+    100494: Table 3
+    100496: Table 4
+    100498: Table 5
+    100500: Toilet
+    100502: Toilet 1
+    100504: Toilet 2
+    100506: Toilet 3
+    100508: Toilet 4
+    100510: Toilet 5
+    100512: Wall
+    100514: Wall 1
+    100516: Wall 2
+    400000: Back_Stairs
+    400002: Backstairs_Lower1
+    400004: BackStairs_Upper1
+    400006: BackStairs_Upper1 1
+    400008: BackStairs_Upper1 2
+    400010: BackStairs_Upper2
+    400012: BackStairs_Upper2 1
+    400014: Barrel
+    400016: Barrel2
+    400018: BDoor_L
+    400020: BDoor_L 1
+    400022: BDoor_L 2
+    400024: BDoor_L1
+    400026: BDoor_R
+    400028: BDoor_R 1
+    400030: BDoor_R 2
+    400032: BDoor_R1
+    400034: Bed
+    400036: Bed 1
+    400038: Bed 2
+    400040: Bed 3
+    400042: Bed 4
+    400044: Bed 5
+    400046: Bed_Cushion
+    400048: Bed_Cushion 1
+    400050: Bed_Cushion 2
+    400052: Bed_Cushion 3
+    400054: Bed_Cushion 4
+    400056: Bed_Cushion 5
+    400058: Bench
+    400060: Bench 1
+    400062: Bench 2
+    400064: Bench 3
+    400066: Bench 4
+    400068: Bench 5
+    400070: BigRoom
+    400072: BlastDoor3
+    400074: BlastDoor4
+    400076: BlastDoor5
+    400078: BlastDoor6
+    400080: Blocked_corridor_corrner
+    400082: Branching_Path1
+    400084: Broken_Flooring_1
+    400086: Broken_Flooring_1 1
+    400088: Broken_Flooring_1 2
+    400090: Broken_Flooring_2
+    400092: Broken_Flooring_2 1
+    400094: Broken_Flooring_2 2
+    400096: Broken_Flooring_3
+    400098: Broken_Flooring_3 1
+    400100: Broken_Flooring_3 2
+    400102: Broken_Flooring_Base
+    400104: Broken_Flooring_Pieces
+    400106: Broken_Flooring_Pieces1
+    400108: Broken_Flooring_Pieces2
+    400110: Cell1
+    400112: cell1:polySurface14
+    400114: cell1:polySurface14 1
+    400116: cell1:polySurface14 2
+    400118: cell1:polySurface14 3
+    400120: cell1:polySurface14 4
+    400122: cell1:polySurface14 5
+    400124: cell1:polySurface15
+    400126: cell1:polySurface15 1
+    400128: cell1:polySurface15 2
+    400130: cell1:polySurface15 3
+    400132: cell1:polySurface15 4
+    400134: cell1:polySurface15 5
+    400136: cell1:polySurface16
+    400138: cell1:polySurface16 1
+    400140: cell1:polySurface16 2
+    400142: cell1:polySurface16 3
+    400144: cell1:polySurface16 4
+    400146: cell1:polySurface16 5
+    400148: cell1:polySurface18
+    400150: cell1:polySurface18 1
+    400152: cell1:polySurface18 2
+    400154: cell1:polySurface18 3
+    400156: cell1:polySurface18 4
+    400158: cell1:polySurface18 5
+    400160: Cell2
+    400162: Cell3
+    400164: Cell4
+    400166: Cell5Door_pannel
+    400168: Cell6
+    400170: Cell6Door_pannel
+    400172: Cell7
+    400174: CellDoor3
+    400176: CellDoor3 1
+    400178: CellDoor3 2
+    400180: CellDoor3 3
+    400182: CellDoor3 4
+    400184: CellDoor3 5
+    400186: CellDoor3 6
+    400188: CellDoor3 7
+    400190: CellDoor_pannel
+    400192: CellDoor_pannel 1
+    400194: CellDoor_pannel 2
+    400196: CellDoor_pannel 3
+    400198: CellDoor_pannel 4
+    400200: CellDoor_pannel 5
+    400202: Collapsed_Section_Big
+    400204: Collapsed_Section_Small
+    400206: Computer
+    400208: Connections_1_FrontStairs
+    400210: Corridor_1
+    400212: Corridor_2
+    400214: Corridor_3
+    400216: Corridor_4
+    400218: Corridor_5
+    400220: Corridor_6
+    400222: Corridor_7
+    400224: Corridor_8
+    400226: Corridor_Backing
+    400228: Corridor_BackStairs
+    400230: Corridor_BackStairs1
+    400232: Corridor_FrontStairs
+    400234: Crate
+    400236: CryoChamper1
+    400238: CryoChamper2
+    400240: CryoChamper3
+    400242: CryoChamper4
+    400244: CryoChamper5
+    400246: CryoChamper_Glass
+    400248: CryoChamper_Glass 1
+    400250: CryoChamper_Glass 2
+    400252: CryoChamper_Glass 3
+    400254: CryoChamper_Glass 4
+    400256: CryoChampers
+    400258: Cyl_Connection1
+    400260: Cyl_Connection2
+    400262: Cyl_Hallway1
+    400264: Cyl_Hallway2
+    400266: Cyl_Intersec1
+    400268: Cyl_Intersec2
+    400270: Cylinder_Interection1
+    400272: Cylinder_Interection2
+    400274: Door3_L
+    400276: Door3_R
+    400278: Door_BottomPart
+    400280: Door_Chrome
+    400282: Door_TopPart
+    400284: DoorFrame
+    400286: Elevator_LiftWell
+    400288: Elevator_Switch
+    400290: ElevatorControlRoom
+    400292: ElevatorPlatform
+    400294: first_corridor_corrner
+    400296: Floor1
+    400298: Floor2
+    400300: Floor3
+    400302: Front_Stairs
+    400304: FrontStairs_Lower
+    400306: FrontStairs_Upper
+    400308: Grate_1
+    400310: Grating
+    400312: Guide_Line
+    400314: Hallway1
+    400316: Hallway2
+    400318: Halway_Connection1
+    400320: Halway_Connection2
+    400322: Halway_Connection3
+    400324: Halway_Connection4
+    400326: Halway_Connection5
+    400328: Halway_Connection6
+    400330: Halway_Connection7
+    400332: Halway_Connection8
+    400334: IntersectionCube4
+    400336: IntersectionCube7
+    400338: IntersectionCube8
+    400340: IntersectionCube_w_brokenfloor
+    400342: LCD_Panel2
+    400344: LCD_Panel3
+    400346: Level
+    400348: //RootNode
+    400350: Lift1
+    400352: Lift2
+    400354: Locker
+    400356: Middle_Bridge
+    400358: Misc_Rubble
+    400360: Monitor
+    400362: Monitor 1
+    400364: Monitor 2
+    400366: Monitor 3
+    400368: Monitor 4
+    400370: Monitor 5
+    400372: pCube21
+    400374: pCube22
+    400376: pCube49
+    400378: pCube50
+    400380: pCube51
+    400382: pCube52
+    400384: pCube52 1
+    400386: pCube53
+    400388: pCube53 1
+    400390: pCube59
+    400392: pCube61
+    400394: Pipeing_1
+    400396: Pipeing_2
+    400398: Pipeing_2 1
+    400400: Pipeing_3
+    400402: Pipeing_3 1
+    400404: Plane_Bridge1
+    400406: Pneu_Pillar1
+    400408: Pneu_Pillar2
+    400410: polySurface14
+    400412: polySurface14 1
+    400414: polySurface15
+    400416: polySurface15 1
+    400418: polySurface16
+    400420: polySurface16 1
+    400422: polySurface18
+    400424: polySurface18 1
+    400426: Prison_Cells
+    400428: Prison_Corridors
+    400430: RandomWall1
+    400432: Slanted_Connection1
+    400434: Slanted_Connection2
+    400436: Slanted_Connection3
+    400438: Slanted_Connection4
+    400440: Slanted_Connection5
+    400442: Slanted_Connection6
+    400444: Slanted_Connection7
+    400446: Slanted_Connection8
+    400448: Slanted_Connections
+    400450: Slanted_Hallway2
+    400452: Slanted_Hallway3
+    400454: Slanted_Hallway4
+    400456: Slanted_Hallway_w_Connection
+    400458: Stair_connection_Back_Stairs1
+    400460: Stair_connection_Back_Stairs1 1
+    400462: Stair_connection_Back_Stairs1 2
+    400464: Stair_connection_Back_Stairs3
+    400466: Stair_connection_Back_Stairs3 1
+    400468: Stairs1
+    400470: Stairs2
+    400472: Stairs3
+    400474: Stairs_Corner
+    400476: Stairs_Corner_Ext1
+    400478: Storage
+    400480: Storage 1
+    400482: Storage_door
+    400484: Storage_door_pannel
+    400486: Switch_Panel
+    400488: Table
+    400490: Table 1
+    400492: Table 2
+    400494: Table 3
+    400496: Table 4
+    400498: Table 5
+    400500: Toilet
+    400502: Toilet 1
+    400504: Toilet 2
+    400506: Toilet 3
+    400508: Toilet 4
+    400510: Toilet 5
+    400512: Wall
+    400514: Wall 1
+    400516: Wall 2
+    2300000: Backstairs_Lower1
+    2300002: BackStairs_Upper1
+    2300004: BackStairs_Upper1 1
+    2300006: BackStairs_Upper1 2
+    2300008: BackStairs_Upper2
+    2300010: BackStairs_Upper2 1
+    2300012: Barrel
+    2300014: Barrel2
+    2300016: BDoor_L
+    2300018: BDoor_L 1
+    2300020: BDoor_L 2
+    2300022: BDoor_L1
+    2300024: BDoor_R
+    2300026: BDoor_R 1
+    2300028: BDoor_R 2
+    2300030: BDoor_R1
+    2300032: Bed
+    2300034: Bed 1
+    2300036: Bed 2
+    2300038: Bed 3
+    2300040: Bed 4
+    2300042: Bed 5
+    2300044: Bed_Cushion
+    2300046: Bed_Cushion 1
+    2300048: Bed_Cushion 2
+    2300050: Bed_Cushion 3
+    2300052: Bed_Cushion 4
+    2300054: Bed_Cushion 5
+    2300056: Bench
+    2300058: Bench 1
+    2300060: Bench 2
+    2300062: Bench 3
+    2300064: Bench 4
+    2300066: Bench 5
+    2300068: BigRoom
+    2300070: BlastDoor3
+    2300072: BlastDoor4
+    2300074: BlastDoor5
+    2300076: Blocked_corridor_corrner
+    2300078: Broken_Flooring_1
+    2300080: Broken_Flooring_1 1
+    2300082: Broken_Flooring_1 2
+    2300084: Broken_Flooring_2
+    2300086: Broken_Flooring_2 1
+    2300088: Broken_Flooring_2 2
+    2300090: Broken_Flooring_3
+    2300092: Broken_Flooring_3 1
+    2300094: Broken_Flooring_3 2
+    2300096: Broken_Flooring_Base
+    2300098: Cell1
+    2300100: cell1:polySurface14
+    2300102: cell1:polySurface14 1
+    2300104: cell1:polySurface14 2
+    2300106: cell1:polySurface14 3
+    2300108: cell1:polySurface14 4
+    2300110: cell1:polySurface14 5
+    2300112: cell1:polySurface15
+    2300114: cell1:polySurface15 1
+    2300116: cell1:polySurface15 2
+    2300118: cell1:polySurface15 3
+    2300120: cell1:polySurface15 4
+    2300122: cell1:polySurface15 5
+    2300124: cell1:polySurface16
+    2300126: cell1:polySurface16 1
+    2300128: cell1:polySurface16 2
+    2300130: cell1:polySurface16 3
+    2300132: cell1:polySurface16 4
+    2300134: cell1:polySurface16 5
+    2300136: cell1:polySurface18
+    2300138: cell1:polySurface18 1
+    2300140: cell1:polySurface18 2
+    2300142: cell1:polySurface18 3
+    2300144: cell1:polySurface18 4
+    2300146: cell1:polySurface18 5
+    2300148: Cell2
+    2300150: Cell3
+    2300152: Cell4
+    2300154: Cell5Door_pannel
+    2300156: Cell6
+    2300158: Cell6Door_pannel
+    2300160: Cell7
+    2300162: CellDoor3
+    2300164: CellDoor3 1
+    2300166: CellDoor3 2
+    2300168: CellDoor3 3
+    2300170: CellDoor3 4
+    2300172: CellDoor3 5
+    2300174: CellDoor3 6
+    2300176: CellDoor3 7
+    2300178: CellDoor_pannel
+    2300180: CellDoor_pannel 1
+    2300182: CellDoor_pannel 2
+    2300184: CellDoor_pannel 3
+    2300186: CellDoor_pannel 4
+    2300188: CellDoor_pannel 5
+    2300190: Collapsed_Section_Big
+    2300192: Collapsed_Section_Small
+    2300194: Computer
+    2300196: Connections_1_FrontStairs
+    2300198: Corridor_1
+    2300200: Corridor_2
+    2300202: Corridor_3
+    2300204: Corridor_4
+    2300206: Corridor_5
+    2300208: Corridor_6
+    2300210: Corridor_7
+    2300212: Corridor_8
+    2300214: Corridor_BackStairs
+    2300216: Corridor_BackStairs1
+    2300218: Corridor_FrontStairs
+    2300220: Crate
+    2300222: CryoChamper1
+    2300224: CryoChamper2
+    2300226: CryoChamper3
+    2300228: CryoChamper4
+    2300230: CryoChamper5
+    2300232: CryoChamper_Glass
+    2300234: CryoChamper_Glass 1
+    2300236: CryoChamper_Glass 2
+    2300238: CryoChamper_Glass 3
+    2300240: CryoChamper_Glass 4
+    2300242: Cyl_Connection1
+    2300244: Cyl_Connection2
+    2300246: Cyl_Hallway1
+    2300248: Cyl_Hallway2
+    2300250: Cyl_Intersec1
+    2300252: Cyl_Intersec2
+    2300254: Door3_L
+    2300256: Door3_R
+    2300258: Door_BottomPart
+    2300260: Door_TopPart
+    2300262: DoorFrame
+    2300264: Elevator_LiftWell
+    2300266: Elevator_Switch
+    2300268: ElevatorControlRoom
+    2300270: ElevatorPlatform
+    2300272: first_corridor_corrner
+    2300274: FrontStairs_Lower
+    2300276: FrontStairs_Upper
+    2300278: Grate_1
+    2300280: Grating
+    2300282: Guide_Line
+    2300284: Hallway1
+    2300286: Hallway2
+    2300288: Halway_Connection1
+    2300290: Halway_Connection2
+    2300292: Halway_Connection3
+    2300294: Halway_Connection4
+    2300296: Halway_Connection5
+    2300298: Halway_Connection6
+    2300300: Halway_Connection7
+    2300302: Halway_Connection8
+    2300304: IntersectionCube4
+    2300306: IntersectionCube7
+    2300308: IntersectionCube8
+    2300310: IntersectionCube_w_brokenfloor
+    2300312: LCD_Panel2
+    2300314: LCD_Panel3
+    2300316: Lift1
+    2300318: Lift2
+    2300320: Locker
+    2300322: Middle_Bridge
+    2300324: Monitor
+    2300326: Monitor 1
+    2300328: Monitor 2
+    2300330: Monitor 3
+    2300332: Monitor 4
+    2300334: Monitor 5
+    2300336: pCube21
+    2300338: pCube22
+    2300340: pCube49
+    2300342: pCube50
+    2300344: pCube51
+    2300346: pCube52
+    2300348: pCube52 1
+    2300350: pCube53
+    2300352: pCube53 1
+    2300354: pCube59
+    2300356: pCube61
+    2300358: Pipeing_1
+    2300360: Pipeing_2
+    2300362: Pipeing_2 1
+    2300364: Pipeing_3
+    2300366: Pipeing_3 1
+    2300368: Plane_Bridge1
+    2300370: Pneu_Pillar1
+    2300372: Pneu_Pillar2
+    2300374: polySurface14
+    2300376: polySurface14 1
+    2300378: polySurface15
+    2300380: polySurface15 1
+    2300382: polySurface16
+    2300384: polySurface16 1
+    2300386: polySurface18
+    2300388: polySurface18 1
+    2300390: RandomWall1
+    2300392: Slanted_Connection1
+    2300394: Slanted_Connection2
+    2300396: Slanted_Connection3
+    2300398: Slanted_Connection4
+    2300400: Slanted_Connection5
+    2300402: Slanted_Connection6
+    2300404: Slanted_Connection7
+    2300406: Slanted_Connection8
+    2300408: Slanted_Hallway2
+    2300410: Slanted_Hallway3
+    2300412: Slanted_Hallway4
+    2300414: Slanted_Hallway_w_Connection
+    2300416: Stair_connection_Back_Stairs1
+    2300418: Stair_connection_Back_Stairs1 1
+    2300420: Stair_connection_Back_Stairs1 2
+    2300422: Stair_connection_Back_Stairs3
+    2300424: Stair_connection_Back_Stairs3 1
+    2300426: Stairs_Corner
+    2300428: Stairs_Corner_Ext1
+    2300430: Storage 1
+    2300432: Storage_door
+    2300434: Storage_door_pannel
+    2300436: Switch_Panel
+    2300438: Table
+    2300440: Table 1
+    2300442: Table 2
+    2300444: Table 3
+    2300446: Table 4
+    2300448: Table 5
+    2300450: Toilet
+    2300452: Toilet 1
+    2300454: Toilet 2
+    2300456: Toilet 3
+    2300458: Toilet 4
+    2300460: Toilet 5
+    2300462: Wall
+    2300464: Wall 1
+    2300466: Wall 2
+    3300000: Backstairs_Lower1
+    3300002: BackStairs_Upper1
+    3300004: BackStairs_Upper1 1
+    3300006: BackStairs_Upper1 2
+    3300008: BackStairs_Upper2
+    3300010: BackStairs_Upper2 1
+    3300012: Barrel
+    3300014: Barrel2
+    3300016: BDoor_L
+    3300018: BDoor_L 1
+    3300020: BDoor_L 2
+    3300022: BDoor_L1
+    3300024: BDoor_R
+    3300026: BDoor_R 1
+    3300028: BDoor_R 2
+    3300030: BDoor_R1
+    3300032: Bed
+    3300034: Bed 1
+    3300036: Bed 2
+    3300038: Bed 3
+    3300040: Bed 4
+    3300042: Bed 5
+    3300044: Bed_Cushion
+    3300046: Bed_Cushion 1
+    3300048: Bed_Cushion 2
+    3300050: Bed_Cushion 3
+    3300052: Bed_Cushion 4
+    3300054: Bed_Cushion 5
+    3300056: Bench
+    3300058: Bench 1
+    3300060: Bench 2
+    3300062: Bench 3
+    3300064: Bench 4
+    3300066: Bench 5
+    3300068: BigRoom
+    3300070: BlastDoor3
+    3300072: BlastDoor4
+    3300074: BlastDoor5
+    3300076: Blocked_corridor_corrner
+    3300078: Broken_Flooring_1
+    3300080: Broken_Flooring_1 1
+    3300082: Broken_Flooring_1 2
+    3300084: Broken_Flooring_2
+    3300086: Broken_Flooring_2 1
+    3300088: Broken_Flooring_2 2
+    3300090: Broken_Flooring_3
+    3300092: Broken_Flooring_3 1
+    3300094: Broken_Flooring_3 2
+    3300096: Broken_Flooring_Base
+    3300098: Cell1
+    3300100: cell1:polySurface14
+    3300102: cell1:polySurface14 1
+    3300104: cell1:polySurface14 2
+    3300106: cell1:polySurface14 3
+    3300108: cell1:polySurface14 4
+    3300110: cell1:polySurface14 5
+    3300112: cell1:polySurface15
+    3300114: cell1:polySurface15 1
+    3300116: cell1:polySurface15 2
+    3300118: cell1:polySurface15 3
+    3300120: cell1:polySurface15 4
+    3300122: cell1:polySurface15 5
+    3300124: cell1:polySurface16
+    3300126: cell1:polySurface16 1
+    3300128: cell1:polySurface16 2
+    3300130: cell1:polySurface16 3
+    3300132: cell1:polySurface16 4
+    3300134: cell1:polySurface16 5
+    3300136: cell1:polySurface18
+    3300138: cell1:polySurface18 1
+    3300140: cell1:polySurface18 2
+    3300142: cell1:polySurface18 3
+    3300144: cell1:polySurface18 4
+    3300146: cell1:polySurface18 5
+    3300148: Cell2
+    3300150: Cell3
+    3300152: Cell4
+    3300154: Cell5Door_pannel
+    3300156: Cell6
+    3300158: Cell6Door_pannel
+    3300160: Cell7
+    3300162: CellDoor3
+    3300164: CellDoor3 1
+    3300166: CellDoor3 2
+    3300168: CellDoor3 3
+    3300170: CellDoor3 4
+    3300172: CellDoor3 5
+    3300174: CellDoor3 6
+    3300176: CellDoor3 7
+    3300178: CellDoor_pannel
+    3300180: CellDoor_pannel 1
+    3300182: CellDoor_pannel 2
+    3300184: CellDoor_pannel 3
+    3300186: CellDoor_pannel 4
+    3300188: CellDoor_pannel 5
+    3300190: Collapsed_Section_Big
+    3300192: Collapsed_Section_Small
+    3300194: Computer
+    3300196: Connections_1_FrontStairs
+    3300198: Corridor_1
+    3300200: Corridor_2
+    3300202: Corridor_3
+    3300204: Corridor_4
+    3300206: Corridor_5
+    3300208: Corridor_6
+    3300210: Corridor_7
+    3300212: Corridor_8
+    3300214: Corridor_BackStairs
+    3300216: Corridor_BackStairs1
+    3300218: Corridor_FrontStairs
+    3300220: Crate
+    3300222: CryoChamper1
+    3300224: CryoChamper2
+    3300226: CryoChamper3
+    3300228: CryoChamper4
+    3300230: CryoChamper5
+    3300232: CryoChamper_Glass
+    3300234: CryoChamper_Glass 1
+    3300236: CryoChamper_Glass 2
+    3300238: CryoChamper_Glass 3
+    3300240: CryoChamper_Glass 4
+    3300242: Cyl_Connection1
+    3300244: Cyl_Connection2
+    3300246: Cyl_Hallway1
+    3300248: Cyl_Hallway2
+    3300250: Cyl_Intersec1
+    3300252: Cyl_Intersec2
+    3300254: Door3_L
+    3300256: Door3_R
+    3300258: Door_BottomPart
+    3300260: Door_TopPart
+    3300262: DoorFrame
+    3300264: Elevator_LiftWell
+    3300266: Elevator_Switch
+    3300268: ElevatorControlRoom
+    3300270: ElevatorPlatform
+    3300272: first_corridor_corrner
+    3300274: FrontStairs_Lower
+    3300276: FrontStairs_Upper
+    3300278: Grate_1
+    3300280: Grating
+    3300282: Guide_Line
+    3300284: Hallway1
+    3300286: Hallway2
+    3300288: Halway_Connection1
+    3300290: Halway_Connection2
+    3300292: Halway_Connection3
+    3300294: Halway_Connection4
+    3300296: Halway_Connection5
+    3300298: Halway_Connection6
+    3300300: Halway_Connection7
+    3300302: Halway_Connection8
+    3300304: IntersectionCube4
+    3300306: IntersectionCube7
+    3300308: IntersectionCube8
+    3300310: IntersectionCube_w_brokenfloor
+    3300312: LCD_Panel2
+    3300314: LCD_Panel3
+    3300316: Lift1
+    3300318: Lift2
+    3300320: Locker
+    3300322: Middle_Bridge
+    3300324: Monitor
+    3300326: Monitor 1
+    3300328: Monitor 2
+    3300330: Monitor 3
+    3300332: Monitor 4
+    3300334: Monitor 5
+    3300336: pCube21
+    3300338: pCube22
+    3300340: pCube49
+    3300342: pCube50
+    3300344: pCube51
+    3300346: pCube52
+    3300348: pCube52 1
+    3300350: pCube53
+    3300352: pCube53 1
+    3300354: pCube59
+    3300356: pCube61
+    3300358: Pipeing_1
+    3300360: Pipeing_2
+    3300362: Pipeing_2 1
+    3300364: Pipeing_3
+    3300366: Pipeing_3 1
+    3300368: Plane_Bridge1
+    3300370: Pneu_Pillar1
+    3300372: Pneu_Pillar2
+    3300374: polySurface14
+    3300376: polySurface14 1
+    3300378: polySurface15
+    3300380: polySurface15 1
+    3300382: polySurface16
+    3300384: polySurface16 1
+    3300386: polySurface18
+    3300388: polySurface18 1
+    3300390: RandomWall1
+    3300392: Slanted_Connection1
+    3300394: Slanted_Connection2
+    3300396: Slanted_Connection3
+    3300398: Slanted_Connection4
+    3300400: Slanted_Connection5
+    3300402: Slanted_Connection6
+    3300404: Slanted_Connection7
+    3300406: Slanted_Connection8
+    3300408: Slanted_Hallway2
+    3300410: Slanted_Hallway3
+    3300412: Slanted_Hallway4
+    3300414: Slanted_Hallway_w_Connection
+    3300416: Stair_connection_Back_Stairs1
+    3300418: Stair_connection_Back_Stairs1 1
+    3300420: Stair_connection_Back_Stairs1 2
+    3300422: Stair_connection_Back_Stairs3
+    3300424: Stair_connection_Back_Stairs3 1
+    3300426: Stairs_Corner
+    3300428: Stairs_Corner_Ext1
+    3300430: Storage 1
+    3300432: Storage_door
+    3300434: Storage_door_pannel
+    3300436: Switch_Panel
+    3300438: Table
+    3300440: Table 1
+    3300442: Table 2
+    3300444: Table 3
+    3300446: Table 4
+    3300448: Table 5
+    3300450: Toilet
+    3300452: Toilet 1
+    3300454: Toilet 2
+    3300456: Toilet 3
+    3300458: Toilet 4
+    3300460: Toilet 5
+    3300462: Wall
+    3300464: Wall 1
+    3300466: Wall 2
+    4300000: Grating
+    4300002: Barrel
+    4300004: Broken_Flooring_Base
+    4300006: Broken_Flooring_1
+    4300008: Broken_Flooring_2
+    4300010: Broken_Flooring_3
+    4300012: Crate
+    4300014: Pipeing_1
+    4300016: Pipeing_2
+    4300018: Pipeing_3
+    4300020: Locker
+    4300022: Barrel2
+    4300024: Cell1
+    4300026: CellDoor_pannel
+    4300028: CellDoor3
+    4300030: cell1:polySurface14
+    4300032: cell1:polySurface15
+    4300034: cell1:polySurface16
+    4300036: cell1:polySurface18
+    4300038: Bed
+    4300040: Bed_Cushion
+    4300042: Monitor
+    4300044: Bench
+    4300046: Table
+    4300048: Toilet
+    4300050: Cell2
+    4300052: CellDoor_pannel
+    4300054: CellDoor3
+    4300056: cell1:polySurface14
+    4300058: cell1:polySurface15
+    4300060: cell1:polySurface16
+    4300062: cell1:polySurface18
+    4300064: Bed
+    4300066: Bed_Cushion
+    4300068: Monitor
+    4300070: Bench
+    4300072: Table
+    4300074: Toilet
+    4300076: Cell3
+    4300078: CellDoor_pannel
+    4300080: CellDoor3
+    4300082: cell1:polySurface14
+    4300084: cell1:polySurface15
+    4300086: cell1:polySurface16
+    4300088: cell1:polySurface18
+    4300090: Bed
+    4300092: Bed_Cushion
+    4300094: Monitor
+    4300096: Bench
+    4300098: Table
+    4300100: Toilet
+    4300102: Cell4
+    4300104: CellDoor_pannel
+    4300106: CellDoor3
+    4300108: cell1:polySurface14
+    4300110: cell1:polySurface15
+    4300112: cell1:polySurface16
+    4300114: cell1:polySurface18
+    4300116: Bed
+    4300118: Bed_Cushion
+    4300120: Monitor
+    4300122: Bench
+    4300124: Table
+    4300126: Toilet
+    4300128: Cell5Door_pannel
+    4300130: CellDoor3
+    4300132: polySurface14
+    4300134: polySurface15
+    4300136: polySurface16
+    4300138: polySurface18
+    4300140: Cell6Door_pannel
+    4300142: CellDoor3
+    4300144: polySurface14
+    4300146: polySurface15
+    4300148: polySurface16
+    4300150: polySurface18
+    4300152: Cell6
+    4300154: CellDoor_pannel
+    4300156: CellDoor3
+    4300158: cell1:polySurface14
+    4300160: cell1:polySurface15
+    4300162: cell1:polySurface16
+    4300164: cell1:polySurface18
+    4300166: Bed
+    4300168: Bed_Cushion
+    4300170: Monitor
+    4300172: Bench
+    4300174: Table
+    4300176: Toilet
+    4300178: Cell7
+    4300180: CellDoor_pannel
+    4300182: CellDoor3
+    4300184: cell1:polySurface14
+    4300186: cell1:polySurface15
+    4300188: cell1:polySurface16
+    4300190: cell1:polySurface18
+    4300192: Bed
+    4300194: Bed_Cushion
+    4300196: Monitor
+    4300198: Bench
+    4300200: Table
+    4300202: Toilet
+    4300204: Wall
+    4300206: Grate_1
+    4300208: Pipeing_2
+    4300210: Pipeing_3
+    4300212: Corridor_1
+    4300214: Corridor_2
+    4300216: Corridor_3
+    4300218: Corridor_4
+    4300220: Corridor_5
+    4300222: Corridor_6
+    4300224: Corridor_7
+    4300226: Corridor_8
+    4300228: Storage
+    4300230: Storage_door
+    4300232: Storage_door_pannel
+    4300234: first_corridor_corrner
+    4300236: Corridor_FrontStairs
+    4300238: Blocked_corridor_corrner
+    4300240: FrontStairs_Lower
+    4300242: Connections_1_FrontStairs
+    4300244: FrontStairs_Upper
+    4300246: Corridor_BackStairs1
+    4300248: RandomWall1
+    4300250: LCD_Panel2
+    4300252: DoorFrame
+    4300254: Door_TopPart
+    4300256: Door_BottomPart
+    4300258: pCube22
+    4300260: Halway_Connection5
+    4300262: Halway_Connection6
+    4300264: Halway_Connection7
+    4300266: Collapsed_Section_Big
+    4300268: Collapsed_Section_Small
+    4300270: Corridor_BackStairs
+    4300272: pCube59
+    4300274: Backstairs_Lower1
+    4300276: Stair_connection_Back_Stairs1
+    4300278: BackStairs_Upper1
+    4300280: pCube21
+    4300282: Stair_connection_Back_Stairs1
+    4300284: BackStairs_Upper1
+    4300286: BackStairs_Upper2
+    4300288: Stair_connection_Back_Stairs3
+    4300290: Stairs_Corner
+    4300292: pCube53
+    4300294: pCube52
+    4300296: Stairs_Corner_Ext1
+    4300298: Pneu_Pillar1
+    4300300: Cyl_Intersec1
+    4300302: Cyl_Intersec2
+    4300304: Pneu_Pillar2
+    4300306: Door3_L
+    4300308: Door3_R
+    4300310: pCube51
+    4300312: pCube50
+    4300314: pCube49
+    4300316: Slanted_Connection8
+    4300318: Slanted_Connection7
+    4300320: Slanted_Connection6
+    4300322: Slanted_Connection5
+    4300324: Slanted_Connection4
+    4300326: Slanted_Connection3
+    4300328: Slanted_Connection2
+    4300330: Slanted_Connection1
+    4300332: Slanted_Hallway2
+    4300334: Slanted_Hallway3
+    4300336: Slanted_Hallway4
+    4300338: Slanted_Hallway_w_Connection
+    4300340: IntersectionCube_w_brokenfloor
+    4300342: IntersectionCube4
+    4300344: Middle_Bridge
+    4300346: Plane_Bridge1
+    4300348: Hallway1
+    4300350: Cyl_Hallway1
+    4300352: Cyl_Hallway2
+    4300354: IntersectionCube7
+    4300356: IntersectionCube8
+    4300358: Halway_Connection4
+    4300360: Halway_Connection3
+    4300362: Halway_Connection2
+    4300364: Halway_Connection1
+    4300366: Cyl_Connection1
+    4300368: Hallway2
+    4300370: Cyl_Connection2
+    4300372: Halway_Connection8
+    4300374: Broken_Flooring_1
+    4300376: Broken_Flooring_2
+    4300378: Broken_Flooring_3
+    4300380: BackStairs_Upper1
+    4300382: BackStairs_Upper2
+    4300384: Stair_connection_Back_Stairs1
+    4300386: Stair_connection_Back_Stairs3
+    4300388: pCube53
+    4300390: pCube52
+    4300392: BlastDoor3
+    4300394: Wall
+    4300396: BDoor_L1
+    4300398: BDoor_R1
+    4300400: ElevatorPlatform
+    4300402: Lift1
+    4300404: Lift2
+    4300406: Elevator_Switch
+    4300408: Switch_Panel
+    4300410: Wall
+    4300412: LCD_Panel3
+    4300414: Guide_Line
+    4300416: Elevator_LiftWell
+    4300418: Computer
+    4300420: ElevatorControlRoom
+    4300422: CryoChamper1
+    4300424: CryoChamper_Glass
+    4300426: CryoChamper2
+    4300428: CryoChamper_Glass
+    4300430: CryoChamper3
+    4300432: CryoChamper_Glass
+    4300434: CryoChamper4
+    4300436: CryoChamper_Glass
+    4300438: CryoChamper5
+    4300440: CryoChamper_Glass
+    4300442: Broken_Flooring_1
+    4300444: Broken_Flooring_2
+    4300446: Broken_Flooring_3
+    4300448: BigRoom
+    4300450: pCube61
+    4300452: BlastDoor4
+    4300454: BDoor_R
+    4300456: BDoor_L
+    4300458: BlastDoor5
+    4300460: BDoor_R
+    4300462: BDoor_L
+    4300464: BDoor_L
+    4300466: BDoor_R
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
