@@ -48,7 +48,7 @@ public class MeleeEnemyMovement : MonoBehaviour {
             {
                 Vector3 direction = origin.position - this.transform.position;
                 direction.y = 0;
-                this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
+              //  this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
                 transform.position = Vector3.MoveTowards(transform.position, origin.position, moveSpeed);
             }
         }

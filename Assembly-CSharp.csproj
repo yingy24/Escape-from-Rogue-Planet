@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\NewCameraFollow.cs" />
      <Compile Include="Assets\Scripts\PlayerAttributes.cs" />
+     <Compile Include="Assets\Scripts\Rubble.cs" />
      <Compile Include="Assets\Scripts\WeaponAttribute.cs" />
      <Compile Include="Assets\SelfDestruct.cs" />
      <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />

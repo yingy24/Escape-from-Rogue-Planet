@@ -20,7 +20,7 @@ public class PlayerAttributes : MonoBehaviour {
     // Use this for initialization
     void Awake () {
         attackCombo = GetComponent<AttackCombo>();
-        hasWeapon = true;
+        hasWeapon = false;
         isDead = false;
         hasWon = false;
 	}
@@ -32,6 +32,10 @@ public class PlayerAttributes : MonoBehaviour {
         if (health <= 0)
         {
             isDead = true;
+        }
+        if (health > 100)
+        {
+            health = 100;
         }
 
         // Checks to see if the player has sword
@@ -69,6 +73,15 @@ public class PlayerAttributes : MonoBehaviour {
         {
             hasWeapon = true;
             attackCombo.SwordObtained();
+            Destroy(other.gameObject);
+        }
+
+        if(other.tag == "HealthPickUp")
+        {
+            if(health <= 100)
+            {
+                health += 5;
+            }
             Destroy(other.gameObject);
         }
 
