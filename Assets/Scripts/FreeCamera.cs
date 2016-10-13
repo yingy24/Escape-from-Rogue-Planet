@@ -47,6 +47,7 @@ public class FreeCamera : MonoBehaviour {
     }
 	
 	// Update is called once per frame
+
 	void LateUpdate () {
 
         Vector3 dir = new Vector3(0, 0, -distance);

@@ -16,14 +16,15 @@ public class MeleeEnemyMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 
         if(!seePlayer)
         {
-            if (!followingPlayer)
+
+            if (this.transform.position == origin.position)
             {
-                if (this.transform.position == origin.position)
+                if (!followingPlayer)
                 {
                     transform.Rotate(0, turnSpeed, 0);
 
@@ -31,6 +32,14 @@ public class MeleeEnemyMovement : MonoBehaviour {
                         (transform.rotation.eulerAngles.y < 360 - maxTurn && transform.rotation.eulerAngles.y > 180))
                     {
                         turnSpeed *= -1;
+                    }
+                }
+                else
+                {
+                    transform.Rotate(0, turnSpeed, 0);
+                    if(transform.rotation.eulerAngles.y < maxTurn )
+                    {
+                        followingPlayer = false;
                     }
                 }
             }

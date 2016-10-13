@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\Enemy\MeleeEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\RangedEnemy.cs" />
      <Compile Include="Assets\Scripts\FreeCamera.cs" />
+     <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\NewCameraFollow.cs" />
      <Compile Include="Assets\Scripts\PlayerAttributes.cs" />
      <Compile Include="Assets\Scripts\WeaponAttribute.cs" />

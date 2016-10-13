@@ -28,16 +28,8 @@ public class PlayerAttributes : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if(isDead)
-        {
-            return; //Make Dead UI
-        }
-        if(hasWon)
-        {
-            return; // Make Winning UI
-        }
 
-        if(health <= 0)
+        if (health <= 0)
         {
             isDead = true;
         }
