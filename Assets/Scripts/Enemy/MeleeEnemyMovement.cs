@@ -12,8 +12,10 @@ public class MeleeEnemyMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+        // anim.SetBool("isIdle", true);
+        transform.eulerAngles = new Vector3(0, 0, 0);
 
-	}
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -24,10 +26,11 @@ public class MeleeEnemyMovement : MonoBehaviour {
 
             if (this.transform.position == origin.position)
             {
+                anim.SetBool("isChasing", false);
+                anim.SetBool("isIdle", true);
                 if (!followingPlayer)
                 {
                     transform.Rotate(0, turnSpeed, 0);
-
                     if ((transform.rotation.eulerAngles.y > maxTurn && transform.rotation.eulerAngles.y < 180) ||
                         (transform.rotation.eulerAngles.y < 360 - maxTurn && transform.rotation.eulerAngles.y > 180))
                     {
@@ -48,20 +51,31 @@ public class MeleeEnemyMovement : MonoBehaviour {
             {
                 Vector3 direction = origin.position - this.transform.position;
                 direction.y = 0;
-              //  this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
+                //  this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
+                transform.LookAt(origin);
                 transform.position = Vector3.MoveTowards(transform.position, origin.position, moveSpeed);
+
             }
         }
         else
         {
             transform.LookAt(target);
             followingPlayer = true;
+
             if (Vector3.Distance(target.position, this.transform.position) < 10)
             {
                 Vector3 direction = target.position - this.transform.position;
                 if (direction.magnitude > 1)
                 {
+                    anim.SetBool("isIdle", false);
+                    anim.SetBool("isChasing", true);
+                    anim.SetBool("isAttacking", false);
                     this.transform.Translate(0, 0, moveSpeed);
+                }
+                else
+                {
+                    anim.SetBool("isChasing", false);
+                    anim.SetBool("isAttacking", true);
                 }
             }
         }
