@@ -22,7 +22,5 @@ public class GameManager : MonoBehaviour {
         {
             return; // Make Winning UI
         }
-
-
     }
 }

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using XInputDotNetPure;
 
 public class AttackOne : MonoBehaviour {
 
@@ -20,15 +21,14 @@ public class AttackOne : MonoBehaviour {
         if (col.transform.tag == "Enemy" && attackCombo.isAttacking)
         {
             col.transform.parent.GetComponent<EnemyHealth>().health -= 5;
+            GamePad.SetVibration(PlayerIndex.One, 0, 0.5f);
+            StartCoroutine(StopVibrate());
         }
     }
-    /*
-    void OnTriggerStay(Collider col)
+
+    IEnumerator StopVibrate()
     {
-        if (col.transform.tag == "Enemy" && attackCombo.isAttacking)
-        {
-            col.transform.parent.GetComponent<EnemyHealth>().health -= 5;
-        }
+        yield return new WaitForSeconds(0.15f);
+        GamePad.SetVibration(PlayerIndex.One, 0, 0);
     }
-    */
 }

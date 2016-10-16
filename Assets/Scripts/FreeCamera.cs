@@ -24,11 +24,11 @@ public class FreeCamera : MonoBehaviour {
     public float YAngleMin = 0.0f;
     public float YAngleMax = 50.0f;
 
-    // Use this for initialization
     void Start () {
         camTransform = transform;
         cam = Camera.main;
-	}
+        currentX -= 90;
+    }
 
     void Update()
     {

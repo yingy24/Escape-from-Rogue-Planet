@@ -15,8 +15,8 @@ public class CollisionEffect : MonoBehaviour {
         Vector3 pos = contact.point;
         Instantiate(collisionEffect, pos, rot);
 
-        print("Points colliding" + collision.contacts.Length);
-        print("First normal of the point that collide: " + collision.contacts[0].normal);
+        //print("Points colliding" + collision.contacts.Length);
+        //print("First normal of the point that collide: " + collision.contacts[0].normal);
     }
     /*
     void OnTriggerEnter(Collider other)

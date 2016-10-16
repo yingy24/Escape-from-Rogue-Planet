@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using XInputDotNetPure;
 
 public class Bullet : MonoBehaviour {
 
@@ -38,9 +39,21 @@ public class Bullet : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            Destroy(this.gameObject);
-            other.GetComponent<PlayerAttributes>().health -= 5;
+            other.GetComponent<PlayerAttributes>().health -= damage;
+            GamePad.SetVibration(PlayerIndex.One, 0, 1);
+            StartCoroutine(ZeroVibrateAndSelfDestruct());
         }
+        else
+        {
+            GamePad.SetVibration(PlayerIndex.One, 0, 0);
+            Destroy(this.gameObject);
+        }
+    }
+
+    IEnumerator ZeroVibrateAndSelfDestruct()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GamePad.SetVibration(PlayerIndex.One, 0, 0);
         Destroy(this.gameObject);
     }
 }
