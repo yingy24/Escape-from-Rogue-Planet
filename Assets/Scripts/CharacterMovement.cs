@@ -10,7 +10,7 @@ public class CharacterMovement : MonoBehaviour
     public Animator anim;
 
     public float runSpeed, sprintSpeed, sprintStamina;
-    public float jumpVelocity, waitForJump;
+    public float jumpVelocity;
 
     //private variables
     private bool moving = false;
@@ -186,12 +186,18 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             //rb.AddRelativeForce(new Vector3(0, jumpVelocity, 0));
-            if (rb.velocity.y == 0 || Mathf.Abs(rb.velocity.y) < 0.2)
+            if (rb.velocity.y == 0 || Mathf.Abs(rb.velocity.y) < 0.3)
             {
                 anim.SetTrigger("Jump");
-                rb.velocity = new Vector3(0, jumpVelocity, 0);
+                StartCoroutine(ApplyVelocity());
             }
         }
+    }
+
+    IEnumerator ApplyVelocity()
+    {
+        yield return new WaitForSeconds(0.2f);
+        rb.velocity = new Vector3(0, jumpVelocity, 0);
     }
 
     //-------------------------------------------------------------------
