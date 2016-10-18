@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public float health = 20;
     public GameObject player;
     public Transform parentTransform;
+    public GameObject effect;
     // Use this for initialization
     void Start()
     {
@@ -20,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (health <= 0)
         {
+            Instantiate(effect, transform.position, transform.rotation);
             Destroy(parentTransform.gameObject);
         }
         

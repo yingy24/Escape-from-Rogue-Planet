@@ -22,6 +22,7 @@ public class OptionMenu : MonoBehaviour {
     public void Resume()
     {
         Time.timeScale = 1;
+        Cursor.visible = false;
         pauseMenu.SetActive(false);
     }
 

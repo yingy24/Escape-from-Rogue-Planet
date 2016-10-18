@@ -4,7 +4,7 @@ using System.Collections;
 public class Enabler : MonoBehaviour {
 
     public AttackCombo attackCombo;
-    public GameObject isOff, isOn;
+    public GameObject isOff, isOn, ElvButton;
     
     // Use this for initialization
 	void Start () {
@@ -22,6 +22,7 @@ public class Enabler : MonoBehaviour {
         {
             isOff.SetActive(false);
             isOn.SetActive(true);
+            ElvButton.SetActive(true);
         }
     }
 }

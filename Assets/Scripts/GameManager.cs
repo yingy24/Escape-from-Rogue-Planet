@@ -16,10 +16,6 @@ public class GameManager : MonoBehaviour {
 
     public GameObject keyboard, controller, optionsMenu;
 
-
-
-
-
     bool dead;
     bool win;
 
@@ -31,6 +27,8 @@ public class GameManager : MonoBehaviour {
         winScreen.SetActive(false);
         dead = false;
         win = false;
+        anim = player.GetComponent<Animator>();
+        Cursor.visible = false;
     }
 	
 	// Update is called once per frame
@@ -44,11 +42,15 @@ public class GameManager : MonoBehaviour {
         }
         if (playerAttributes.hasWon)
         {
+            win = true;
+            winScreen.SetActive(true);
+            Time.timeScale = 0;
             return; // Make Winning UI
         }
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Options"))
         {
             pauseMenu.SetActive(true);
+            Cursor.visible = true;
             Time.timeScale = 0;
         }
     }
@@ -57,10 +59,19 @@ public class GameManager : MonoBehaviour {
     {
         if (dead)
         {
-            if (Input.GetButton("Cancel") | Input.GetButton("Options"))
+            if (Input.GetButton("Options"))
             {
                 Time.timeScale = 1f;
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level_ForReal");
+            }
+        }
+
+        if (win)
+        {
+            if (Input.GetButton("Options"))
+            {
+                Time.timeScale = 1f;
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
             }
         }
     }
@@ -70,7 +81,9 @@ public class GameManager : MonoBehaviour {
         keyboard.SetActive(false);
         optionsMenu.SetActive(false);
         cameraScript.useMouse = false;
-        controller.SetActive(true);    
+        controller.SetActive(true);
+        Cursor.visible = false;
+        Time.timeScale = 1;
     }
 
     public void Keyboard()
@@ -79,7 +92,8 @@ public class GameManager : MonoBehaviour {
         optionsMenu.SetActive(false);
         cameraScript.useMouse = true;
         keyboard.SetActive(true);
-
+        Cursor.visible = false;
+        Time.timeScale = 1;
     }
 
     IEnumerator WaitForAnimation()

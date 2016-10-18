@@ -3,6 +3,7 @@ using System.Collections;
 
 public class DoorAnimPlay : MonoBehaviour {
 
+    public AttackCombo attackCombo;
     public bool requireAttack = false;
 
     Animator animator;
@@ -12,20 +13,13 @@ public class DoorAnimPlay : MonoBehaviour {
 	void Start () {
         doorOpen = false;
         animator = GetComponent<Animator>();
-	}
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        attackCombo = player.GetComponent<AttackCombo>();
+    }
 	
 
 	void OnTriggerEnter (Collider col) {
-
-        if (requireAttack)
-        {
-            if (col.gameObject.tag == "Weapon")
-            {
-                doorOpen = true;
-                DoorTrigger("Open");
-            }
-        }
-        else
+        if (!requireAttack)
         {
             if (col.gameObject.tag == "Player")
             {
@@ -34,6 +28,21 @@ public class DoorAnimPlay : MonoBehaviour {
             }
         }
 	}
+
+    void OnTriggerStay(Collider other)
+    {
+        if (requireAttack)
+        {
+            if (other.gameObject.tag == "Weapon")
+            {
+                if (attackCombo.isAttacking)
+                {
+                    doorOpen = true;
+                    DoorTrigger("Open");
+                }
+            }
+        }
+    }
 
     void OnTriggerExit (Collider col)
     {
@@ -63,7 +72,7 @@ public class DoorAnimPlay : MonoBehaviour {
     IEnumerator WaitToClose()
     {
         yield return new WaitForSeconds(4);
-        print("Waiting to close");
+        //print("Waiting to close");
         DoorTrigger("Close");
     }
 }
