@@ -91,23 +91,5 @@ public class RangedEnemy : MonoBehaviour
 
 
     }
-    /*
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            inRangeOfPlayer = true;
-            timePassed = Time.time + 1;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            inRangeOfPlayer = false;
-        }
-    }
-    */
 }
 

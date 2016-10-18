@@ -3,14 +3,17 @@ using System.Collections;
 
 public class MeleeEnemyMovement : MonoBehaviour {
 
+    //Public Classes
+    public AttackActive attackActive;
+
     //Public Member Variables
     public Animator anim;
     public Transform target, origin;
     public bool seePlayer, followingPlayer;
-    public float turnSpeed, maxTurn, lineOfSight, maxSight, moveSpeed;
+    public float damageDealt, turnSpeed, maxTurn, lineOfSight, maxSight, moveSpeed;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         anim = GetComponent<Animator>();
         // anim.SetBool("isIdle", true);
         transform.eulerAngles = new Vector3(0, 0, 0);
@@ -76,6 +79,10 @@ public class MeleeEnemyMovement : MonoBehaviour {
                 {
                     anim.SetBool("isChasing", false);
                     anim.SetBool("isAttacking", true);
+                    if(attackActive.isAttacking)
+                    {
+                        target.GetComponent<PlayerAttributes>().health -= damageDealt;
+                    }
                 }
             }
         }

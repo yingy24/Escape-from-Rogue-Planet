@@ -4,10 +4,21 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
     //Public Classes
+    public FreeCamera cameraScript;
+
+
+    //Public Member variables
     public PlayerAttributes playerAttributes;
     public GameObject player;
     public GameObject deathScreen;
     public GameObject winScreen;
+    public GameObject pauseMenu;
+
+    public GameObject keyboard, controller, optionsMenu;
+
+
+
+
 
     bool dead;
     bool win;
@@ -16,7 +27,6 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-        anim = player.GetComponent<Animator>();
         deathScreen.SetActive(false);
         winScreen.SetActive(false);
         dead = false;
@@ -36,6 +46,11 @@ public class GameManager : MonoBehaviour {
         {
             return; // Make Winning UI
         }
+        if (Input.GetButtonDown("Cancel"))
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
     }
 
     void LateUpdate()
@@ -48,6 +63,23 @@ public class GameManager : MonoBehaviour {
                 UnityEngine.SceneManagement.SceneManager.LoadScene("Level_ForReal");
             }
         }
+    }
+
+    public void Controller()
+    {
+        keyboard.SetActive(false);
+        optionsMenu.SetActive(false);
+        cameraScript.useMouse = false;
+        controller.SetActive(true);    
+    }
+
+    public void Keyboard()
+    {
+        controller.SetActive(false);
+        optionsMenu.SetActive(false);
+        cameraScript.useMouse = true;
+        keyboard.SetActive(true);
+
     }
 
     IEnumerator WaitForAnimation()

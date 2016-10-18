@@ -24,6 +24,13 @@ public class AttackOne : MonoBehaviour {
             GamePad.SetVibration(PlayerIndex.One, 0, 0.5f);
             StartCoroutine(StopVibrate());
         }
+
+        if (col.transform.tag == "MeleeEnemy" && attackCombo.isAttacking)
+        {
+            col.transform.GetComponent<EnemyHealth>().health -= 5;
+            GamePad.SetVibration(PlayerIndex.One, 0, 0.5f);
+            StartCoroutine(StopVibrate());
+        }
     }
 
     IEnumerator StopVibrate()

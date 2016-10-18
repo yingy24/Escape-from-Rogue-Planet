@@ -4,6 +4,7 @@ using System.Collections;
 public class OptionMenu : MonoBehaviour {
 
     public GameObject pauseMenu;
+    public GameObject optionsMenu;
 
     GameObject player;
     bool paused;
@@ -15,30 +16,19 @@ public class OptionMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!paused)
-            return;
 
-        if (paused)
-        {
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0;
-        }
-        else
-        {
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1;
-        }
-
-        //Pressing Esc or Start
-        if (Input.GetButton("Cancel") | Input.GetButton("Options"))
-        {
-            paused = true;
-        }
     }
 
     public void Resume()
     {
-        paused = false;
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+    }
+
+    public void Options()
+    {
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
     }
 
     public void Quit()

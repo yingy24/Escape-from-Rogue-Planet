@@ -174,7 +174,7 @@ public class CharacterMovement : MonoBehaviour
         }
         if (Mathf.Abs(rb.velocity.y) > 0 && Mathf.Abs(rb.velocity.y) < 0.01)
         {
-            print("rb.Vel Y =" + rb.velocity.y);
+          //  print("rb.Vel Y =" + rb.velocity.y);
         }
 
         //correct gravity and downward velocity
