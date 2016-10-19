@@ -72,12 +72,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DoorAnimPlay.cs" />
-    <Compile Include="Assets\Enabler.cs" />
-    <Compile Include="Assets\Enabler2.cs" />
-    <Compile Include="Assets\Enabler3.cs" />
-    <Compile Include="Assets\InstaDead.cs" />
-    <Compile Include="Assets\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\AttackCombo.cs" />
     <Compile Include="Assets\Scripts\AttackOne.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
@@ -85,7 +79,11 @@
     <Compile Include="Assets\Scripts\CharTestController.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Scripts\CollisionEffect.cs" />
+    <Compile Include="Assets\Scripts\DoorAnimPlay.cs" />
     <Compile Include="Assets\Scripts\Elevator.cs" />
+    <Compile Include="Assets\Scripts\Enabler.cs" />
+    <Compile Include="Assets\Scripts\Enabler2.cs" />
+    <Compile Include="Assets\Scripts\Enabler3.cs" />
     <Compile Include="Assets\Scripts\Enemy\AttackActive.cs" />
     <Compile Include="Assets\Scripts\Enemy\Bullet.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
@@ -93,14 +91,16 @@
     <Compile Include="Assets\Scripts\Enemy\RangedEnemy.cs" />
     <Compile Include="Assets\Scripts\FreeCamera.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\InstaDead.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\NewCameraFollow.cs" />
+    <Compile Include="Assets\Scripts\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerAttributes.cs" />
     <Compile Include="Assets\Scripts\Rubble.cs" />
     <Compile Include="Assets\Scripts\SelfDestruct.cs" />
     <Compile Include="Assets\Scripts\SwitchControls.cs" />
+    <Compile Include="Assets\Scripts\TutorialScheme.cs" />
     <Compile Include="Assets\Scripts\WeaponAttribute.cs" />
-    <Compile Include="Assets\TutorialScheme.cs" />
     <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using XInputDotNetPure;
 
 public class MainMenu : MonoBehaviour {
 
@@ -7,6 +8,7 @@ public class MainMenu : MonoBehaviour {
     {
         Time.timeScale = 1f;
         Cursor.visible = true;
+        GamePad.SetVibration(PlayerIndex.One, 0, 0);
     }
 
     public void StartGame()
