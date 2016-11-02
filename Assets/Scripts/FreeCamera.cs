@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FreeCamera : MonoBehaviour {
 
+    public CameraLockOn cameraLockOn;
+
     //public GameObject target;
     public Transform lookAt;
     private Vector3 newLookAt;
@@ -25,6 +27,8 @@ public class FreeCamera : MonoBehaviour {
     public float YAngleMax = 50.0f;
 
     void Start () {
+        cameraLockOn = GetComponent<CameraLockOn>();
+        Screen.lockCursor = true;
         camTransform = transform;
         cam = Camera.main;
         currentX -= 90;
@@ -50,10 +54,11 @@ public class FreeCamera : MonoBehaviour {
 
 	void LateUpdate () {
 
-        Vector3 dir = new Vector3(0, 0, -distance);
-        Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        newLookAt = new Vector3(lookAt.position.x, lookAt.position.y + offsetY, lookAt.position.z);
-        camTransform.position = newLookAt + rotation * dir;
-        camTransform.LookAt(newLookAt);
+        
+            Vector3 dir = new Vector3(0, 0, -distance);
+            Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
+            newLookAt = new Vector3(lookAt.position.x, lookAt.position.y + offsetY, lookAt.position.z);
+            camTransform.position = newLookAt + rotation * dir;
+            camTransform.LookAt(newLookAt);
 	}
 }

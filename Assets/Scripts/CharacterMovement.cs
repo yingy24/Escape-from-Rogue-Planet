@@ -12,6 +12,9 @@ public class CharacterMovement : MonoBehaviour
     public float runSpeed, sprintSpeed, sprintStamina;
     public float jumpVelocity;
 
+
+    public GameObject target;
+
     //private variables
     private bool moving = false;
     private float vMovement;
@@ -30,30 +33,50 @@ public class CharacterMovement : MonoBehaviour
         playerAttributes = GetComponent<PlayerAttributes>();
     }
 
+    void Update()
+    {
+        if (target != null)
+        {
+            hMovement = Input.GetAxisRaw("Horizontal");
+            vMovement = Input.GetAxisRaw("Vertical");
+            inputVec = new Vector3(hMovement, 0, vMovement);
+            transform.Translate(Vector3.right * runSpeed * Time.deltaTime * inputVec.x);
+            transform.Translate(Vector3.forward * runSpeed * Time.deltaTime * inputVec.z);
+            anim.SetFloat("Input Z", inputVec.z);
+            anim.SetFloat("Input X", inputVec.x);
+            CheckMoving();
+            transform.LookAt(target.transform);
+        }
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Get movement inputs
-        vMovement = Input.GetAxisRaw("Vertical");
-        hMovement = Input.GetAxisRaw("Horizontal");
+        if(target == null)
+        {
+            //Get movement inputs
+            vMovement = Input.GetAxisRaw("Vertical");
+            hMovement = Input.GetAxisRaw("Horizontal");
 
-        //Normalize imputs
-        inputVec = new Vector3(hMovement, 0, vMovement);
-        inputVec = (inputVec.magnitude > 1.0f) ? inputVec.normalized : inputVec;
+            //Normalize imputs
+            inputVec = new Vector3(hMovement, 0, vMovement);
+            inputVec = (inputVec.magnitude > 1.0f) ? inputVec.normalized : inputVec;
 
-        //Apply inputs to animator
-        anim.SetFloat("Input Z", inputVec.z);
-        anim.SetFloat("Input X", inputVec.x);
-        anim.SetFloat("RVelocity", rb.velocity.y);
+            //Apply inputs to animator
+            anim.SetFloat("Input Z", inputVec.z);
+            anim.SetFloat("Input X", inputVec.x);
+            anim.SetFloat("RVelocity", rb.velocity.y);
 
-        GetCameraRelativeMovement();
-        RotateTowardMovementDirection();
+            GetCameraRelativeMovement();
+            RotateTowardMovementDirection();
 
-        CheckMoving();
-        Move();
-        Jump();
+            CheckMoving();
+            Move();
+            Jump();
+        }
+   
     }
-
+    
     void CheckMoving()
     {
 

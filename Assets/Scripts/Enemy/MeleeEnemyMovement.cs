@@ -86,10 +86,10 @@ public class MeleeEnemyMovement : MonoBehaviour {
                 }
             }
         }
-
+        
         Vector3 sight = target.transform.position - transform.position;
         float dot = Vector3.Dot(sight, transform.right);
-
+        
         if(dot < lineOfSight && dot > -lineOfSight)
         {
             RaycastHit hit;
@@ -105,20 +105,6 @@ public class MeleeEnemyMovement : MonoBehaviour {
             else
                 seePlayer = false;
         }
-
-        /*
-        if (Vector3.Distance(target.position, this.transform.position) < 10)
-        {
-            Vector3 direction = target.position - this.transform.position;
-            direction.y = 0;
-            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
-
-            if(direction.magnitude > 3)
-            {
-                this.transform.Translate(0, 0, 0.03f);
-            }
-        }
-        */
-
+        
     }
 }

@@ -41,6 +41,7 @@ public class AttackCombo : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && hasWeapon && playerAttributes.stamina > 0)
         {
             anim.SetTrigger(comboParams[comboIndex]);
