@@ -102,7 +102,11 @@
  <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="XInputDotNetPure">
+<<<<<<< HEAD
  <HintPath>C:/Users/CAGD Student/Desktop/Escape-from-Rogue-Planet/Assets/Plugins/x86_64/XInputDotNetPure.dll</HintPath>
+=======
+ <HintPath>C:/Users/CAGD Student/Desktop/R/Escape-from-Rogue-Planet/Assets/Plugins/x86_64/XInputDotNetPure.dll</HintPath>
+>>>>>>> f7f79c6daa84aab7959e76d231996292b57a3f15
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
