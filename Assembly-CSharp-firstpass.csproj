@@ -89,54 +89,20 @@
      <Compile Include="Assets\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Multiply Culled.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\Rain.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Background.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Transparent Vertex Color.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\RealtimeReflectionInWaterFlow.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\Cursor.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\ParticleAdditiveBlend.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\AdditiveBlend.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\RealtimeReflectionReplacement.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\Additive.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\ReflectiveBackgroundArbitrary.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\ReflectiveBackgroundSelfIllumination.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Miscellaneous Shaders\Mobile Detail.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\ScreenRefract.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\RainSplash.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\Fallback.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\Multiply.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\Blend.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\HeightFogBeforeTransparent.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\CharacterSelfIlluminationReflective.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\InterlacePatternBlend.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\PlanarRealtimeReflection.shader" />
+     <None Include="Assets\XInputDotNet\MITLicense.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\ReflectiveBackgroundPlanar.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\EnemySelfIlluminationReflective.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\AngryInclude.cginc" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Scripts\MobileBloom.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\ParticleMultiply.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\ParticleAdditive.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Reflective.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Particle Shaders\Mobile Particles Additive Culled.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\AlphaCutoutCheapFallback.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\LaserScope.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\BackgroundAndCharacters\SuperSimpleSelfIllumination.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Vertex Colored Shaders\Mobile Vertex Colored.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap Only.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Standard Assets (Mobile)\Shaders\Lightmap Shaders (Legacy)\Mobile Lightmap AlphaTest.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\ParticleBlend.shader" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
-     <None Include="Assets\Borrowed Assets\SF-Pack Mobile\Source\Shaders\Fx\InterlacePatternAdditive.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="XInputDotNetPure">
+ <HintPath>C:/Users/CAGD Student/Desktop/R/Escape-from-Rogue-Planet/Assets/Plugins/x86_64/XInputDotNetPure.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
