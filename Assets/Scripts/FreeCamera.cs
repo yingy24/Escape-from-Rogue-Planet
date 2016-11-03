@@ -28,7 +28,7 @@ public class FreeCamera : MonoBehaviour {
 
     void Start () {
         cameraLockOn = GetComponent<CameraLockOn>();
-        Screen.lockCursor = true;
+       // Screen.lockCursor = true;
         camTransform = transform;
         cam = Camera.main;
         currentX -= 90;
@@ -36,10 +36,13 @@ public class FreeCamera : MonoBehaviour {
 
     void Update()
     {
+        if (cameraLockOn.isLockedOn)
+            return;
+
         if (!useMouse)
         {
-                currentX += Input.GetAxis("Joystick X") * sensivityX * controllerSensitivity;
-                currentY += -Input.GetAxis("Joystick Y") * sensivityY * controllerSensitivity;
+            currentX += Input.GetAxis("Joystick X") * sensivityX * controllerSensitivity;
+            currentY += -Input.GetAxis("Joystick Y") * sensivityY * controllerSensitivity;
         }
         else
         {
@@ -49,12 +52,10 @@ public class FreeCamera : MonoBehaviour {
 
         currentY = Mathf.Clamp(currentY, YAngleMin, YAngleMax);
     }
-	
+    
 	// Update is called once per frame
 
 	void LateUpdate () {
-
-        
             Vector3 dir = new Vector3(0, 0, -distance);
             Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
             newLookAt = new Vector3(lookAt.position.x, lookAt.position.y + offsetY, lookAt.position.z);

@@ -34,9 +34,9 @@ public class CameraLockOn : MonoBehaviour {
 
     public void AddAllEnemies()
     {
-        GameObject[] gO = GameObject.FindGameObjectsWithTag("MeleeEnemy");
+        GameObject[] gO = GameObject.FindGameObjectsWithTag("Enemy");
 
-        foreach(GameObject enemy in gO)
+        foreach (GameObject enemy in gO)
         {
             AddTarget(enemy.transform);
         }
@@ -53,8 +53,12 @@ public class CameraLockOn : MonoBehaviour {
         if (selectedTarget == null)
         {
             SortByDistance();
-            selectedTarget = enemies[0];
-            isLockedOn = true;
+            if (enemies[0].GetComponent<Renderer>().isVisible)
+            {
+                selectedTarget = enemies[0];
+                isLockedOn = true;
+                characterMovement.enemyTarget = selectedTarget.gameObject;
+            }
 
         }
 
@@ -70,24 +74,27 @@ public class CameraLockOn : MonoBehaviour {
             {
                 index = 0;
             }
-            selectedTarget = enemies[index];
-            isLockedOn = true;
+            if (enemies[index].GetComponent<Renderer>().isVisible)
+            {
+                selectedTarget = enemies[index];
+                isLockedOn = true;
+                characterMovement.enemyTarget = selectedTarget.gameObject;
+            }
+            else
+            {
+                characterMovement.enemyTarget = null;
+            }
+
         }
 
-        RaycastHit hit;
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
-        if (Physics.Raycast(transform.position, fwd, out hit))
-        {
-            if(hit.collider.tag == "MeleeEnemy")
-            characterMovement.target = selectedTarget.gameObject;
-        }
+        
     }
 
 
     private void ClearTarget()
     {
         selectedTarget = null;
-        characterMovement.target = null;
+        characterMovement.enemyTarget = null;
         isLockedOn = false;
     }
 	

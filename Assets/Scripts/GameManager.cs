@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     //Public Member variables
     public PlayerAttributes playerAttributes;
     public GameObject player;
+    public GameObject camera;
     public GameObject deathScreen;
     public GameObject winScreen;
     public GameObject pauseMenu;

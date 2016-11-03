@@ -11,9 +11,12 @@ public class CharacterMovement : MonoBehaviour
 
     public float runSpeed, sprintSpeed, sprintStamina;
     public float jumpVelocity;
+    public Vector3 targetPos; // Used for camera target pos
 
 
-    public GameObject target;
+    public GameObject enemyTarget; // which enemy the player is locked on
+    public Transform cameraTarget; // camera target
+
 
     //private variables
     private bool moving = false;
@@ -35,7 +38,8 @@ public class CharacterMovement : MonoBehaviour
 
     void Update()
     {
-        if (target != null)
+        /*
+        if (enemyTarget != null)
         {
             hMovement = Input.GetAxisRaw("Horizontal");
             vMovement = Input.GetAxisRaw("Vertical");
@@ -45,15 +49,16 @@ public class CharacterMovement : MonoBehaviour
             anim.SetFloat("Input Z", inputVec.z);
             anim.SetFloat("Input X", inputVec.x);
             CheckMoving();
-            transform.LookAt(target.transform);
+            transform.LookAt(enemyTarget.transform);
         }
+        */
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(target == null)
-        {
+        //if(enemyTarget == null)
+        
             //Get movement inputs
             vMovement = Input.GetAxisRaw("Vertical");
             hMovement = Input.GetAxisRaw("Horizontal");
@@ -73,7 +78,8 @@ public class CharacterMovement : MonoBehaviour
             CheckMoving();
             Move();
             Jump();
-        }
+            HandleCameraTarget();
+        
    
     }
     
@@ -258,4 +264,33 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    void HandleCameraTarget()
+    {
+        if (enemyTarget == null)
+        {
+            targetPos = transform.position;
+            cameraTarget.position = targetPos;
+
+        }
+        else
+        {
+
+            Vector3 direction = enemyTarget.transform.position - transform.position;
+            direction.y = 0;
+
+            float distance = Vector3.Distance(transform.position, enemyTarget.transform.position);
+
+            targetPos = direction.normalized * distance / 5;
+
+            targetPos += transform.position;
+
+            cameraTarget.position = targetPos;
+
+            if (distance > 20)
+            {
+                enemyTarget = null;
+            }
+
+        }
+    }
 }
