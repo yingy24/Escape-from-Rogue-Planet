@@ -29,7 +29,7 @@ public class AttackOne : MonoBehaviour {
         if (col.transform.tag == "Enemy" && attackCombo.isAttacking)
         {
             col.transform.GetComponent<EnemyHealth>().health -= 5;
-            GamePad.SetVibration(PlayerIndex.One, 0, 0.5f);
+            GamePad.SetVibration(PlayerIndex.One, 0, 0.75f);
             StartCoroutine(StopVibrate());
         }
     }
