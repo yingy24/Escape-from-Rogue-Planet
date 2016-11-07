@@ -34,7 +34,7 @@ public class CameraLockOn : MonoBehaviour {
 
     public void AddAllEnemies()
     {
-        GameObject[] gO = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject[] gO = GameObject.FindGameObjectsWithTag("EnemyTarget");
 
         foreach (GameObject enemy in gO)
         {

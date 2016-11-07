@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CameraTarget : MonoBehaviour {
 
+    public GameObject camera;
     public GameManager gameManager;
 
 	// Use this for initialization
@@ -13,13 +14,10 @@ public class CameraTarget : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        transform.LookAt(gameManager.player.GetComponent<CharacterMovement>().enemyTarget.transform);
-
-        //print(transform.localRotation);
-
-        //print(gameManager.camera.transform.eulerAngles);
-        Vector3 localAngle = this.transform.rotation.eulerAngles;
-        Camera.main.transform.rotation = Quaternion.Euler(localAngle.x, localAngle.y, localAngle.z);
+        if (gameManager.player.GetComponent<CharacterMovement>().enemyTarget)
+            transform.LookAt(gameManager.player.GetComponent<CharacterMovement>().enemyTarget.transform);
+        else
+            transform.LookAt(camera.transform);
     }
+
 }
