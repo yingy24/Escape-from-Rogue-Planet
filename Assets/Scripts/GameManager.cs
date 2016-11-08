@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
 
     //Public Member variables
     public PlayerAttributes playerAttributes;
+    public CameraLockOn cameraLockOn;
     public GameObject player;
     public GameObject camera;
     public GameObject deathScreen;

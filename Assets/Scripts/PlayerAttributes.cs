@@ -8,19 +8,19 @@ public class PlayerAttributes : MonoBehaviour {
     public AttackCombo attackCombo;
 
     //Public Member Variables
-    public Slider playerHealth, playerStamina; // Used to display the UI for now...
+    public Slider playerHealth, playerStamina, weaponEnergy; // UI Displays
     public GameObject sword; // Sword object
-    public float health, stamina, regainStaminaTime, restTimer, staminaRegain;
+    public float health, stamina, currentWeaponEnergy, regainStaminaTime, restTimer, staminaRegain;
     public bool isDead, hasWon, hasWeapon;
 
     // Private Member Variables
-   // private float restTimer; //Reset the time for the player to regain stamina
+    // private float restTimer; //Reset the time for the player to regain stamina
 
 
     // Use this for initialization
     void Awake () {
         attackCombo = GetComponent<AttackCombo>();
-        hasWeapon = false;
+        hasWeapon = true; //change this to false after testing!!
         isDead = false;
         hasWon = false;
 	}
@@ -32,23 +32,29 @@ public class PlayerAttributes : MonoBehaviour {
         if (health <= 0)
         {
             isDead = true;
+            return;
         }
         if (health > 100)
         {
             health = 100;
         }
 
-        // Checks to see if the player has sword
-        // if player has sword, then it shows the sword, if not it doesn't show
-        if (!hasWeapon)
+        // Weapon Select
+        if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1) || Input.GetAxis("DpadX") == -1)
         {
-            sword.SetActive(false);
+            print("1");
         }
-        else if (hasWeapon)
+        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetAxis("DpadY") == 2)
         {
-            sword.SetActive(true);
+            print("2");
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetAxis("DpadX") == 1)
+        {
+            print("3");
         }
 
+
+        // Stamina check and stamina to regain
         if (stamina < 20)
         {
             restTimer += Time.deltaTime;    // resets the counter for time
@@ -61,8 +67,9 @@ public class PlayerAttributes : MonoBehaviour {
             }
         }
 
-        playerHealth.value = health;        //Sets the UI Health to the player Health
-        playerStamina.value = stamina;      //Sets the UI Stamina to the player Stamina
+        playerHealth.value = health;                 //Sets the UI Health to the player Health
+        playerStamina.value = stamina;               //Sets the UI Stamina to the player Stamina
+        weaponEnergy.value = currentWeaponEnergy;   // Sets the UI Energy Bar
 
     }
 
@@ -72,6 +79,7 @@ public class PlayerAttributes : MonoBehaviour {
         if(other.tag == "Sword")
         {
             hasWeapon = true;
+            sword.SetActive(true);
             attackCombo.SwordObtained();
             Destroy(other.gameObject);
         }

@@ -25,6 +25,8 @@ public class EnemyHealth : MonoBehaviour
         healthSlider.value = health;
         if (health <= 0)
         {
+            gameManager.cameraLockOn.SwapAndDelete(); // Function call to delete enemy from list
+            gameManager.playerAttributes.currentWeaponEnergy += 5;
             Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(parentTransform.gameObject);
             gameManager.player.GetComponent<CharacterMovement>().enemyTarget = null;

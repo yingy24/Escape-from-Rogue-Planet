@@ -16,6 +16,8 @@ public class CameraLockOn : MonoBehaviour {
 
     public bool isLockedOn;
 
+    private int curIndex;
+
 	// Use this for initialization
 	void Start () {
         cameraScript = GetComponent<FreeCamera>();
@@ -55,6 +57,7 @@ public class CameraLockOn : MonoBehaviour {
             SortByDistance();
             if (enemies[0].GetComponent<Renderer>().isVisible)
             {
+                curIndex = 0;
                 selectedTarget = enemies[0];
                 isLockedOn = true;
                 characterMovement.enemyTarget = selectedTarget.gameObject;
@@ -76,6 +79,7 @@ public class CameraLockOn : MonoBehaviour {
             }
             if (enemies[index].GetComponent<Renderer>().isVisible)
             {
+                curIndex = index;
                 selectedTarget = enemies[index];
                 isLockedOn = true;
                 characterMovement.enemyTarget = selectedTarget.gameObject;
@@ -90,7 +94,6 @@ public class CameraLockOn : MonoBehaviour {
         
     }
 
-
     private void ClearTarget()
     {
         selectedTarget = null;
@@ -98,6 +101,23 @@ public class CameraLockOn : MonoBehaviour {
         isLockedOn = false;
     }
 	
+    // Remove destroyed enemy from list
+    public void SwapAndDelete()
+    {
+        if (curIndex == enemies.Count - 1)
+                   enemies.RemoveAt(curIndex);
+
+        else
+        {
+            Transform tmpT = selectedTarget;
+            enemies[curIndex] = enemies[enemies.Count - 1];
+            //  enemies[enemies.Count - 1] = selectedTarget;
+            enemies.RemoveAt(curIndex);
+        }
+
+        selectedTarget = null;
+    }
+
 	// Update is called once per frame
 	void Update () {
         if(Input.GetKeyDown(KeyCode.Tab))

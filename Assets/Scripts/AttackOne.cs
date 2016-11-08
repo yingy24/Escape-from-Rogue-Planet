@@ -5,6 +5,7 @@ using XInputDotNetPure;
 public class AttackOne : MonoBehaviour {
 
     public AttackCombo attackCombo;
+    public PlayerAttributes playerAttributes;
     
 	// Use this for initialization
 	void Start () {
@@ -28,6 +29,7 @@ public class AttackOne : MonoBehaviour {
         */
         if (col.transform.tag == "Enemy" && attackCombo.isAttacking)
         {
+
             col.transform.GetComponent<EnemyHealth>().health -= 5;
             GamePad.SetVibration(PlayerIndex.One, 0, 0.75f);
             StartCoroutine(StopVibrate());

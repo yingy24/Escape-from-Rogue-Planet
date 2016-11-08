@@ -42,7 +42,7 @@ public class AttackCombo : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && hasWeapon && playerAttributes.stamina > 0)
+        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && hasWeapon && playerAttributes.stamina > 5)
         {
             anim.SetTrigger(comboParams[comboIndex]);
             comboIndex++;
