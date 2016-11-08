@@ -120,9 +120,10 @@ public class CameraLockOn : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if(Input.GetKeyDown(KeyCode.Tab))
+        if(Input.GetButtonDown("Target"))
         {
             TargetEnemy();
+            print("press target");
         }
         else if(Input.GetKeyDown(KeyCode.Space))
         {

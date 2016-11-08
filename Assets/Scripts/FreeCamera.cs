@@ -12,6 +12,7 @@ public class FreeCamera : MonoBehaviour
     public Transform camTransform;
     public GameObject player;
     public bool useMouse;
+    
 
     private Camera cam;
 
@@ -19,6 +20,8 @@ public class FreeCamera : MonoBehaviour
     public float offsetY = 1.8f;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
+    private string axisX;
+    private string axisY;
     public float unobstructed = 0.0f;
 
     public float sensivityX = 4.0f;
@@ -47,20 +50,35 @@ public class FreeCamera : MonoBehaviour
         if (cameraLockOn.isLockedOn)
             return;
 
-        if (!useMouse)
+        float addSensitivity = 0;
+
+        if (Input.GetAxis("Mouse X") != 0 | Input.GetAxis("Mouse Y") != 0)
         {
-            currentX += Input.GetAxis("Joystick X") * sensivityX * controllerSensitivity;
-            currentY += -Input.GetAxis("Joystick Y") * sensivityY * controllerSensitivity;
+            addSensitivity = 1;
+            useMouse = true;
+        }
+
+        if (Input.GetAxis("Joystick X") != 0 |Input.GetAxis("Joystick Y") != 0)
+        {
+            addSensitivity = controllerSensitivity;
+            useMouse = false;
+        }
+        
+        if (useMouse)
+        {
+            currentX += Input.GetAxis("Mouse X") * sensivityX * addSensitivity;
+            currentY += -Input.GetAxis("Mouse Y") * sensivityY * addSensitivity;
         }
         else
         {
-            currentX += Input.GetAxis("Mouse X") * sensivityX;
-            currentY += -Input.GetAxis("Mouse Y") * sensivityY;
+            currentX += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
+            currentY += -Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
         }
+        
+
+
 
         currentY = Mathf.Clamp(currentY, YAngleMin, YAngleMax);
-
-     
     }
 
     // Update is called once per frame
