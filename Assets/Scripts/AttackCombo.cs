@@ -46,7 +46,7 @@ public class AttackCombo : MonoBehaviour {
         {
             anim.SetTrigger(comboParams[comboIndex]);
             comboIndex++;
-            playerAttributes.stamina -= 5;
+         
             playerAttributes.restTimer = 0;
             playerAttributes.regainStaminaTime = 1;
             restTimer = 0f;
@@ -69,43 +69,24 @@ public class AttackCombo : MonoBehaviour {
 
     }
 
-    void StartedAttacking()
+    public void StartedAttacking()
     {
+        playerAttributes.stamina -= 5;
         isAttacking = true;
     }
-    void EndedAttacking()
+
+    public void EndedAttacking()
     {
         isAttacking = false;
+    }
+
+    void TakeAwayStamina()
+    {
+        playerAttributes.stamina -= 5;
     }
 
     public void SwordObtained()
     {
         hasWeapon = true;
     }
-
-    void OnTriggerEnter(Collider collision)
-    {
-        if (collision.transform.tag == "Enemy")
-        {
-        }
-
-    }
-
-    void OnTriggerStay(Collider collision)
-    {
-        if (collision.transform.tag == "Enemy")
-        {
-
-        }
-
-    }
-
-    void OnTriggerExit(Collider collision)
-    {
-        if (collision.transform.tag == "Enemy")
-        {
-        }
-
-    }
-    
 }

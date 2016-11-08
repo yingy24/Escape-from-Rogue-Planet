@@ -16,6 +16,7 @@ public class FreeCamera : MonoBehaviour
 
     private Camera cam;
 
+    public float cameraLockedOnHeight;
     public float distance = 3f;
     public float offsetY = 1.8f;
     private float currentX = 0.0f;
@@ -88,7 +89,7 @@ public class FreeCamera : MonoBehaviour
 
         if (cameraLockOn.isLockedOn)
         {
-            Vector3 dir = new Vector3(0, 0, -5);
+            Vector3 dir = new Vector3(0, cameraLockedOnHeight, -5);
             Quaternion rotation = Quaternion.Euler(lookAt.eulerAngles.x, lookAt.eulerAngles.y, lookAt.eulerAngles.z);
             newLookAt = new Vector3(lookAt.position.x, lookAt.position.y + offsetY, lookAt.position.z);
             camTransform.position = newLookAt + rotation * dir;

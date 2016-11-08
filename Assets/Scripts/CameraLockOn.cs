@@ -60,6 +60,7 @@ public class CameraLockOn : MonoBehaviour {
                 curIndex = 0;
                 selectedTarget = enemies[0];
                 isLockedOn = true;
+                selectedTarget.GetChild(0).gameObject.SetActive(true);
                 characterMovement.enemyTarget = selectedTarget.gameObject;
             }
 
@@ -82,6 +83,7 @@ public class CameraLockOn : MonoBehaviour {
                 curIndex = index;
                 selectedTarget = enemies[index];
                 isLockedOn = true;
+                selectedTarget.GetChild(0).gameObject.SetActive(true);
                 characterMovement.enemyTarget = selectedTarget.gameObject;
             }
             else
@@ -111,7 +113,6 @@ public class CameraLockOn : MonoBehaviour {
         {
             Transform tmpT = selectedTarget;
             enemies[curIndex] = enemies[enemies.Count - 1];
-            //  enemies[enemies.Count - 1] = selectedTarget;
             enemies.RemoveAt(curIndex);
         }
 
@@ -120,13 +121,18 @@ public class CameraLockOn : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
         if(Input.GetButtonDown("Target"))
         {
+            if(selectedTarget)
+                selectedTarget.GetChild(0).gameObject.SetActive(false);
+
             TargetEnemy();
             print("press target");
         }
         else if(Input.GetKeyDown(KeyCode.Space))
         {
+            selectedTarget.GetChild(0).gameObject.SetActive(false);
             ClearTarget();
         }
     }

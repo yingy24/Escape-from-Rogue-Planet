@@ -36,23 +36,7 @@ public class CharacterMovement : MonoBehaviour
         playerAttributes = GetComponent<PlayerAttributes>();
     }
 
-    void Update()
-    {
-        /*
-        if (enemyTarget != null)
-        {
-            hMovement = Input.GetAxisRaw("Horizontal");
-            vMovement = Input.GetAxisRaw("Vertical");
-            inputVec = new Vector3(hMovement, 0, vMovement);
-            transform.Translate(Vector3.right * runSpeed * Time.deltaTime * inputVec.x);
-            transform.Translate(Vector3.forward * runSpeed * Time.deltaTime * inputVec.z);
-            anim.SetFloat("Input Z", inputVec.z);
-            anim.SetFloat("Input X", inputVec.x);
-            CheckMoving();
-            transform.LookAt(enemyTarget.transform);
-        }
-        */
-    }
+
 
     // Update is called once per frame
     void FixedUpdate()
