@@ -18,6 +18,13 @@ ModelImporter:
     100020: Sword_Extend
     100022: Weapon_Core
     100024: WeaponParts
+    100026: HammerHandle
+    100028: HammerHandle1
+    100030: HammerHead
+    100032: HammerX
+    100034: pCube2
+    100036: Shield2
+    100038: Weapon_Base
     400000: AxeHead1
     400002: AxeHead2
     400004: Blade_Axe1
@@ -31,6 +38,13 @@ ModelImporter:
     400020: Sword_Extend
     400022: Weapon_Core
     400024: WeaponParts
+    400026: HammerHandle
+    400028: HammerHandle1
+    400030: HammerHead
+    400032: HammerX
+    400034: pCube2
+    400036: Shield2
+    400038: Weapon_Base
     2300000: AxeHead1
     2300002: AxeHead2
     2300004: Blade_Axe1
@@ -42,6 +56,13 @@ ModelImporter:
     2300016: Sword_Base1
     2300018: Sword_Extend
     2300020: Weapon_Core
+    2300022: HammerHandle
+    2300024: HammerHandle1
+    2300026: HammerHead
+    2300028: HammerX
+    2300030: pCube2
+    2300032: Shield2
+    2300034: Weapon_Base
     3300000: AxeHead1
     3300002: AxeHead2
     3300004: Blade_Axe1
@@ -53,6 +74,13 @@ ModelImporter:
     3300016: Sword_Base1
     3300018: Sword_Extend
     3300020: Weapon_Core
+    3300022: HammerHandle
+    3300024: HammerHandle1
+    3300026: HammerHead
+    3300028: HammerX
+    3300030: pCube2
+    3300032: Shield2
+    3300034: Weapon_Base
     4300000: Blade_Sword
     4300002: Weapon_Core
     4300004: Handle
@@ -64,6 +92,13 @@ ModelImporter:
     4300016: Blade_Axe1
     4300018: Blade_Axe2
     4300020: Shield
+    4300022: Weapon_Base
+    4300024: HammerHandle
+    4300026: HammerHandle1
+    4300028: Shield2
+    4300030: HammerX
+    4300032: pCube2
+    4300034: HammerHead
     9500000: //RootNode
   materials:
     importMaterials: 1
