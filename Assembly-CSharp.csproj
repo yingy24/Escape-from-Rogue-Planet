@@ -48,13 +48,12 @@
      <Compile Include="Assets\CameraFacingBillboard.cs" />
      <Compile Include="Assets\Scripts\AttackCombo.cs" />
      <Compile Include="Assets\Scripts\AttackOne.cs" />
+     <Compile Include="Assets\Scripts\CameraClip.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CameraLockOn.cs" />
+     <Compile Include="Assets\Scripts\CameraRaycast.cs" />
      <Compile Include="Assets\Scripts\CameraSwitch.cs" />
-<<<<<<< HEAD
      <Compile Include="Assets\Scripts\CameraTarget.cs" />
-=======
->>>>>>> f7f79c6daa84aab7959e76d231996292b57a3f15
      <Compile Include="Assets\Scripts\CharTestController.cs" />
      <Compile Include="Assets\Scripts\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\CollisionEffect.cs" />
@@ -64,7 +63,10 @@
      <Compile Include="Assets\Scripts\Enabler2.cs" />
      <Compile Include="Assets\Scripts\Enabler3.cs" />
      <Compile Include="Assets\Scripts\Enemy\AttackActive.cs" />
+     <Compile Include="Assets\Scripts\Enemy\BigMeleeAttack.cs" />
+     <Compile Include="Assets\Scripts\Enemy\BigMeleeMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Enemy\DoubleTurret.cs" />
      <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\Enemy\MeleeEnemyMovement.cs" />
      <Compile Include="Assets\Scripts\Enemy\RangedEnemy.cs" />
@@ -77,6 +79,7 @@
      <Compile Include="Assets\Scripts\PlayerAttributes.cs" />
      <Compile Include="Assets\Scripts\Rubble.cs" />
      <Compile Include="Assets\Scripts\SelfDestruct.cs" />
+     <Compile Include="Assets\Scripts\Story.cs" />
      <Compile Include="Assets\Scripts\SwitchControls.cs" />
      <Compile Include="Assets\Scripts\TutorialScheme.cs" />
      <Compile Include="Assets\Scripts\WeaponAttribute.cs" />
@@ -94,11 +97,7 @@
  <HintPath>C:/Program Files/Unity5_3_4/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="XInputDotNetPure">
-<<<<<<< HEAD
- <HintPath>C:/Users/CAGD Student/Desktop/Escape-from-Rogue-Planet/Assets/Plugins/x86_64/XInputDotNetPure.dll</HintPath>
-=======
  <HintPath>C:/Users/CAGD Student/Desktop/R/Escape-from-Rogue-Planet/Assets/Plugins/x86_64/XInputDotNetPure.dll</HintPath>
->>>>>>> f7f79c6daa84aab7959e76d231996292b57a3f15
  </Reference>
   </ItemGroup>
   <ItemGroup>

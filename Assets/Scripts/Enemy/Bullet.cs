@@ -25,9 +25,9 @@ public class Bullet : MonoBehaviour {
         // float newVec = Vector3.Angle(transform.position, playerT.transform.position);
         //   print(newVec);
         // transform.eulerAngles = new Vector3(0, newVec, 0);
-        transform.LookAt(playerT);
+        //transform.LookAt(playerT);
         //transform.eulerAngles = new Vector3(0, 90, 0);
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        transform.Translate(Vector3.up * Time.deltaTime * speed);
       //  Rigidbody temp_rigid = this.GetComponent<Rigidbody>();
        // temp_rigid.AddForce(transform.forward * speed);
 

@@ -3,11 +3,11 @@ using System.Collections;
 
 public class DoubleTurret : MonoBehaviour {
     //public member variables
-    public GameObject pos1, pos2, pos3, bulletPrefab, spawnPoint;
+    public GameObject pos1, pos2, pos3, bulletPrefab, spawnPoint, spawnPoint2, leftgun, rightGun;
     public Transform targetPos;
     public Transform target;
     public bool inRangeOfPlayer;
-    public float speed, timePassed, timeWait;
+    public float speed, timePassed, timeInBetween, timeWait;
 
     // Use this for initialization
     void Start()
@@ -49,6 +49,9 @@ public class DoubleTurret : MonoBehaviour {
             newDir.y = 0;
             transform.rotation = Quaternion.LookRotation(newDir);
 
+            leftgun.transform.LookAt(target);
+            rightGun.transform.LookAt(target);
+
             // If Enemy is facing player, it shoots player
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             if (Vector3.Dot(forward, targetDir) > 0)
@@ -57,24 +60,18 @@ public class DoubleTurret : MonoBehaviour {
                 if (timePassed < Time.time)
                 {
                     timePassed = Time.time + timeWait;
-                    Vector3 bulletRotate = new Vector3(0, 0, 0);
                     float newVec = Vector3.Angle(transform.position, target.transform.position);
-                    //print(newVec);
                     GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
+                    //GameObject bullet1 = Instantiate(bulletPrefab, new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z - 1), spawnPoint.transform.rotation) as GameObject;
+                    //GameObject bullet2 = Instantiate(bulletPrefab, new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z - 2), spawnPoint.transform.rotation) as GameObject;
 
-                    /*
-                    Vector3 eAngle = target.transform.eulerAngles;
-                    Vector3 force = new Vector3(100,100,100);
-                    Vector3 newForce = Quaternion.Euler(eAngle) * force;
-                    bullet.GetComponent<Rigidbody>().AddForce(newForce);
-                    */
-                    // GameObject bullet1 = Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
-                    // GameObject bullet2 = Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
-                    //bullet.transform.rotation = Quaternion.LookRotation(newDir);
+                    GameObject bullet3 = Instantiate(bulletPrefab, spawnPoint2.transform.position, spawnPoint2.transform.rotation) as GameObject;
+                    //GameObject bullet4 = Instantiate(bulletPrefab, new Vector3(spawnPoint2.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z - 1), spawnPoint2.transform.rotation) as GameObject;
+                    //GameObject bullet5 = Instantiate(bulletPrefab, new Vector3(spawnPoint2.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z - 2), spawnPoint2.transform.rotation) as GameObject;
                 }
             }
-
         }
+
 
         if (!inRangeOfPlayer)
         {
