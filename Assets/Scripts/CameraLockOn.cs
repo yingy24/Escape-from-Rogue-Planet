@@ -92,8 +92,6 @@ public class CameraLockOn : MonoBehaviour {
             }
 
         }
-
-        
     }
 
     private void ClearTarget()

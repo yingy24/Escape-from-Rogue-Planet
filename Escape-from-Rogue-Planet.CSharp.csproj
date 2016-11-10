@@ -94,7 +94,10 @@
     <Compile Include="Assets\Scripts\Enabler2.cs" />
     <Compile Include="Assets\Scripts\Enabler3.cs" />
     <Compile Include="Assets\Scripts\Enemy\AttackActive.cs" />
+    <Compile Include="Assets\Scripts\Enemy\BigMeleeAttack.cs" />
+    <Compile Include="Assets\Scripts\Enemy\BigMeleeMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Enemy\DoubleTurret.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\MeleeEnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\RangedEnemy.cs" />

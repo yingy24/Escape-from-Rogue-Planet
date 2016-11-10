@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class PlayerAttributes : MonoBehaviour {
 
@@ -9,7 +10,8 @@ public class PlayerAttributes : MonoBehaviour {
 
     //Public Member Variables
     public Slider playerHealth, playerStamina, weaponEnergy; // UI Displays
-    public GameObject sword; // Sword object
+    public List <GameObject> weapons; // Sword object
+    public List<bool> weaponsObtained;
     public float health, stamina, currentWeaponEnergy, regainStaminaTime, restTimer, staminaRegain;
     public bool isDead, hasWon, hasWeapon;
 
@@ -42,15 +44,30 @@ public class PlayerAttributes : MonoBehaviour {
         // Weapon Select
         if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1) || Input.GetAxis("DpadX") == -1)
         {
-            print("1");
+            if(weaponsObtained[0])
+            {
+                weapons[1].SetActive(false);
+                weapons[2].SetActive(false);
+                weapons[0].SetActive(true);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetAxis("DpadY") == 2)
         {
-            print("2");
+          if(weaponsObtained[1])
+            {
+                weapons[0].SetActive(false);
+                weapons[2].SetActive(false);
+                weapons[1].SetActive(true);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetAxis("DpadX") == 1)
         {
-            print("3");
+            if (weaponsObtained[2])
+            {
+                weapons[0].SetActive(false);
+                weapons[1].SetActive(false);
+                weapons[2].SetActive(true);
+            }
         }
 
 
@@ -79,12 +96,31 @@ public class PlayerAttributes : MonoBehaviour {
         if(other.tag == "Sword")
         {
             hasWeapon = true;
-            sword.SetActive(true);
+            weapons[0].SetActive(true);
+            weaponsObtained[0] = true;
             attackCombo.SwordObtained();
             Destroy(other.gameObject);
         }
 
-        if(other.tag == "HealthPickUp")
+        if (other.tag == "Axe")
+        {
+            hasWeapon = true;
+            weapons[1].SetActive(true);
+            weaponsObtained[1] = true;
+            attackCombo.SwordObtained();
+            Destroy(other.gameObject);
+        }
+
+        if (other.tag == "Gun")
+        {
+            hasWeapon = true;
+            weapons[2].SetActive(true);
+            weaponsObtained[2] = true;
+            attackCombo.SwordObtained();
+            Destroy(other.gameObject);
+        }
+
+        if (other.tag == "HealthPickUp")
         {
             if(health <= 100)
             {

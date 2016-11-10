@@ -9,7 +9,7 @@ public class AttackCombo : MonoBehaviour {
     // Public Member Variables
     public Animator anim;
     public string[] comboParams;
-    public bool hasWeapon, isAttacking;
+    public bool isAttacking;
     public float attackRate;
     public float attackDamage = 10f;
 
@@ -42,7 +42,7 @@ public class AttackCombo : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && hasWeapon && playerAttributes.stamina > 5)
+        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && playerAttributes.weaponsObtained[0] && playerAttributes.stamina > 5)
         {
             anim.SetTrigger(comboParams[comboIndex]);
             comboIndex++;
@@ -87,6 +87,6 @@ public class AttackCombo : MonoBehaviour {
 
     public void SwordObtained()
     {
-        hasWeapon = true;
+        // hasWeapon = true;
     }
 }
