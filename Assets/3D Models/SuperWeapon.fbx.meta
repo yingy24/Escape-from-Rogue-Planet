@@ -25,6 +25,18 @@ ModelImporter:
     100034: pCube2
     100036: Shield2
     100038: Weapon_Base
+    100040: GunTrigger
+    100042: HammerExtend1
+    100044: HammerExtend2
+    100046: HammerExtend3
+    100048: HammerX1
+    100050: HammerX2
+    100052: HammerZ
+    100054: Handle1
+    100056: Handle2
+    100058: Handle3
+    100060: SuperBullet
+    100062: WeaponCore
     400000: AxeHead1
     400002: AxeHead2
     400004: Blade_Axe1
@@ -45,6 +57,18 @@ ModelImporter:
     400034: pCube2
     400036: Shield2
     400038: Weapon_Base
+    400040: GunTrigger
+    400042: HammerExtend1
+    400044: HammerExtend2
+    400046: HammerExtend3
+    400048: HammerX1
+    400050: HammerX2
+    400052: HammerZ
+    400054: Handle1
+    400056: Handle2
+    400058: Handle3
+    400060: SuperBullet
+    400062: WeaponCore
     2300000: AxeHead1
     2300002: AxeHead2
     2300004: Blade_Axe1
@@ -63,6 +87,18 @@ ModelImporter:
     2300030: pCube2
     2300032: Shield2
     2300034: Weapon_Base
+    2300036: GunTrigger
+    2300038: HammerExtend1
+    2300040: HammerExtend2
+    2300042: HammerExtend3
+    2300044: HammerX1
+    2300046: HammerX2
+    2300048: HammerZ
+    2300050: Handle1
+    2300052: Handle2
+    2300054: Handle3
+    2300056: SuperBullet
+    2300058: WeaponCore
     3300000: AxeHead1
     3300002: AxeHead2
     3300004: Blade_Axe1
@@ -81,6 +117,18 @@ ModelImporter:
     3300030: pCube2
     3300032: Shield2
     3300034: Weapon_Base
+    3300036: GunTrigger
+    3300038: HammerExtend1
+    3300040: HammerExtend2
+    3300042: HammerExtend3
+    3300044: HammerX1
+    3300046: HammerX2
+    3300048: HammerZ
+    3300050: Handle1
+    3300052: Handle2
+    3300054: Handle3
+    3300056: SuperBullet
+    3300058: WeaponCore
     4300000: Blade_Sword
     4300002: Weapon_Core
     4300004: Handle
@@ -99,6 +147,18 @@ ModelImporter:
     4300030: HammerX
     4300032: pCube2
     4300034: HammerHead
+    4300036: HammerExtend1
+    4300038: HammerExtend2
+    4300040: HammerExtend3
+    4300042: HammerZ
+    4300044: HammerX1
+    4300046: HammerX2
+    4300048: WeaponCore
+    4300050: Handle1
+    4300052: Handle2
+    4300054: Handle3
+    4300056: GunTrigger
+    4300058: SuperBullet
     9500000: //RootNode
   materials:
     importMaterials: 1
