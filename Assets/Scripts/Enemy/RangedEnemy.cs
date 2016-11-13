@@ -59,8 +59,7 @@ public class RangedEnemy : MonoBehaviour
                 if (timePassed < Time.time)
                 {
                     timePassed = Time.time + timeWait;
-                    Vector3 bulletRotate = new Vector3(90, 0, 0);
-                    GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, Quaternion.Euler(new Vector3(90, 0, 0))) as GameObject;
+                    GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
                     //bullet.transform.rotation = Quaternion.LookRotation(newDir);
                 }
             }

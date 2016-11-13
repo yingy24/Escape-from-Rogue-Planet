@@ -2,10 +2,12 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class WeaponAttribute : MonoBehaviour {
+public class SwordAttribute : MonoBehaviour {
 
     // Public Member Variables
-    public AttackCombo attackCombo;
+    public PlayerAttributes playerAttribute;
+    public float enegyDrainage, healthRegain;
+    
 
 
 	// Use this for initialization
@@ -21,7 +23,14 @@ public class WeaponAttribute : MonoBehaviour {
             return;
         }
 
-
+        if (playerAttribute.currentWeaponEnergy > 0)
+        {
+            if(Input.GetMouseButton(1))
+            {
+                playerAttribute.currentWeaponEnergy -= Time.deltaTime * enegyDrainage;
+                playerAttribute.health += Time.deltaTime * healthRegain;
+            }
+        }
 
 	}
 

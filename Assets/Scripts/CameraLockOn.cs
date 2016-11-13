@@ -105,8 +105,8 @@ public class CameraLockOn : MonoBehaviour {
     public void SwapAndDelete()
     {
         if (curIndex == enemies.Count - 1)
-                   enemies.RemoveAt(curIndex);
-
+            enemies.RemoveAt(curIndex);
+        
         else
         {
             Transform tmpT = selectedTarget;
@@ -123,7 +123,7 @@ public class CameraLockOn : MonoBehaviour {
         if (enemies.Count <= 0)
             return;
 
-        if(Input.GetButtonDown("Target"))
+        if(Input.GetMouseButtonDown(2) && !selectedTarget)
         {
             if(selectedTarget)
                 selectedTarget.GetChild(0).gameObject.SetActive(false);
@@ -131,6 +131,31 @@ public class CameraLockOn : MonoBehaviour {
             TargetEnemy();
             print("press target");
         }
+
+       else if (Input.GetMouseButtonDown(2) && selectedTarget)
+        {
+            if (selectedTarget)
+                selectedTarget.GetChild(0).gameObject.SetActive(false);
+            curIndex = 0;
+            ClearTarget();
+        }
+
+        if (selectedTarget)
+        {
+            if(Input.GetAxis("Mouse ScrollWheel") >= 1)
+            {
+                TargetEnemy();
+                print("mouse positive");
+            }
+
+            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            {
+                TargetEnemy();
+                print("mouse negative");
+            }
+
+        }
+
         else if(Input.GetKeyDown(KeyCode.Space))
         {
             selectedTarget.GetChild(0).gameObject.SetActive(false);

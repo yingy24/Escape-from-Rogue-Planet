@@ -8,6 +8,7 @@ public class AttackCombo : MonoBehaviour {
 
     // Public Member Variables
     public Animator anim;
+    public Animation currentAnima;
     public string[] comboParams;
     public bool isAttacking;
     public float attackRate;
@@ -35,6 +36,7 @@ public class AttackCombo : MonoBehaviour {
 
         }
         isAttacking = false;
+        anim.SetBool("Attacking", false);
     }
 
 
@@ -42,25 +44,49 @@ public class AttackCombo : MonoBehaviour {
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && playerAttributes.weaponsObtained[0] && playerAttributes.stamina > 5)
+        if (!playerAttributes.weaponsObtained[0])
+            return;
+
+        if(Input.GetButtonDown("Fire1") && !anim.GetBool("Attacking"))
+        {        
+            anim.SetTrigger("Attack1");
+            anim.SetBool("Attacking", true);
+            return;
+        }
+
+        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && /*playerAttributes.weaponsObtained[0] && */ playerAttributes.stamina > 5 && !anim.GetBool("Attacking"))
         {
+                print("should get called");
+
             anim.SetTrigger(comboParams[comboIndex]);
+            anim.SetBool("Attacking", true);
             comboIndex++;
-         
             playerAttributes.restTimer = 0;
             playerAttributes.regainStaminaTime = 1;
-            restTimer = 0f;
-            
+            restTimer = 0.0f;
+
+        }
+
+        else
+        {
+            //anim.SetBool("Attacking", false);
         }
         if(comboIndex > 0)
         {
             restTimer += Time.deltaTime;
             if(restTimer > attackRate)
             {
+                print("yup, called");
                 anim.SetTrigger("AttackReset");
+               // anim.SetBool("Attacking", false);
                 comboIndex = 0;
             }
         }
+
+
+
+       // if(comboIndex >= comboParams.Length)
+        //    anim.SetBool("Attacking", false);
     }
 
     void LateUpdate()

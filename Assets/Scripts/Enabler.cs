@@ -22,15 +22,19 @@ public class Enabler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
+        if (!enableAll)
+            return;
+
         if(enableAll)
         {
             foreach(GameObject gO in enableObjects)
             {
                 gO.SetActive(true);
+
             }
         }
-
+        enableAll = false;
 	}
 
     void OnTriggerStay(Collider other)
