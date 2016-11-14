@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
     public GameObject enemyTarget; // which enemy the player is locked on
     public Transform cameraTarget; // camera target
 
-        public bool isAttacking;
+    public bool isAttacking;
 
     //private variables
     private bool moving = false;
@@ -43,30 +43,32 @@ public class CharacterMovement : MonoBehaviour
     void FixedUpdate()
     {
         //if(enemyTarget == null)
-        
-            //Get movement inputs
-            vMovement = Input.GetAxisRaw("Vertical");
-            hMovement = Input.GetAxisRaw("Horizontal");
 
-            //Normalize imputs
-            inputVec = new Vector3(hMovement, 0, vMovement);
-            inputVec = (inputVec.magnitude > 1.0f) ? inputVec.normalized : inputVec;
+        if (anim.GetBool("Attacking"))
+            return;
 
-            //Apply inputs to animator
-            anim.SetFloat("Input Z", inputVec.z);
-            anim.SetFloat("Input X", inputVec.x);
-            anim.SetFloat("RVelocity", rb.velocity.y);
+        //Get movement inputs
+        vMovement = Input.GetAxisRaw("Vertical");
+        hMovement = Input.GetAxisRaw("Horizontal");
 
-            GetCameraRelativeMovement();
-            RotateTowardMovementDirection();
+        //Normalize imputs
+        inputVec = new Vector3(hMovement, 0, vMovement);
+        inputVec = (inputVec.magnitude > 1.0f) ? inputVec.normalized : inputVec;
 
-            CheckMoving();
-            Move();
-            Jump();
-            HandleCameraTarget();
-        
-   
+        //Apply inputs to animator
+        anim.SetFloat("Input Z", inputVec.z);
+        anim.SetFloat("Input X", inputVec.x);
+        anim.SetFloat("RVelocity", rb.velocity.y);
+
+        GetCameraRelativeMovement();
+        RotateTowardMovementDirection();
+
+        CheckMoving();
+        Move();
+        Jump();
+        HandleCameraTarget();
     }
+
     
     void CheckMoving()
     {
@@ -282,12 +284,14 @@ public class CharacterMovement : MonoBehaviour
     public void StartedAttacking()
     {
         playerAttributes.stamina -= 5;
+        anim.SetBool("Attacking", true);
         isAttacking = true;
     }
 
     public void EndedAttacking()
     {
         isAttacking = false;
+        anim.SetBool("Attacking", false);
     }
 
 }

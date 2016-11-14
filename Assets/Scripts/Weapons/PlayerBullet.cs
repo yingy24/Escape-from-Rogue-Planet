@@ -30,7 +30,6 @@ public class PlayerBullet : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        print("must be hitting something");
         if (other.tag == "Enemy")
         {
             other.GetComponent<EnemyHealth>().health -= damage;

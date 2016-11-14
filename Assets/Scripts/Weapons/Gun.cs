@@ -10,31 +10,50 @@ public class Gun : MonoBehaviour {
     public GameObject player, bulletPrefab;
     public Transform bulletSpawnPoint;
     public Animator anim;
+    public float staminaReduction;
 
 
     // Use this for initialization
     void Start () {
         anim = GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
 
         if (!playerAttributes.weaponsActive[2])
         {
             return;
         }
 
-        if(cameraLockedOn.isLockedOn)
+        if (cameraLockedOn.isLockedOn)
         {
             if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.stamina > 0.5)
             {
                 player.transform.LookAt(cameraLockedOn.selectedTarget);
                 anim.SetTrigger("RifleShot");
-                GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
+                playerAttributes.stamina -= staminaReduction;
+                playerAttributes.restTimer = 0;
+                playerAttributes.regainStaminaTime = 1;
 
+            }
+        }
+
+        else
+        {
+            if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.stamina > 0.5)
+            {
+                anim.SetTrigger("RifleShot");
+                playerAttributes.stamina -= staminaReduction;
+                playerAttributes.restTimer = 0;
+                playerAttributes.regainStaminaTime = 1;
+               // GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
             }
         }
     }
 
+        public void RifleAttack()
+    {
+        GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
+    }
 }

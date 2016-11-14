@@ -5,6 +5,7 @@ public class AttackCombo : MonoBehaviour {
 
     //Class Scripts
     public PlayerAttributes playerAttributes;
+    public CharacterMovement cMovement;
 
     // Public Member Variables
     public Animator anim;
@@ -16,6 +17,7 @@ public class AttackCombo : MonoBehaviour {
 
     //Private Member Variables
     private int comboIndex = 0; //Counter for which Animation is playing
+    [SerializeField]
     private float restTimer; //Reset the time if the player didn't press the attack quick enough
 
 
@@ -49,18 +51,19 @@ public class AttackCombo : MonoBehaviour {
         }
 
 
-        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length &&/*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.stamina > 5)
+        if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.stamina > 5)
         {
             anim.SetTrigger(comboParams[comboIndex]);
             comboIndex++;
-
             playerAttributes.restTimer = 0;
             playerAttributes.regainStaminaTime = 1;
             restTimer = 0f;
 
         }
-        if (comboIndex > 0)
+
+        else if (comboIndex > 0)
         {
+            print("bottom this");
             restTimer += Time.deltaTime;
             if (restTimer > attackRate)
             {
