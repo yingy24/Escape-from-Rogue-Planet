@@ -17,6 +17,7 @@ public class CharacterMovement : MonoBehaviour
     public GameObject enemyTarget; // which enemy the player is locked on
     public Transform cameraTarget; // camera target
 
+        public bool isAttacking;
 
     //private variables
     private bool moving = false;
@@ -277,4 +278,16 @@ public class CharacterMovement : MonoBehaviour
 
         }
     }
+
+    public void StartedAttacking()
+    {
+        playerAttributes.stamina -= 5;
+        isAttacking = true;
+    }
+
+    public void EndedAttacking()
+    {
+        isAttacking = false;
+    }
+
 }

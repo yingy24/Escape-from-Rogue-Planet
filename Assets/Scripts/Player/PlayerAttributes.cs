@@ -9,9 +9,10 @@ public class PlayerAttributes : MonoBehaviour {
     public AttackCombo attackCombo;
 
     //Public Member Variables
+    public Animator anim;
     public Slider playerHealth, playerStamina, weaponEnergy; // UI Displays
     public List <GameObject> weapons; // Sword object
-    public List<bool> weaponsObtained;
+    public List<bool> weaponsObtained, weaponsActive;
     public float health, stamina, currentWeaponEnergy, regainStaminaTime, restTimer, staminaRegain;
     public bool isDead, hasWon, hasWeapon;
 
@@ -21,6 +22,7 @@ public class PlayerAttributes : MonoBehaviour {
 
     // Use this for initialization
     void Awake () {
+        anim = GetComponent<Animator>();
         attackCombo = GetComponent<AttackCombo>();
         hasWeapon = true; //change this to false after testing!!
         isDead = false;
@@ -44,29 +46,50 @@ public class PlayerAttributes : MonoBehaviour {
         // Weapon Select
         if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1) || Input.GetAxis("DpadX") == -1)
         {
-            if(weaponsObtained[0])
+            if (!weaponsObtained[0])
+                return;
+
+           else if(weaponsObtained[0])
             {
+                anim.SetInteger("WeaponState", 0);
                 weapons[1].SetActive(false);
                 weapons[2].SetActive(false);
                 weapons[0].SetActive(true);
+                weaponsActive[0] = true;
+                weaponsActive[1] = false;
+                weaponsActive[2] = false;
             }
         }
         if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetAxis("DpadY") == 2)
         {
-          if(weaponsObtained[1])
+            if (!weaponsObtained[1])
+                return;
+
+            else if (weaponsObtained[1])
             {
+                anim.SetInteger("WeaponState", 1);
                 weapons[0].SetActive(false);
                 weapons[2].SetActive(false);
                 weapons[1].SetActive(true);
+                weaponsActive[0] = false;
+                weaponsActive[1] = true;
+                weaponsActive[2] = false;
             }
         }
         if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetAxis("DpadX") == 1)
         {
-            if (weaponsObtained[2])
+            if (!weaponsObtained[2])
+                return;
+
+           else if (weaponsObtained[2])
             {
+                anim.SetInteger("WeaponState", 2);
                 weapons[0].SetActive(false);
                 weapons[1].SetActive(false);
                 weapons[2].SetActive(true);
+                weaponsActive[0] = false;
+                weaponsActive[1] = false;
+                weaponsActive[2] = true;
             }
         }
 
@@ -99,7 +122,11 @@ public class PlayerAttributes : MonoBehaviour {
             weapons[0].SetActive(true);
             weaponsObtained[0] = true;
             attackCombo.SwordObtained();
+            weaponsActive[0] = true;
+            weaponsActive[1] = false;
+            weaponsActive[2] = false;
             Destroy(other.gameObject);
+
         }
 
         if (other.tag == "Axe")
@@ -108,6 +135,9 @@ public class PlayerAttributes : MonoBehaviour {
             weapons[1].SetActive(true);
             weaponsObtained[1] = true;
             attackCombo.SwordObtained();
+            weaponsActive[0] = false;
+            weaponsActive[1] = true;
+            weaponsActive[2] = false;
             Destroy(other.gameObject);
         }
 
@@ -117,6 +147,9 @@ public class PlayerAttributes : MonoBehaviour {
             weapons[2].SetActive(true);
             weaponsObtained[2] = true;
             attackCombo.SwordObtained();
+            weaponsActive[0] = false;
+            weaponsActive[1] = false;
+            weaponsActive[2] = true;
             Destroy(other.gameObject);
         }
 
