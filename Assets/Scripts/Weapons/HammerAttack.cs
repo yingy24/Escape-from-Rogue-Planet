@@ -9,6 +9,8 @@ public class HammerAttack : MonoBehaviour {
     // Public Member Variables
     public Animator anim;
     public Animation currentAnima;
+    public GameObject hammerHead;
+    public GameObject shield;
     public string[] comboParams;
     public bool isAttacking;
     public float attackRate, weaponEnergyReduction;
@@ -35,6 +37,8 @@ public class HammerAttack : MonoBehaviour {
 
         }
         isAttacking = false;
+        hammerHead.SetActive(true);
+        shield.SetActive(false);
     }
 
     // Update is called once per frame
@@ -70,11 +74,15 @@ public class HammerAttack : MonoBehaviour {
         if(Input.GetButton("Fire2") && playerAttributes.currentWeaponEnergy > 0 )
         {
             anim.SetBool("HammerBlock", true);
+            hammerHead.SetActive(false);
+            shield.SetActive(true);
             playerAttributes.currentWeaponEnergy -= Time.deltaTime * weaponEnergyReduction;
         }
         else
         {
             anim.SetBool("HammerBlock", false);
+            hammerHead.SetActive(true);
+            shield.SetActive(false);
         }
 
     }

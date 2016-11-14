@@ -60,7 +60,7 @@ public class PlayerAttributes : MonoBehaviour {
                 weaponsActive[2] = false;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetAxis("DpadY") == 2)
+        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetAxis("DpadY") == 1)
         {
             if (!weaponsObtained[1])
                 return;

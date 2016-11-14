@@ -123,7 +123,7 @@ public class CameraLockOn : MonoBehaviour {
         if (enemies.Count <= 0)
             return;
 
-        if(Input.GetMouseButtonDown(2) && !selectedTarget)
+        if(Input.GetButtonDown("Target") && !selectedTarget)
         {
             if(selectedTarget)
                 selectedTarget.GetChild(0).gameObject.SetActive(false);
@@ -132,7 +132,7 @@ public class CameraLockOn : MonoBehaviour {
             print("press target");
         }
 
-       else if (Input.GetMouseButtonDown(2) && selectedTarget)
+       else if (Input.GetButtonDown("Target") && selectedTarget)
         {
             if (selectedTarget)
                 selectedTarget.GetChild(0).gameObject.SetActive(false);
@@ -142,13 +142,13 @@ public class CameraLockOn : MonoBehaviour {
 
         if (selectedTarget)
         {
-            if(Input.GetAxis("Mouse ScrollWheel") >= 1)
+            if(Input.GetAxis("Mouse ScrollWheel") >= 1 | Input.GetAxis("Joystick X") > 0.1)
             {
                 TargetEnemy();
                 print("mouse positive");
             }
 
-            if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            if (Input.GetAxis("Mouse ScrollWheel") < 0 | Input.GetAxis("Joystick X") < -0.1)
             {
                 TargetEnemy();
                 print("mouse negative");
