@@ -157,7 +157,7 @@ public class PlayerAttributes : MonoBehaviour {
         {
             if(health <= 100)
             {
-                health += 25;
+                health += 30;
             }
             Destroy(other.gameObject);
         }

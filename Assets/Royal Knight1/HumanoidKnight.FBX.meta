@@ -311,18 +311,12 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: "\nDefault bone length found in this file is different
-      form the one found in the source avatar:\n\t'Bip01 L Thigh' : position error
-      = 19.194389 mm\n\t'Bip01 R Thigh' : position error = 27.011063 mm\n\nClip 'Take
-      001' has import animation warnings that might lower retargeting quality:\n\t'Bip01
-      Spine1' has translation animation that will be discarded.\n\t'Bip01 L Clavicle'
-      has translation animation that will be discarded.\n\t'Bip01 R Clavicle' has
-      translation animation that will be discarded.\n\t'Bip01 L Thigh' has translation
-      animation that will be discarded.\n\t'Bip01 R Thigh' has translation animation
-      that will be discarded.\n\nClip 'StrongAttack' has import animation warnings
-      that might lower retargeting quality:\n\t'Bip01 Spine1' has translation animation
-      that will be discarded.\n\t'Bip01 L Thigh' has translation animation that will
-      be discarded.\n\t'Bip01 R Thigh' has translation animation that will be discarded.\n"
+    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
+      might lower retargeting quality:\n\t'Bip01 Spine1' has translation animation
+      that will be discarded.\n\t'Bip01 L Clavicle' has translation animation that
+      will be discarded.\n\t'Bip01 R Clavicle' has translation animation that will
+      be discarded.\n\t'Bip01 L Thigh' has translation animation that will be discarded.\n\t'Bip01
+      R Thigh' has translation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -3883,7 +3877,7 @@ ModelImporter:
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
