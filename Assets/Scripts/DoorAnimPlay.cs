@@ -3,8 +3,8 @@ using System.Collections;
 
 public class DoorAnimPlay : MonoBehaviour {
 
-    public AttackCombo attackCombo;
-    public bool requireAttack = false;
+    //public AttackCombo attackCombo;
+    //public bool requireAttack = false;
 
     Animator animator;
     bool doorOpen;
@@ -14,19 +14,19 @@ public class DoorAnimPlay : MonoBehaviour {
         doorOpen = false;
         animator = GetComponent<Animator>();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        attackCombo = player.GetComponent<AttackCombo>();
+        //attackCombo = player.GetComponent<AttackCombo>();
     }
 	
-
+    
 	void OnTriggerEnter (Collider col) {
-        if (!requireAttack)
+        /*if (!requireAttack)
         {
             if (col.gameObject.tag == "Player")
             {
                 doorOpen = true;
                 DoorTrigger("Open");
             }
-        }
+        }*/
 	}
 
     void OnTriggerStay(Collider other)
