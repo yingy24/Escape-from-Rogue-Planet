@@ -11,7 +11,7 @@ public class HammerAttack : MonoBehaviour {
     public Animation currentAnima;
     public string[] comboParams;
     public bool isAttacking;
-    public float attackRate;
+    public float attackRate, weaponEnergyReduction;
     public float attackDamage = 10f;
 
     //Private Member Variables
@@ -56,6 +56,7 @@ public class HammerAttack : MonoBehaviour {
             restTimer = 0f;
 
         }
+
         if (comboIndex > 0)
         {
             restTimer += Time.deltaTime;
@@ -65,5 +66,16 @@ public class HammerAttack : MonoBehaviour {
                 comboIndex = 0;
             }
         }
+
+        if(Input.GetButton("Fire2") && playerAttributes.currentWeaponEnergy > 0 )
+        {
+            anim.SetBool("HammerBlock", true);
+            playerAttributes.currentWeaponEnergy -= Time.deltaTime * weaponEnergyReduction;
+        }
+        else
+        {
+            anim.SetBool("HammerBlock", false);
+        }
+
     }
 }

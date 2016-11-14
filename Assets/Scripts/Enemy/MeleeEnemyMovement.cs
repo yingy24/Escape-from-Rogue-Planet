@@ -79,10 +79,16 @@ public class MeleeEnemyMovement : MonoBehaviour {
                 {
                     anim.SetBool("isChasing", false);
                     anim.SetBool("isAttacking", true);
-                    if(attackActive.isAttacking)
+                    if (attackActive.isAttacking)
                     {
-                        target.GetComponent<PlayerAttributes>().health -= damageDealt;
+                        if (target.GetComponent<Animator>().GetBool("HammerBlock"))
+                        {
+                            target.GetComponent<PlayerAttributes>().health -= damageDealt / 2;
+                        }
+                        else
+                            target.GetComponent<PlayerAttributes>().health -= damageDealt;
                     }
+
                 }
             }
         }

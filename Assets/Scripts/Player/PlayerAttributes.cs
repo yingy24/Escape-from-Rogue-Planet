@@ -103,7 +103,7 @@ public class PlayerAttributes : MonoBehaviour {
             {
                 regainStaminaTime = 0.1f;
                 restTimer = 0;
-                stamina += staminaRegain;
+                stamina += Time.deltaTime * staminaRegain;
             }
         }
 
