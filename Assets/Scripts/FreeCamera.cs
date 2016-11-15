@@ -12,6 +12,7 @@ public class FreeCamera : MonoBehaviour
     public Transform camTransform;
     public GameObject player;
     public bool useMouse;
+    public bool isInvert;
     
 
     private Camera cam;
@@ -59,23 +60,37 @@ public class FreeCamera : MonoBehaviour
             useMouse = true;
         }
 
-        if (Input.GetAxis("Joystick X") != 0 |Input.GetAxis("Joystick Y") != 0)
+        if (Input.GetAxis("Joystick X") != 0 | Input.GetAxis("Joystick Y") != 0)
         {
             addSensitivity = controllerSensitivity;
             useMouse = false;
         }
-        
-        if (useMouse)
+        if (!isInvert)
         {
-            currentX += Input.GetAxis("Mouse X") * sensivityX * addSensitivity;
-            currentY += -Input.GetAxis("Mouse Y") * sensivityY * addSensitivity;
+            if (useMouse)
+            {
+                currentX += Input.GetAxis("Mouse X") * sensivityX * addSensitivity;
+                currentY += -Input.GetAxis("Mouse Y") * sensivityY * addSensitivity;
+            }
+            else
+            {
+                currentX += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
+                currentY += -Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
+            }
         }
         else
         {
-            currentX += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
-            currentY += -Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
+            if (useMouse)
+            {
+                currentX += Input.GetAxis("Mouse X") * sensivityX * addSensitivity;
+                currentY += -Input.GetAxis("Mouse Y") * -sensivityY * addSensitivity;
+            }
+            else
+            {
+                currentX += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
+                currentY += -Input.GetAxis("Joystick Y") * -sensivityY * addSensitivity;
+            }
         }
-        
 
 
 

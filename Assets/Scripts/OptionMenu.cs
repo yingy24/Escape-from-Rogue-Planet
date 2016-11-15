@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class OptionMenu : MonoBehaviour {
 
     public GameObject pauseMenu;
     public GameObject optionsMenu;
+    public GameObject invert;
+    public Slider invertedSlider;
+    public FreeCamera fCamera;
 
     GameObject player;
     bool paused;
@@ -24,6 +28,7 @@ public class OptionMenu : MonoBehaviour {
         Time.timeScale = 1;
         Cursor.visible = false;
         pauseMenu.SetActive(false);
+        invert.SetActive(false);
     }
 
     public void Options()
@@ -35,5 +40,23 @@ public class OptionMenu : MonoBehaviour {
     public void Quit()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Invert()
+    {
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        invert.SetActive(true);
+    }
+
+    //Inverted Options
+    public void InvertYes()
+    {
+        if (invertedSlider.value == 1)
+        {
+            fCamera.isInvert = true;
+        }
+        else
+            fCamera.isInvert = false;
     }
 }
