@@ -156,7 +156,7 @@ public class CameraLockOn : MonoBehaviour {
 
         }
 
-        else if(Input.GetKeyDown(KeyCode.Space))
+        else if(Input.GetKeyDown(KeyCode.O))
         {
             selectedTarget.GetChild(0).gameObject.SetActive(false);
             ClearTarget();

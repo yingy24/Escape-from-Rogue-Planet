@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour {
 
     public void StartGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Level_ForReal");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level_v2");
     }
 
     public void QuitGame()

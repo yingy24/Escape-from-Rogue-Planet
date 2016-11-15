@@ -42,7 +42,7 @@ public class FreeCamera : MonoBehaviour
         // Screen.lockCursor = true;
         camTransform = transform;
         cam = Camera.main;
-        currentX -= 90;
+        currentX -= 0;
 
         layerMasks = 1 << LayerMask.NameToLayer("Clippable") | 0 << LayerMask.NameToLayer("NotClippable");
     }
