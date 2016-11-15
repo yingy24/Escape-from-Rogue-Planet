@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
     public GameObject enemyTarget; // which enemy the player is locked on
     public Transform cameraTarget; // camera target
 
-    public bool isAttacking;
+    public bool isAttacking, isUsingEnergy;
 
     //private variables
     private bool moving = false;
@@ -283,15 +283,30 @@ public class CharacterMovement : MonoBehaviour
 
     public void StartedAttacking()
     {
-        playerAttributes.stamina -= 5;
-        anim.SetBool("Attacking", true);
-        isAttacking = true;
+        if (isUsingEnergy)
+        {
+            NewStartedAttacking();
+        }
+        else
+        {
+            playerAttributes.stamina -= 5;
+            anim.SetBool("Attacking", true);
+            isAttacking = true;
+        }
     }
 
     public void EndedAttacking()
     {
         isAttacking = false;
+        isUsingEnergy = false;
         anim.SetBool("Attacking", false);
+    }
+
+    public void NewStartedAttacking()
+    {
+        playerAttributes.currentWeaponEnergy -= 2;
+        anim.SetBool("Attacking", true);
+        isAttacking = true;
     }
 
 }

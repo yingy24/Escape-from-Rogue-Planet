@@ -42,6 +42,10 @@ public class PlayerAttributes : MonoBehaviour {
         {
             health = 100;
         }
+        if(currentWeaponEnergy > 30)
+        {
+            currentWeaponEnergy = 30;
+        }
 
         // Weapon Select
         if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1) || Input.GetAxis("DpadX") == -1)

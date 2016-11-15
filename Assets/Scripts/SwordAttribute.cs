@@ -23,7 +23,7 @@ public class SwordAttribute : MonoBehaviour {
             return;
         }
 
-        if (playerAttribute.currentWeaponEnergy > 0)
+        if (playerAttribute.currentWeaponEnergy > 0 && playerAttribute.health < 100)
         {
             if(Input.GetMouseButton(1))
             {

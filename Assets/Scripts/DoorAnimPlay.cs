@@ -28,7 +28,7 @@ public class DoorAnimPlay : MonoBehaviour {
             }
         }*/
 	}
-
+    /*
     void OnTriggerStay(Collider other)
     {
         if (requireAttack)
@@ -75,4 +75,5 @@ public class DoorAnimPlay : MonoBehaviour {
         //print("Waiting to close");
         DoorTrigger("Close");
     }
+    */
 }

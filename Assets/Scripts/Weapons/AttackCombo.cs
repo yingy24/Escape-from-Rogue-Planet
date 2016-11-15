@@ -13,11 +13,10 @@ public class AttackCombo : MonoBehaviour {
     public string[] comboParams;
     public bool isAttacking;
     public float attackRate;
-    public float attackDamage = 10f;
+    public float attackDamage;
 
     //Private Member Variables
     private int comboIndex = 0; //Counter for which Animation is playing
-    [SerializeField]
     private float restTimer; //Reset the time if the player didn't press the attack quick enough
 
 
@@ -63,7 +62,6 @@ public class AttackCombo : MonoBehaviour {
 
         else if (comboIndex > 0)
         {
-            print("bottom this");
             restTimer += Time.deltaTime;
             if (restTimer > attackRate)
             {
@@ -77,11 +75,6 @@ public class AttackCombo : MonoBehaviour {
     {
         //anim.SetBool("Attacking", false);
 
-    }
-
-    void TakeAwayStamina()
-    {
-        playerAttributes.stamina -= 5;
     }
 
     public void SwordObtained()

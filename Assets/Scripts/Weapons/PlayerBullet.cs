@@ -33,6 +33,7 @@ public class PlayerBullet : MonoBehaviour {
         if (other.tag == "Enemy")
         {
             other.GetComponent<EnemyHealth>().health -= damage;
+            Destroy(this.gameObject);
            // GamePad.SetVibration(PlayerIndex.One, 0, 1);
           //  StartCoroutine(ZeroVibrateAndSelfDestruct());
         }
