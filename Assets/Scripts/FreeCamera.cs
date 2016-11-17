@@ -39,7 +39,7 @@ public class FreeCamera : MonoBehaviour
     void Start()
     {
         cameraLockOn = GetComponent<CameraLockOn>();
-        // Screen.lockCursor = true;
+        Screen.lockCursor = true;
         camTransform = transform;
         cam = Camera.main;
         currentX -= 0;

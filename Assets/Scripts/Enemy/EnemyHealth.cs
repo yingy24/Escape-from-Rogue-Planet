@@ -13,6 +13,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject player;
     public Transform parentTransform;
     public GameObject deathEffect;
+    public float energyRegain;
     // Use this for initialization
     void Start()
     {
@@ -26,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
         if (health <= 0)
         {
             gameManager.cameraLockOn.SwapAndDelete(); // Function call to delete enemy from list
-            gameManager.playerAttributes.currentWeaponEnergy += 5;
+            gameManager.playerAttributes.currentWeaponEnergy += energyRegain;
             Instantiate(deathEffect, transform.position, transform.rotation);
             Destroy(parentTransform.gameObject);
             gameManager.player.GetComponent<CharacterMovement>().enemyTarget = null;

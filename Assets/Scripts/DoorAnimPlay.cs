@@ -16,7 +16,21 @@ public class DoorAnimPlay : MonoBehaviour {
         //GameObject player = GameObject.FindGameObjectWithTag("Player");
         //attackCombo = player.GetComponent<AttackCombo>();
     }
-	
+    /*
+    void Update()
+    {
+        if(Vector3.Distance(gameObject.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) > 10)
+        {
+            return;
+        }
+
+        else
+        {
+            doorOpen = true;
+            DoorTrigger("Open");
+        }
+    }
+	*/
     
 	void OnTriggerEnter (Collider col) {
         if (col.gameObject.tag == "Player")
@@ -40,11 +54,11 @@ public class DoorAnimPlay : MonoBehaviour {
         doorOpen = false;
         DoorTrigger("Close");
     }
-
+    
     void DoorTrigger (string direction)
     {
         animator.SetTrigger(direction);
     }
-
+    
     
 }

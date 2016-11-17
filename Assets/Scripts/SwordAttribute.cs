@@ -25,7 +25,7 @@ public class SwordAttribute : MonoBehaviour {
 
         if (playerAttribute.currentWeaponEnergy > 0 && playerAttribute.health < 100)
         {
-            if(Input.GetMouseButton(1))
+            if(Input.GetMouseButton(1) || Input.GetButton("SpecialAbility"))
             {
                 playerAttribute.currentWeaponEnergy -= Time.deltaTime * enegyDrainage;
                 playerAttribute.health += Time.deltaTime * healthRegain;

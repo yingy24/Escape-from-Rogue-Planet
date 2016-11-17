@@ -11,7 +11,7 @@ public class CameraLockOn : MonoBehaviour {
 
     public Transform selectedTarget;
 
-    public Transform myTransform;
+    public Transform myTransform, playerT;
     public List <Transform> enemies;
 
     public bool isLockedOn;
@@ -88,6 +88,7 @@ public class CameraLockOn : MonoBehaviour {
             }
             else
             {
+                playerT.eulerAngles = new Vector3(0, playerT.transform.eulerAngles.y, 0);
                 characterMovement.enemyTarget = null;
             }
 
@@ -99,14 +100,15 @@ public class CameraLockOn : MonoBehaviour {
         selectedTarget = null;
         characterMovement.enemyTarget = null;
         isLockedOn = false;
+        playerT.eulerAngles = new Vector3(0, playerT.transform.eulerAngles.y, 0); ;
     }
-	
+
     // Remove destroyed enemy from list
     public void SwapAndDelete()
     {
         if (curIndex == enemies.Count - 1)
             enemies.RemoveAt(curIndex);
-        
+
         else
         {
             Transform tmpT = selectedTarget;
@@ -115,7 +117,10 @@ public class CameraLockOn : MonoBehaviour {
         }
 
         selectedTarget = null;
+        playerT.eulerAngles = new Vector3(0, playerT.transform.eulerAngles.y, 0);
     }
+
+
 
 	// Update is called once per frame
 	void Update () {
@@ -145,13 +150,11 @@ public class CameraLockOn : MonoBehaviour {
             if(Input.GetAxis("Mouse ScrollWheel") >= 1 | Input.GetAxis("Joystick X") > 0.1)
             {
                 TargetEnemy();
-                print("mouse positive");
             }
 
             if (Input.GetAxis("Mouse ScrollWheel") < 0 | Input.GetAxis("Joystick X") < -0.1)
             {
                 TargetEnemy();
-                print("mouse negative");
             }
 
         }

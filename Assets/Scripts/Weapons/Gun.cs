@@ -10,7 +10,7 @@ public class Gun : MonoBehaviour {
     public GameObject player, bulletPrefab;
     public Transform bulletSpawnPoint;
     public Animator anim;
-    public float energyReduction;
+    public float energyReduction, neededEnegyToShoot;
 
 
     // Use this for initialization
@@ -28,7 +28,7 @@ public class Gun : MonoBehaviour {
 
         if (cameraLockedOn.isLockedOn)
         {
-            if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > 1)
+            if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
             {
                 player.transform.LookAt(cameraLockedOn.selectedTarget);
                 anim.SetTrigger("RifleShot");
@@ -41,7 +41,7 @@ public class Gun : MonoBehaviour {
 
         else
         {
-            if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.stamina > 0.5)
+            if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
             {
                 anim.SetTrigger("RifleShot");
                 playerAttributes.currentWeaponEnergy -= energyReduction;

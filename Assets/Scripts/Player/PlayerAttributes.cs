@@ -48,6 +48,8 @@ public class PlayerAttributes : MonoBehaviour {
         }
 
         // Weapon Select
+
+        //Gun
         if(Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.Alpha1) || Input.GetAxis("DpadX") == -1)
         {
             if (!weaponsObtained[0])
@@ -64,6 +66,7 @@ public class PlayerAttributes : MonoBehaviour {
                 weaponsActive[2] = false;
             }
         }
+        //Axe/Hammer
         if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Alpha2) || Input.GetAxis("DpadY") == 1)
         {
             if (!weaponsObtained[1])
@@ -80,6 +83,7 @@ public class PlayerAttributes : MonoBehaviour {
                 weaponsActive[2] = false;
             }
         }
+        //Gun
         if (Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Alpha3) || Input.GetAxis("DpadX") == 1)
         {
             if (!weaponsObtained[2])
@@ -116,6 +120,7 @@ public class PlayerAttributes : MonoBehaviour {
         weaponEnergy.value = currentWeaponEnergy;   // Sets the UI Energy Bar
 
     }
+    
 
     void OnTriggerEnter(Collider other)
     {
@@ -123,7 +128,11 @@ public class PlayerAttributes : MonoBehaviour {
         if(other.tag == "Sword")
         {
             hasWeapon = true;
+
+            weapons[1].SetActive(false);
+            weapons[2].SetActive(false);
             weapons[0].SetActive(true);
+
             weaponsObtained[0] = true;
             attackCombo.SwordObtained();
             weaponsActive[0] = true;
@@ -136,7 +145,11 @@ public class PlayerAttributes : MonoBehaviour {
         if (other.tag == "Axe")
         {
             hasWeapon = true;
+
+            weapons[0].SetActive(false);
+            weapons[2].SetActive(false);
             weapons[1].SetActive(true);
+
             weaponsObtained[1] = true;
             attackCombo.SwordObtained();
             weaponsActive[0] = false;
@@ -148,7 +161,11 @@ public class PlayerAttributes : MonoBehaviour {
         if (other.tag == "Gun")
         {
             hasWeapon = true;
+
+            weapons[0].SetActive(false);
+            weapons[1].SetActive(false);
             weapons[2].SetActive(true);
+
             weaponsObtained[2] = true;
             attackCombo.SwordObtained();
             weaponsActive[0] = false;
