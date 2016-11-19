@@ -42,9 +42,9 @@ public class PlayerAttributes : MonoBehaviour {
         {
             health = 100;
         }
-        if(currentWeaponEnergy > 30)
+        if(currentWeaponEnergy > 40)
         {
-            currentWeaponEnergy = 30;
+            currentWeaponEnergy = 40;
         }
 
         // Weapon Select
@@ -179,6 +179,7 @@ public class PlayerAttributes : MonoBehaviour {
             if(health <= 100)
             {
                 health += 30;
+                currentWeaponEnergy += 15;
             }
             Destroy(other.gameObject);
         }
