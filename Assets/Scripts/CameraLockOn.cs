@@ -16,6 +16,8 @@ public class CameraLockOn : MonoBehaviour {
 
     public bool isLockedOn;
 
+    public float maxSight;
+
     private int curIndex;
 
 	// Use this for initialization
@@ -51,25 +53,29 @@ public class CameraLockOn : MonoBehaviour {
 
     private void TargetEnemy()
     {
-
         if (selectedTarget == null)
         {
             SortByDistance();
-            if (enemies[0].GetComponent<Renderer>().isVisible)
+            curIndex = 0;
+            selectedTarget = enemies[0];
+            
+            // Raycast to hit enemy collider
+            // If hits enemy, target the enemy, if not ignores the raycast
+            RaycastHit hit;
+            if (Physics.Linecast(transform.position, selectedTarget.transform.position /*(selectedTarget.transform.position - transform.position).normalized*/, out hit))
             {
-                curIndex = 0;
-                selectedTarget = enemies[0];
-                isLockedOn = true;
-                selectedTarget.GetChild(0).gameObject.SetActive(true);
-                characterMovement.enemyTarget = selectedTarget.gameObject;
+                if (hit.collider.tag == "Enemy")
+                {
+                    isLockedOn = true;
+                    selectedTarget.GetChild(0).gameObject.SetActive(true);
+                    characterMovement.enemyTarget = selectedTarget.gameObject;
+                }
             }
-
         }
 
         else
         {
             int index = enemies.IndexOf(selectedTarget);
-
             if (index < enemies.Count - 1)
             {
                 index++;
@@ -78,20 +84,24 @@ public class CameraLockOn : MonoBehaviour {
             {
                 index = 0;
             }
-            if (enemies[index].GetComponent<Renderer>().isVisible)
-            {
                 curIndex = index;
                 selectedTarget = enemies[index];
-                isLockedOn = true;
-                selectedTarget.GetChild(0).gameObject.SetActive(true);
-                characterMovement.enemyTarget = selectedTarget.gameObject;
+
+            RaycastHit hit;
+            if (Physics.Linecast(transform.position, selectedTarget.transform.position /*(selectedTarget.transform.position - transform.position).normalized*/, out hit))
+            {
+                if (hit.collider.tag == "Enemy")
+                {
+                    isLockedOn = true;
+                    selectedTarget.GetChild(0).gameObject.SetActive(true);
+                    characterMovement.enemyTarget = selectedTarget.gameObject;
+                }
             }
             else
             {
                 playerT.eulerAngles = new Vector3(0, playerT.transform.eulerAngles.y, 0);
                 characterMovement.enemyTarget = null;
             }
-
         }
     }
 
@@ -128,19 +138,20 @@ public class CameraLockOn : MonoBehaviour {
         if (enemies.Count <= 0)
             return;
 
-        if(Input.GetButtonDown("Target") && !selectedTarget)
+        // Function to lock 
+        if (Input.GetButtonDown("Target") && !selectedTarget)
         {
-            if(selectedTarget)
+            if(selectedTarget) // Turning on and off enemy health UI
                 selectedTarget.GetChild(0).gameObject.SetActive(false);
 
             TargetEnemy();
-            print("press target");
         }
-
-       else if (Input.GetButtonDown("Target") && selectedTarget)
+        // Function to turn off lock  
+        else if (Input.GetButtonDown("Target") && selectedTarget)
         {
-            if (selectedTarget)
+            if (selectedTarget)  // Turning on and off enemy health UI
                 selectedTarget.GetChild(0).gameObject.SetActive(false);
+
             curIndex = 0;
             ClearTarget();
         }

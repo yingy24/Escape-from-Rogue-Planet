@@ -10,7 +10,7 @@ public class MeleeEnemyMovement : MonoBehaviour {
     public Animator anim;
     public Transform target, origin;
     public bool seePlayer, followingPlayer;
-    public float damageDealt, turnSpeed, maxTurn, lineOfSight, maxSight, moveSpeed;
+    public float damageDealt, turnSpeed, maxTurn, lineOfSight, maxSight, moveSpeed, hammerPowerBlock;
 
     // Use this for initialization
     void Start () {
@@ -83,12 +83,11 @@ public class MeleeEnemyMovement : MonoBehaviour {
                     {
                         if (target.GetComponent<Animator>().GetBool("HammerBlock"))
                         {
-                            target.GetComponent<PlayerAttributes>().health -= damageDealt / 2;
+                            target.GetComponent<PlayerAttributes>().health -= damageDealt / hammerPowerBlock;
                         }
                         else
                             target.GetComponent<PlayerAttributes>().health -= damageDealt;
                     }
-
                 }
             }
         }

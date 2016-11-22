@@ -65,6 +65,7 @@ public class FreeCamera : MonoBehaviour
             addSensitivity = controllerSensitivity;
             useMouse = false;
         }
+
         if (!isInvert)
         {
             if (useMouse)
@@ -82,8 +83,8 @@ public class FreeCamera : MonoBehaviour
         {
             if (useMouse)
             {
-                currentX += Input.GetAxis("Mouse X") * sensivityX * addSensitivity;
-                currentY += -Input.GetAxis("Mouse Y") * -sensivityY * addSensitivity;
+                //currentX += Input.GetAxis("Mouse X") * sensivityX * addSensitivity;
+                //currentY += -Input.GetAxis("Mouse Y") * -sensivityY * addSensitivity;
             }
             else
             {
@@ -94,7 +95,7 @@ public class FreeCamera : MonoBehaviour
 
 
 
-        currentY = Mathf.Clamp(currentY, YAngleMin, YAngleMax);
+        //currentY = Mathf.Clamp(currentY, YAngleMin, YAngleMax);
     }
 
     // Update is called once per frame
