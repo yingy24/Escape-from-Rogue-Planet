@@ -62,7 +62,7 @@ public class CameraLockOn : MonoBehaviour {
             // Raycast to hit enemy collider
             // If hits enemy, target the enemy, if not ignores the raycast
             RaycastHit hit;
-            if (Physics.Linecast(transform.position, selectedTarget.transform.position /*(selectedTarget.transform.position - transform.position).normalized*/, out hit))
+            if (Physics.Raycast(transform.position, (selectedTarget.transform.position - transform.position).normalized, out hit))
             {
                 if (hit.collider.tag == "Enemy")
                 {
@@ -88,7 +88,7 @@ public class CameraLockOn : MonoBehaviour {
                 selectedTarget = enemies[index];
 
             RaycastHit hit;
-            if (Physics.Linecast(transform.position, selectedTarget.transform.position /*(selectedTarget.transform.position - transform.position).normalized*/, out hit))
+            if (Physics.Raycast(transform.position, (selectedTarget.transform.position - transform.position).normalized, out hit))
             {
                 if (hit.collider.tag == "Enemy")
                 {

@@ -114,6 +114,7 @@
     <Compile Include="Assets\Scripts\Weapons\AttackCombo.cs" />
     <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
     <Compile Include="Assets\Scripts\Weapons\HammerAttack.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Laser.cs" />
     <Compile Include="Assets\Scripts\Weapons\PlayerBullet.cs" />
     <Compile Include="Assets\WeaponAnimation.cs" />
     <Compile Include="Assets\XInputDotNet\Examples\XInputTestCS.cs" />

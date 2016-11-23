@@ -8,7 +8,7 @@ public class Gun : MonoBehaviour {
     public CameraLockOn cameraLockedOn;
 
     public GameObject player, bulletPrefab;
-    public Transform bulletSpawnPoint;
+    public Transform laser;
     public Animator anim;
     public float energyReduction, neededEnegyToShoot;
 
@@ -28,7 +28,7 @@ public class Gun : MonoBehaviour {
 
         if (cameraLockedOn.isLockedOn)
         {
-            if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
+            if (Input.GetButton("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
             {
                 player.transform.LookAt(cameraLockedOn.selectedTarget);
                 anim.SetTrigger("RifleShot");
@@ -36,24 +36,44 @@ public class Gun : MonoBehaviour {
                 playerAttributes.restTimer = 0;
                 playerAttributes.regainStaminaTime = 1;
 
+                Fire();
+
             }
         }
 
         else
         {
-            if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
+            if (Input.GetButton("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
             {
                 anim.SetTrigger("RifleShot");
                 playerAttributes.currentWeaponEnergy -= energyReduction;
                 playerAttributes.restTimer = 0;
                 playerAttributes.regainStaminaTime = 1;
-               // GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
+                // GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
+
+
+                Fire();
             }
         }
     }
 
-        public void RifleAttack()
+    void Fire()
     {
-        GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
+        RaycastHit hit;
+        if(Physics.Raycast(laser.transform.position, laser.transform.forward, out hit))
+        {
+            print("Hit: " + hit.collider.gameObject.name);
+        }
+    }
+
+    public void RifleAttack()
+    {
+        laser.gameObject.SetActive(true);
+        //GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
+    }
+
+    public void laserGone()
+    {
+        laser.gameObject.SetActive(false);
     }
 }
