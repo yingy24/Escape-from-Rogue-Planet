@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour {
     //Class Scripts
     public PlayerAttributes playerAttributes;
     public CameraLockOn cameraLockedOn;
+    public CharacterMovement cMovement;
 
     public GameObject player, bulletPrefab;
     public Transform laser;
@@ -15,6 +16,7 @@ public class Gun : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        cMovement = GetComponent<CharacterMovement>();
         anim = GetComponent<Animator>();
 	}
 
@@ -36,7 +38,7 @@ public class Gun : MonoBehaviour {
                 playerAttributes.restTimer = 0;
                 playerAttributes.regainStaminaTime = 1;
 
-                Fire();
+               // Fire();
 
             }
         }
@@ -52,7 +54,7 @@ public class Gun : MonoBehaviour {
                 // GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
 
 
-                Fire();
+               // Fire();
             }
         }
     }
@@ -68,12 +70,14 @@ public class Gun : MonoBehaviour {
 
     public void RifleAttack()
     {
+        anim.SetBool("Attacking", true);
         laser.gameObject.SetActive(true);
         //GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
     }
 
     public void laserGone()
     {
+        anim.SetBool("Attacking", false);
         laser.gameObject.SetActive(false);
     }
 }

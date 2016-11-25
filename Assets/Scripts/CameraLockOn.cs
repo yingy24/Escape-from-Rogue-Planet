@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class CameraLockOn : MonoBehaviour {
+public class CameraLockOn : MonoBehaviour
+{
 
 
     //Class Scripts
@@ -12,26 +13,31 @@ public class CameraLockOn : MonoBehaviour {
     public Transform selectedTarget;
 
     public Transform myTransform, playerT;
-    public List <Transform> enemies;
+    public List<Transform> enemies;
 
     public bool isLockedOn;
 
-    public float maxSight;
+    //public float maxSight;
 
     private int curIndex;
 
-	// Use this for initialization
-	void Start () {
+    private int layerMask;
+
+    // Use this for initialization
+    void Start()
+    {
+        layerMask = LayerMask.GetMask("Enemy");
         cameraScript = GetComponent<FreeCamera>();
         enemies = new List<Transform>();
         selectedTarget = null;
 
         AddAllEnemies();
-	}
+    }
 
     private void SortByDistance()
     {
-        enemies.Sort(delegate (Transform t1, Transform t2) {
+        enemies.Sort(delegate (Transform t1, Transform t2)
+        {
             return Vector3.Distance(t1.position, myTransform.position).CompareTo(Vector3.Distance(t2.position, myTransform.position));
         });
     }
@@ -48,29 +54,38 @@ public class CameraLockOn : MonoBehaviour {
 
     public void AddTarget(Transform enemy)
     {
-            enemies.Add(enemy);
+        enemies.Add(enemy);
     }
 
     private void TargetEnemy()
     {
         if (selectedTarget == null)
         {
+
             SortByDistance();
             curIndex = 0;
             selectedTarget = enemies[0];
-            
+
             // Raycast to hit enemy collider
             // If hits enemy, target the enemy, if not ignores the raycast
+            
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, (selectedTarget.transform.position - transform.position).normalized, out hit))
+            if (Physics.Raycast(transform.position, (selectedTarget.transform.position - transform.position).normalized, out hit, layerMask))
             {
+                print(hit.collider.gameObject.name);
                 if (hit.collider.tag == "Enemy")
                 {
-                    isLockedOn = true;
-                    selectedTarget.GetChild(0).gameObject.SetActive(true);
-                    characterMovement.enemyTarget = selectedTarget.gameObject;
+                    if (selectedTarget.GetComponent<Renderer>().isVisible)
+                    {
+                        print("I see you");
+                        //  print(hit.distance);
+                        isLockedOn = true;
+                        selectedTarget.GetChild(0).gameObject.SetActive(true);
+                        characterMovement.enemyTarget = selectedTarget.gameObject;
+                    }
                 }
             }
+              
         }
 
         else
@@ -84,8 +99,8 @@ public class CameraLockOn : MonoBehaviour {
             {
                 index = 0;
             }
-                curIndex = index;
-                selectedTarget = enemies[index];
+            curIndex = index;
+            selectedTarget = enemies[index];
 
             RaycastHit hit;
             if (Physics.Raycast(transform.position, (selectedTarget.transform.position - transform.position).normalized, out hit))
@@ -130,10 +145,18 @@ public class CameraLockOn : MonoBehaviour {
         playerT.eulerAngles = new Vector3(0, playerT.transform.eulerAngles.y, 0);
     }
 
+    public void notLockedOn()
+    {
+        selectedTarget.GetChild(0).gameObject.SetActive(false);
+
+        curIndex = 0;
+        ClearTarget();
+    }
 
 
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update()
+    {
 
         if (enemies.Count <= 0)
             return;
@@ -141,7 +164,7 @@ public class CameraLockOn : MonoBehaviour {
         // Function to lock 
         if (Input.GetButtonDown("Target") && !selectedTarget)
         {
-            if(selectedTarget) // Turning on and off enemy health UI
+            if (selectedTarget) // Turning on and off enemy health UI
                 selectedTarget.GetChild(0).gameObject.SetActive(false);
 
             TargetEnemy();
@@ -150,15 +173,13 @@ public class CameraLockOn : MonoBehaviour {
         else if (Input.GetButtonDown("Target") && selectedTarget)
         {
             if (selectedTarget)  // Turning on and off enemy health UI
-                selectedTarget.GetChild(0).gameObject.SetActive(false);
-
-            curIndex = 0;
-            ClearTarget();
+                notLockedOn();
         }
 
+        // Function to switch while locked on
         if (selectedTarget)
         {
-            if(Input.GetAxis("Mouse ScrollWheel") >= 1 | Input.GetAxis("Joystick X") > 0.1)
+            if (Input.GetAxis("Mouse ScrollWheel") >= 1 | Input.GetAxis("Joystick X") > 0.1)
             {
                 TargetEnemy();
             }
@@ -170,7 +191,7 @@ public class CameraLockOn : MonoBehaviour {
 
         }
 
-        else if(Input.GetKeyDown(KeyCode.O))
+        else if (Input.GetKeyDown(KeyCode.O))
         {
             selectedTarget.GetChild(0).gameObject.SetActive(false);
             ClearTarget();

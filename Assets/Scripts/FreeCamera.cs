@@ -43,7 +43,7 @@ public class FreeCamera : MonoBehaviour
         camTransform = transform;
         cam = Camera.main;
         currentX -= 0;
-
+      
         layerMasks = 1 << LayerMask.NameToLayer("Clippable") | 0 << LayerMask.NameToLayer("NotClippable");
     }
 
@@ -59,7 +59,7 @@ public class FreeCamera : MonoBehaviour
             addSensitivity = 1;
             useMouse = true;
         }
-
+        
         if (Input.GetAxis("Joystick X") != 0 | Input.GetAxis("Joystick Y") != 0)
         {
             addSensitivity = controllerSensitivity;
@@ -110,6 +110,15 @@ public class FreeCamera : MonoBehaviour
             newLookAt = new Vector3(lookAt.position.x, lookAt.position.y + offsetY, lookAt.position.z);
             camTransform.position = newLookAt + rotation * dir;
             camTransform.LookAt(newLookAt);
+            
+           Vector3 parentT = cameraLockOn.selectedTarget.parent.position;
+            float dist = Vector3.Distance(lookAt.transform.position, parentT);            
+            if (dist > 15)
+            {
+                cameraLockOn.isLockedOn = false;
+                cameraLockOn.notLockedOn();
+            }
+            
         }
         else
         {
