@@ -72,12 +72,12 @@ public class CameraLockOn : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, (selectedTarget.transform.position - transform.position).normalized, out hit, layerMask))
             {
-                print(hit.collider.gameObject.name);
+                //print(hit.collider.gameObject.name);
                 if (hit.collider.tag == "Enemy")
                 {
                     if (selectedTarget.GetComponent<Renderer>().isVisible)
                     {
-                        print("I see you");
+                        // print("I see you");
                         //  print(hit.distance);
                         isLockedOn = true;
                         selectedTarget.GetChild(0).gameObject.SetActive(true);

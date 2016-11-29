@@ -18,13 +18,13 @@ public class MeleeEnemyMovement : MonoBehaviour {
         // anim.SetBool("isIdle", true);
         transform.eulerAngles = new Vector3(0, 0, 0);
 
+
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
-
-        if(!seePlayer)
+        if (!seePlayer)
         {
 
             if (this.transform.position == origin.position)
@@ -39,6 +39,7 @@ public class MeleeEnemyMovement : MonoBehaviour {
                     {
                         turnSpeed *= -1;
                     }
+                    
                 }
                 else
                 {
