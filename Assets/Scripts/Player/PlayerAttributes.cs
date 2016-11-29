@@ -119,9 +119,8 @@ public class PlayerAttributes : MonoBehaviour {
         playerStamina.value = stamina;               //Sets the UI Stamina to the player Stamina
         weaponEnergy.value = currentWeaponEnergy;   // Sets the UI Energy Bar
 
-    }
+    } 
     
-
     void OnTriggerEnter(Collider other)
     {
         // Interactions with sword to be "Picked up"
