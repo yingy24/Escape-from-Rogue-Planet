@@ -9,12 +9,14 @@ public class BossAttribute : MonoBehaviour
 
     private Animator anim;
     private BossSwordAttack bossSwordAttack;
+    private BossGunAttack bossGunAttack;
 
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
         bossSwordAttack = GetComponent<BossSwordAttack>();
+        bossGunAttack = GetComponent<BossGunAttack>();
 
     }
 
@@ -22,7 +24,7 @@ public class BossAttribute : MonoBehaviour
     void Update()
     {
 
-        if (!anim)
+        if (!anim) // Dummy check for an animator
         {
             print("ANIMATOR NOT FOUND");
             return;
@@ -30,7 +32,7 @@ public class BossAttribute : MonoBehaviour
 
         transform.LookAt(target.transform);
 
-        if (Vector3.Distance(target.transform.position, this.transform.position) < 10)
+        if (Vector3.Distance(target.transform.position, this.transform.position) < 10 || bossGunAttack.emptyAmmo)
         {
             sword.SetActive(true);
             gun.SetActive(false);
@@ -44,7 +46,6 @@ public class BossAttribute : MonoBehaviour
                 this.transform.Translate(0, 0, moveSpeed * Time.deltaTime);
             }
         }
-
         else if (Vector3.Distance(target.transform.position, transform.position) > 10)
         {
             sword.SetActive(false);

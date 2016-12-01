@@ -37,10 +37,12 @@ public class PlayerBullet : MonoBehaviour {
            // GamePad.SetVibration(PlayerIndex.One, 0, 1);
           //  StartCoroutine(ZeroVibrateAndSelfDestruct());
         }
-        else
+        else if(other.tag == "Player")
         {
-           // GamePad.SetVibration(PlayerIndex.One, 0, 0);
-           // Destroy(this.gameObject);
+            print(other.name);
+            other.GetComponent<PlayerAttributes>().health -= damage;
+            // GamePad.SetVibration(PlayerIndex.One, 0, 0);
+            Destroy(this.gameObject);
         }
     }
 }

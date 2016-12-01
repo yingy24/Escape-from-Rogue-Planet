@@ -12,7 +12,6 @@ public class BossSwordAttack : MonoBehaviour {
 
     [SerializeField]
     private string[] comboParam;
-    [SerializeField]
     private float timePassed;
 
 
