@@ -176,7 +176,6 @@ public class UpdatedCamera : MonoBehaviour
     {
         if (cameraLockOn.isLockedOn)
         {
-            print("Called from update");
             LockedLookAtTarget();
             return;
         }

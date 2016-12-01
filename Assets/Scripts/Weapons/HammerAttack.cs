@@ -75,7 +75,7 @@ public class HammerAttack : MonoBehaviour {
 
         }
 
-       else if (Input.GetButton("Fire2") && playerAttributes.currentWeaponEnergy > 0)
+       else if (Input.GetButtonDown("Fire2") && playerAttributes.currentWeaponEnergy > 0)
         {
             anim.SetBool("Attacking", true);
             anim.SetBool("HammerBlock", true);

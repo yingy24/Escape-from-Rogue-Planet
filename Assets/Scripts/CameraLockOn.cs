@@ -8,7 +8,7 @@ public class CameraLockOn : MonoBehaviour
 
     //Class Scripts
     public CharacterMovement characterMovement;
-    public FreeCamera cameraScript;
+    //public FreeCamera cameraScript;
 
     public Transform selectedTarget;
 
@@ -26,8 +26,9 @@ public class CameraLockOn : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        myTransform = transform;
         layerMask = LayerMask.GetMask("Enemy");
-        cameraScript = GetComponent<FreeCamera>();
+        //cameraScript = GetComponent<FreeCamera>();
         enemies = new List<Transform>();
         selectedTarget = null;
 
@@ -72,9 +73,11 @@ public class CameraLockOn : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(transform.position, (selectedTarget.transform.position - transform.position).normalized, out hit, layerMask))
             {
+                print(hit.collider.name);
                 //print(hit.collider.gameObject.name);
                 if (hit.collider.tag == "Enemy")
                 {
+                    print("I see you");
                     if (selectedTarget.GetComponent<Renderer>().isVisible)
                     {
                         // print("I see you");
@@ -87,7 +90,7 @@ public class CameraLockOn : MonoBehaviour
             }
               
         }
-
+        
         else
         {
             int index = enemies.IndexOf(selectedTarget);
@@ -103,7 +106,7 @@ public class CameraLockOn : MonoBehaviour
             selectedTarget = enemies[index];
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, (selectedTarget.transform.position - transform.position).normalized, out hit))
+            if (Physics.Raycast(transform.position, (selectedTarget.transform.position - transform.position).normalized, out hit, layerMask))
             {
                 if (hit.collider.tag == "Enemy")
                 {
@@ -118,6 +121,7 @@ public class CameraLockOn : MonoBehaviour
                 characterMovement.enemyTarget = null;
             }
         }
+        
     }
 
     private void ClearTarget()
@@ -157,7 +161,6 @@ public class CameraLockOn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (enemies.Count <= 0)
             return;
 
@@ -173,9 +176,9 @@ public class CameraLockOn : MonoBehaviour
         else if (Input.GetButtonDown("Target") && selectedTarget)
         {
             if (selectedTarget)  // Turning on and off enemy health UI
-                notLockedOn();
+               notLockedOn();
         }
-
+        
         // Function to switch while locked on
         if (selectedTarget)
         {

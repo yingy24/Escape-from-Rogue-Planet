@@ -77,7 +77,7 @@ public class UpdateCharacterController : MonoBehaviour
         else
         {
             //transform.LookAt(camera.transform);
-            // Turn();
+             Turn();
         }
     }
 

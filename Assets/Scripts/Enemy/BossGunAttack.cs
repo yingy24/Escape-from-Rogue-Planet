@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BossGunAttack : MonoBehaviour {
 
-    public GameObject bulletPrefab, spawnPoint;
+    public GameObject laserPrefab, spawnPoint;
     public float timeWait, ammo;
     public bool emptyAmmo;
 
@@ -53,7 +53,7 @@ public class BossGunAttack : MonoBehaviour {
             {
                 ammo -= 1;
                 timePassed = Time.time + timeWait;
-                GameObject bullet = Instantiate(bulletPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
+                GameObject bullet = Instantiate(laserPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
                 //bullet.transform.rotation = Quaternion.LookRotation(newDir);
             }
         }

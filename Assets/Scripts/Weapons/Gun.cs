@@ -8,8 +8,8 @@ public class Gun : MonoBehaviour {
     public CameraLockOn cameraLockedOn;
     public CharacterMovement cMovement;
 
-    public GameObject player, bulletPrefab;
-    public Transform laser;
+    public GameObject player, spawnPoint, laserPrefab;
+    //public Transform laser;
     public Animator anim;
     public float energyReduction, neededEnegyToShoot;
 
@@ -51,14 +51,14 @@ public class Gun : MonoBehaviour {
                 playerAttributes.currentWeaponEnergy -= energyReduction;
                 playerAttributes.restTimer = 0;
                 playerAttributes.regainStaminaTime = 1;
-                // GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
+                GameObject go = Instantiate(laserPrefab, spawnPoint.transform.position, spawnPoint.transform.transform.rotation) as GameObject;
 
 
                // Fire();
             }
         }
     }
-
+    /*
     void Fire()
     {
         RaycastHit hit;
@@ -67,17 +67,17 @@ public class Gun : MonoBehaviour {
             print("Hit: " + hit.collider.gameObject.name);
         }
     }
-
+    */
     public void RifleAttack()
     {
         anim.SetBool("Attacking", true);
-        laser.gameObject.SetActive(true);
+        //laser.gameObject.SetActive(true);
         //GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
     }
 
     public void laserGone()
     {
         anim.SetBool("Attacking", false);
-        laser.gameObject.SetActive(false);
+        //laser.gameObject.SetActive(false);
     }
 }
