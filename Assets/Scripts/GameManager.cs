@@ -4,7 +4,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
     //Public Classes
-    public FreeCamera cameraScript;
+    public UpdatedCamera cameraScript;
 
 
     //Public Member variables

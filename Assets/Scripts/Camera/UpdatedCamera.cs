@@ -306,8 +306,8 @@ public class UpdatedCamera : MonoBehaviour
             }
             else
             {
-                orbit.xRotation += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
-                orbit.yRotation += -Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
+                orbit.yRotation += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
+                orbit.xRotation += -Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
             }
         }
         else
@@ -319,8 +319,8 @@ public class UpdatedCamera : MonoBehaviour
             }
             else
             {
-                orbit.xRotation += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
-                orbit.yRotation += -Input.GetAxis("Joystick Y") * -sensivityY * addSensitivity;
+                orbit.yRotation += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
+                orbit.xRotation += -Input.GetAxis("Joystick Y") * -sensivityY * addSensitivity;
             }
         }
 
