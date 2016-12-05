@@ -12,6 +12,7 @@ public class BigMeleeMovement : MonoBehaviour
     public bool inRangeOfPlayer;
     public float distanceToSeePlayer, speed, timePassed, timeWait, movementSpeed;
 
+    private float intialY;
     //public Transform destination;
 
     // Use this for initialization
@@ -26,6 +27,7 @@ public class BigMeleeMovement : MonoBehaviour
         //newDir.y = 0;
         transform.rotation = Quaternion.LookRotation(newDir);
         //target = GameObject.FindGameObjectWithTag("Player").transform;
+        anim.SetBool("isPatrol", true);
     }
 
     // Update is called once per frame
@@ -95,20 +97,17 @@ public class BigMeleeMovement : MonoBehaviour
             if (transform.position == pos1.transform.position)
             {
                 targetPos = pos2.transform;
-
             }
             else if (transform.position == pos2.transform.position)
             {
                 targetPos = pos1.transform;
-
             }
-            anim.SetBool("isPatrol", true);
+            //anim.SetBool("isPatrol", true);
             Vector3 targetDir = targetPos.position - transform.position;
             float step = speed * Time.deltaTime;
             Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
             newDir.y = 0;
             transform.rotation = Quaternion.LookRotation(newDir);
-
             transform.position = Vector3.MoveTowards(transform.position, targetPos.position, movementSpeed * Time.deltaTime);
         }
 

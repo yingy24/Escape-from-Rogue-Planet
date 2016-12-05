@@ -16,9 +16,7 @@ public class MeleeEnemyMovement : MonoBehaviour {
     void Start () {
         anim = GetComponent<Animator>();
         // anim.SetBool("isIdle", true);
-        transform.eulerAngles = new Vector3(0, 0, 0);
-
-
+        //transform.eulerAngles = new Vector3(0, 0, 0);
     }
 	
 	// Update is called once per frame
@@ -53,12 +51,13 @@ public class MeleeEnemyMovement : MonoBehaviour {
 
             else
             {
+                /*
                 Vector3 direction = origin.position - this.transform.position;
                 direction.y = 0;
                 //  this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), 0.1f);
                 transform.LookAt(origin);
                 transform.position = Vector3.MoveTowards(transform.position, origin.position, moveSpeed);
-
+                */
             }
         }
         else
