@@ -2,8 +2,11 @@
 using System.Collections;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PlayerAttributes : MonoBehaviour {
+
+    public static PlayerAttributes playerAttribute;
 
     // Class Scripts
     public AttackCombo attackCombo;
@@ -16,23 +19,33 @@ public class PlayerAttributes : MonoBehaviour {
     public float health, stamina, currentWeaponEnergy, regainStaminaTime, restTimer, staminaRegain;
     public bool isDead, hasWon, hasWeapon;
 
+    private bool bossLevelLoaded;
+
     // Private Member Variables
     // private float restTimer; //Reset the time for the player to regain stamina
 
 
     // Use this for initialization
-    void Awake () {
+    void Start () {
         anim = GetComponent<Animator>();
         attackCombo = GetComponent<AttackCombo>();
         hasWeapon = true; //change this to false after testing!!
         isDead = false;
         hasWon = false;
+        bossLevelLoaded = false;
 	}
 
     // Update is called once per frame
     void Update()
     {
-
+        /*
+        if(Application.loadedLevel == 2 && !bossLevelLoaded)
+        {
+            bossLevelLoaded = true;
+            health = GameControl.control.health;
+            stamina = GameControl.control.stamina;
+        }
+        */
         if (health <= 0)
         {
             isDead = true;
@@ -186,6 +199,13 @@ public class PlayerAttributes : MonoBehaviour {
         if(other.tag == "WinningPlatform")
         {
             hasWon = true;
+        }
+
+        if(other.tag == "BossLevel")
+        {
+            GameControl.control.health = health;
+            GameControl.control.stamina = stamina;
+            Application.LoadLevel(2);
         }
     }
 }

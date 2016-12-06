@@ -71,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraFacingBillboard.cs" />
-    <Compile Include="Assets\Scripts\AdjustScript.cs" />
     <Compile Include="Assets\Scripts\AttackOne.cs" />
     <Compile Include="Assets\Scripts\Camera\UpdatedCamera.cs" />
     <Compile Include="Assets\Scripts\CameraClip.cs" />

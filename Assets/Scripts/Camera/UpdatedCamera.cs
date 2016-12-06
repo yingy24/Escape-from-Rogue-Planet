@@ -3,8 +3,10 @@ using System.Collections;
 
 public class UpdatedCamera : MonoBehaviour
 {
+    public static UpdatedCamera mainCamera;
 
     public CameraLockOn cameraLockOn;
+    public OptionMenu optionMenu;
 
     public Transform target;
 
@@ -15,7 +17,8 @@ public class UpdatedCamera : MonoBehaviour
     public float sensivityX = 4.0f;
     public float sensivityY = 1.0f;
 
-    public bool useMouse, isInverted;
+    public bool useMouse;
+    public bool xInvert, yInvert;
 
     private float currentX = 0.0f;
     private float currentY = 0.0f;
@@ -297,31 +300,70 @@ public class UpdatedCamera : MonoBehaviour
             useMouse = false;
         }
 
-        if (!isInverted)
+        if (optionMenu.invertX.image.color == Color.red)
         {
-            if (useMouse)
+            xInvert = true;
+            print("Red");
+        }
+        
+        else if(optionMenu.invertX.image.color != Color.red)
+            xInvert = false;
+
+        if (optionMenu.invertY.image.color == Color.red)
+            yInvert = true;
+        else
+           yInvert = false;
+
+
+        if (useMouse)
+        {
+            if (!xInvert && !yInvert)
             {
-                orbit.xRotation += Input.GetAxis("Mouse Y") * sensivityX * addSensitivity;
+                orbit.xRotation += -Input.GetAxis("Mouse Y") * sensivityX * addSensitivity;
                 orbit.yRotation += -Input.GetAxis("Mouse X") * sensivityY * addSensitivity;
             }
-            else
-            {
-                orbit.yRotation += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
-                orbit.xRotation += -Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
-            }
-        }
-        else
-        {
-            if (useMouse)
+            else if (!xInvert && yInvert)
             {
                 orbit.xRotation += Input.GetAxis("Mouse Y") * sensivityX * addSensitivity;
                 orbit.yRotation += -Input.GetAxis("Mouse X") * -sensivityY * addSensitivity;
             }
+            else if (xInvert && !yInvert)
+            {
+                orbit.xRotation += -Input.GetAxis("Mouse Y") * sensivityX * addSensitivity;
+                orbit.yRotation += Input.GetAxis("Mouse X") * -sensivityY * addSensitivity;
+            }
+            else
+            {
+                orbit.xRotation += Input.GetAxis("Mouse Y") * sensivityX * addSensitivity;
+                orbit.yRotation += Input.GetAxis("Mouse X") * -sensivityY * addSensitivity;
+            }
+
+
+        }
+
+        else
+        {
+            if (!xInvert && !yInvert)
+            {
+                orbit.yRotation += -Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
+                orbit.xRotation += -Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
+            }
+            else if (!xInvert && yInvert)
+            {
+                orbit.yRotation += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
+                orbit.xRotation += -Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
+            }
+            else if (xInvert && !yInvert)
+            {
+                orbit.yRotation += -Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
+                orbit.xRotation += Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
+            }
             else
             {
                 orbit.yRotation += Input.GetAxis("Joystick X") * sensivityX * addSensitivity;
-                orbit.xRotation += -Input.GetAxis("Joystick Y") * -sensivityY * addSensitivity;
-            }
+                orbit.xRotation += Input.GetAxis("Joystick Y") * sensivityY * addSensitivity;
+            }           
+
         }
 
         //orbit.xRotation += vOrbitInput * orbit.vOrbitSmooth * Time.deltaTime;

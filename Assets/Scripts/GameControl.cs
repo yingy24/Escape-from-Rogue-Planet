@@ -9,10 +9,11 @@ public class GameControl : MonoBehaviour {
     public static GameControl control;
 
     public float health;
-    public float experience;
+    //public float experience;
+    public float stamina;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 
         if (control == null)
         {
@@ -24,6 +25,8 @@ public class GameControl : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+
 	}
 	
 	// Update is called once per frame
@@ -33,12 +36,13 @@ public class GameControl : MonoBehaviour {
 
     void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 100, 30), "Health: " + health);
-        GUI.Label(new Rect(10, 20, 150, 30), "Expereience: " + experience);
+        // GUI.Label(new Rect(10, 10, 100, 30), "Health: " + health);
+        // GUI.Label(new Rect(10, 20, 150, 30), "Expereience: " + stamina);
     }
 
     public void Save()
     {
+        /*
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
 
@@ -48,10 +52,12 @@ public class GameControl : MonoBehaviour {
 
         bf.Serialize(file, data);
         file.Close();
+        */
     }
 
     public void Load()
     {
+        /*
         if(File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
         {
             BinaryFormatter bf = new BinaryFormatter();
@@ -62,6 +68,7 @@ public class GameControl : MonoBehaviour {
             health = data.health;
             experience = data.experience;
         }
+        */
     }
 }
 

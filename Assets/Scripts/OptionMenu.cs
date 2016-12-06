@@ -7,7 +7,7 @@ public class OptionMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject optionsMenu;
     public GameObject invert;
-    public Slider invertedSlider;
+    public Button invertX, invertY ;
     public UpdatedCamera uCamera;
 
     GameObject player;
@@ -50,13 +50,21 @@ public class OptionMenu : MonoBehaviour {
     }
 
     //Inverted Options
-    public void InvertYes()
+    public void InvertX()
     {
-        if (invertedSlider.value == 1)
-        {
-            uCamera.isInverted = true;
-        }
+        if (invertX.image.color == Color.red)
+            invertX.image.color = Color.white;
         else
-            uCamera.isInverted = false;
+            invertX.image.color = Color.red;
+
+    }
+
+    public void InvertY()
+    {
+        if (invertY.image.color == Color.red)
+            invertY.image.color = Color.white;
+        else
+            invertY.image.color = Color.red;
+
     }
 }
