@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 1c97fb13becd9bd46a80aba3212bc6ed
-timeCreated: 1479003563
+guid: 599c28986ceadeb43862effe84877bff
+timeCreated: 1480984405
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -119,7 +119,7 @@ ModelImporter:
     400108: ROOT
     400110: Spine
     400112: Spine1
-    7400000: HammerAttack1
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -143,10 +143,10 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: HammerAttack1
-      takeName: HammerAttack1
-      firstFrame: 0
-      lastFrame: 27
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -163,7 +163,7 @@ ModelImporter:
       keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000000000000100000001000000010000000100000001000000
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events: []
       transformMask:
@@ -325,7 +325,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 4
+    tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 1
   humanDescription:
