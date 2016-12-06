@@ -8,7 +8,7 @@ public class OptionMenu : MonoBehaviour {
     public GameObject optionsMenu;
     public GameObject invert;
     public Slider invertedSlider;
-    public FreeCamera fCamera;
+    public UpdatedCamera uCamera;
 
     GameObject player;
     bool paused;
@@ -19,7 +19,7 @@ public class OptionMenu : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 
     }
 
@@ -54,9 +54,9 @@ public class OptionMenu : MonoBehaviour {
     {
         if (invertedSlider.value == 1)
         {
-            fCamera.isInvert = true;
+            uCamera.isInverted = true;
         }
         else
-            fCamera.isInvert = false;
+            uCamera.isInverted = false;
     }
 }

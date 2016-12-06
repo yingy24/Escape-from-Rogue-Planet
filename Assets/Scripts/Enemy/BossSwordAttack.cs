@@ -87,11 +87,13 @@ public class BossSwordAttack : MonoBehaviour {
     }
     public void StartedAttacking()
     {
+        anim.SetBool("isAttacking", true);
         isAttacking = true;
     }
 
     public void DoneAttacking()
     {
+        anim.SetBool("isAttacking", false);
         isAttacking = false;
     }
 }

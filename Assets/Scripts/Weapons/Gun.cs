@@ -21,7 +21,7 @@ public class Gun : MonoBehaviour {
 	}
 
     // Update is called once per frame
-    void Update() {
+    void FixedUpdate() {
 
         if (!playerAttributes.weaponsActive[2])
         {
@@ -30,7 +30,7 @@ public class Gun : MonoBehaviour {
 
         if (cameraLockedOn.isLockedOn)
         {
-            if (Input.GetButton("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
+            if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
             {
                 player.transform.LookAt(cameraLockedOn.selectedTarget);
                 anim.SetTrigger("RifleShot");
@@ -45,14 +45,12 @@ public class Gun : MonoBehaviour {
 
         else
         {
-            if (Input.GetButton("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
+            if (Input.GetButtonDown("Fire1") && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.currentWeaponEnergy > neededEnegyToShoot)
             {
                 anim.SetTrigger("RifleShot");
                 playerAttributes.currentWeaponEnergy -= energyReduction;
                 playerAttributes.restTimer = 0;
                 playerAttributes.regainStaminaTime = 1;
-                GameObject go = Instantiate(laserPrefab, spawnPoint.transform.position, spawnPoint.transform.transform.rotation) as GameObject;
-
 
                // Fire();
             }
@@ -72,7 +70,7 @@ public class Gun : MonoBehaviour {
     {
         anim.SetBool("Attacking", true);
         //laser.gameObject.SetActive(true);
-        //GameObject go = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.transform.rotation) as GameObject;
+        GameObject go = Instantiate(laserPrefab, spawnPoint.transform.position, spawnPoint.transform.rotation) as GameObject;
     }
 
     public void laserGone()

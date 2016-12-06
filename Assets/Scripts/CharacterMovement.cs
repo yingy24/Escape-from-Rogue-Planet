@@ -281,19 +281,6 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public void StartedAttacking()
-    {
-        if (isUsingEnergy)
-        {
-            NewStartedAttacking();
-        }
-        else
-        {
-            playerAttributes.stamina -= 5;
-            anim.SetBool("Attacking", true);
-            isAttacking = true;
-        }
-    }
 
     public void EndedAttacking()
     {

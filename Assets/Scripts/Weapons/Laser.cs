@@ -59,9 +59,19 @@ public class Laser : MonoBehaviour {
         }
         else if (other.tag == "Player")
         {
-            print(other.name);
             other.GetComponent<PlayerAttributes>().health -= damage;
             // GamePad.SetVibration(PlayerIndex.One, 0, 0);
+            Destroy(this.gameObject);
+        }
+        else if (other.tag == "Boss")
+        {
+            print(other.name);
+            other.GetComponent<BossAttribute>().health -= damage;
+            // GamePad.SetVibration(PlayerIndex.One, 0, 0);
+            Destroy(this.gameObject);
+        }
+        else
+        {
             Destroy(this.gameObject);
         }
     }

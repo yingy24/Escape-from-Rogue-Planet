@@ -75,7 +75,7 @@ public class CameraLockOn : MonoBehaviour
             {
                 print(hit.collider.name);
                 //print(hit.collider.gameObject.name);
-                if (hit.collider.tag == "Enemy")
+                if (hit.collider.tag == "Enemy" || hit.collider.tag == "Boss" )
                 {
                     print("I see you");
                     if (selectedTarget.GetComponent<Renderer>().isVisible)
@@ -184,11 +184,13 @@ public class CameraLockOn : MonoBehaviour
         {
             if (Input.GetAxis("Mouse ScrollWheel") >= 1 | Input.GetAxis("Joystick X") > 0.1)
             {
+                notLockedOn();
                 TargetEnemy();
             }
 
             if (Input.GetAxis("Mouse ScrollWheel") < 0 | Input.GetAxis("Joystick X") < -0.1)
             {
+                notLockedOn();
                 TargetEnemy();
             }
 

@@ -5,7 +5,7 @@ public class HammerAttack : MonoBehaviour {
 
     //Class Scripts
     public PlayerAttributes playerAttributes;
-    public CharacterMovement cMovement;
+    private CharacterMovement cMovement;
     public AttackOne attackScript;
     
 
@@ -16,7 +16,7 @@ public class HammerAttack : MonoBehaviour {
     public GameObject shield;
     public string[] comboParams;
     public bool isAttacking;
-    public float attackRate, weaponEnergyReduction;
+    public float attackRate, weaponEnergyReduction, staminaReduction;
     public float attackDamage;
 
     //Private Member Variables
@@ -28,7 +28,7 @@ public class HammerAttack : MonoBehaviour {
     {
         playerAttributes = GetComponent<PlayerAttributes>();    // Gets the info of player attributes
         anim = GetComponent<Animator>();                        // gets the animator info
-
+        cMovement = GetComponent<CharacterMovement>();          // gets the character movement
         // Collecting the animations for attacking if there isn't anything already set
         if (comboParams == null || (comboParams != null && comboParams.Length == 0))
         {
@@ -45,13 +45,12 @@ public class HammerAttack : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
 
         if (!playerAttributes.weaponsActive[1])
         {
             return;
         }
-
 
         if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length &&/*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.stamina > 5)
         {
@@ -115,6 +114,15 @@ public class HammerAttack : MonoBehaviour {
         }
     }
 
+
+    public void HammerAttacking()
+    {
+        playerAttributes.stamina -= staminaReduction;
+        anim.SetBool("Attacking", true);
+        isAttacking = true;
+        cMovement.isAttacking = true;
+    }
+    
     public void DoneBlocking()
     {
         anim.SetBool("Attacking", false);

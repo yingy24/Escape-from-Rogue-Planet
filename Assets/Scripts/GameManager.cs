@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour {
 
     Animator anim;
 
+    private bool paused;
+
     // Use this for initialization
     void Awake() {
         deathScreen.SetActive(false);
@@ -31,24 +33,37 @@ public class GameManager : MonoBehaviour {
         win = false;
         anim = player.GetComponent<Animator>();
         Cursor.visible = false;
+
+        paused = false;
     }
 
     // Update is called once per frame
-    void Update() {
-
-        if (Input.GetButtonDown("Options"))
+    void LateUpdate()
+    {
+        if (Input.GetButtonDown("Options") && !paused)
         {
+            paused = true;
             pauseMenu.SetActive(true);
             Cursor.visible = true;
             Time.timeScale = 0;
         }
 
+        else if (Input.GetButtonDown("Options") && paused)
+        {
+            pauseMenu.SetActive(false);
+            optionsMenu.SetActive(false);
+            paused = false;
+            Cursor.visible = true;
+            Time.timeScale = 1;
+        }
+        
         if (playerAttributes.isDead)
         {
             anim.SetBool("Dead", true);
             StartCoroutine(WaitForAnimation());
             return;
         }
+
         if (playerAttributes.hasWon)
         {
             win = true;
@@ -57,10 +72,6 @@ public class GameManager : MonoBehaviour {
             return; // Make Winning UI
         }
 
-    }
-
-    void LateUpdate()
-    {
         if (dead)
         {
             if (Input.GetButton("Options"))
@@ -79,6 +90,7 @@ public class GameManager : MonoBehaviour {
             }
         }
     }
+
 
     public void Controller()
     {

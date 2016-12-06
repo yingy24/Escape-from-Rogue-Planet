@@ -1,15 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class BossAttribute : MonoBehaviour
 {
-    public GameObject target, sword, gun;
+    public GameManager gameManager;
+    public GameObject target, sword, gun, origin;
+    public Slider healthSlider;
     public float health, energy, moveSpeed;
-    public bool usingGun, usingSword;
+    public bool usingGun, usingSword, isJumping;
 
     private Animator anim;
+    private Rigidbody rBody;
     private BossSwordAttack bossSwordAttack;
     private BossGunAttack bossGunAttack;
+    private Transform parent;
+    private Vector3 jumpPos;
+    private float originalHealth, percentageDeduction;
+    private bool isDoneJumping;
+ 
 
     // Use this for initialization
     void Start()
@@ -17,6 +26,12 @@ public class BossAttribute : MonoBehaviour
         anim = GetComponent<Animator>();
         bossSwordAttack = GetComponent<BossSwordAttack>();
         bossGunAttack = GetComponent<BossGunAttack>();
+        rBody = GetComponent<Rigidbody>();
+        originalHealth = health;
+        //isJumping = true;
+        isDoneJumping = true;
+        parent = transform.parent;
+        percentageDeduction = 0.6f;
 
     }
 
@@ -30,37 +45,79 @@ public class BossAttribute : MonoBehaviour
             return;
         }
 
+        if (health <= 0)
+        {
+            print("sorry i am dead");
+            // something should happen now...
+            return;
+        }
+
+        healthSlider.value = health;
         transform.LookAt(target.transform);
 
-        if (Vector3.Distance(target.transform.position, this.transform.position) < 10 || bossGunAttack.emptyAmmo)
+        if (health <= 0)
         {
-            sword.SetActive(true);
-            gun.SetActive(false);
-            usingSword = true;
-            SwordActive();
+            gameManager.cameraLockOn.SwapAndDelete(); // Function call to delete enemy from list;
+            gameManager.player.GetComponent<CharacterMovement>().enemyTarget = null;
+            gameManager.camera.GetComponent<CameraLockOn>().isLockedOn = false;
+        }
 
-            Vector3 direction = target.transform.position - this.transform.position;
-            if (direction.magnitude > 1)
+        if (health / originalHealth <= percentageDeduction)
+        {
+            percentageDeduction -= 0.3f;
+            anim.SetBool("isAttacking", false);
+            anim.SetBool("isChasing", false);
+            isJumping = true;
+            anim.SetTrigger("Jump");
+            print("hit");
+        }
+
+        if (isJumping)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, origin.transform.position, moveSpeed * Time.deltaTime);
+            if (transform.position == origin.transform.position)
             {
-                anim.SetBool("isChasing", true);
-                this.transform.Translate(0, 0, moveSpeed * Time.deltaTime);
+                isJumping = false;
+            }
+            else
+                return;
+        }
+
+        if (!isJumping)
+        {
+            if ((Vector3.Distance(target.transform.position, this.transform.position) < 10 || bossGunAttack.emptyAmmo) && !anim.GetBool("isAttacking"))
+            {
+                sword.SetActive(true);
+                gun.SetActive(false);
+                usingSword = true;
+                SwordActive();
+
+                Vector3 direction = target.transform.position - this.transform.position;
+                if (direction.magnitude > 1)
+                {
+                    anim.SetBool("isChasing", true);
+                    this.transform.Translate(0, 0, moveSpeed * Time.deltaTime);
+                }
+            }
+            else if (Vector3.Distance(target.transform.position, transform.position) > 10)
+            {
+                sword.SetActive(false);
+                gun.SetActive(true);
+                anim.SetBool("isAttacking", false);
+                anim.SetBool("isChasing", false);
+                usingGun = true;
+                GunActive();
             }
         }
-        else if (Vector3.Distance(target.transform.position, transform.position) > 10)
-        {
-            sword.SetActive(false);
-            gun.SetActive(true);
-            anim.SetBool("isChasing", false);
-            usingGun = true;
-            GunActive();
-        }
-        
-        if (Input.GetKey("up"))
-        {
-            usingGun = true;
-            usingSword = false;
-        }
 
+
+        if (Input.GetKeyDown("up"))
+        {
+            health -= 10;
+            //usingGun = true;
+            //usingSword = false;
+        }
+        /* debugging
         if (Input.GetKey("down"))
         {
             usingGun = false;
@@ -69,22 +126,9 @@ public class BossAttribute : MonoBehaviour
 
         if (Input.GetKey("left"))
             ClearBoolens();
-
-  
-        /*
-        if (usingGun)
-        {
-            // call a function to use the gun
-            GunActive();
-        }
-
-        else if (usingSword)
-        {
-            // call function to use sword
-            SwordActive();
-        }
-        */
+         */
     }
+
     void ClearBoolens()
     {
         bossSwordAttack.canSeePlayer = false;

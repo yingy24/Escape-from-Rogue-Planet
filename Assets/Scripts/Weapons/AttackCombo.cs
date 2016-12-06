@@ -5,7 +5,7 @@ public class AttackCombo : MonoBehaviour {
 
     //Class Scripts
     public PlayerAttributes playerAttributes;
-    public CharacterMovement cMovement;
+    private CharacterMovement cMovement;
 
     // Public Member Variables
     public Animator anim;
@@ -13,7 +13,7 @@ public class AttackCombo : MonoBehaviour {
     public string[] comboParams;
     public bool isAttacking;
     public float attackRate;
-    public float attackDamage;
+    public float attackDamage, staminaReduction;
 
     //Private Member Variables
     private int comboIndex = 0; //Counter for which Animation is playing
@@ -24,7 +24,7 @@ public class AttackCombo : MonoBehaviour {
     {
         playerAttributes = GetComponent<PlayerAttributes>();    // Gets the info of player attributes
         anim = GetComponent<Animator>();                        // gets the animator info
-
+        cMovement = GetComponent<CharacterMovement>();          // gets the character movement
         // Collecting the animations for attacking if there isn't anything already set
         if (comboParams == null || (comboParams != null && comboParams.Length == 0))
         {
@@ -41,14 +41,13 @@ public class AttackCombo : MonoBehaviour {
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (!playerAttributes.weaponsActive[0])
         {
             return;
         }
-
 
         if (Input.GetButtonDown("Fire1") && comboIndex < comboParams.Length && /*  playerAttributes.weaponsObtained[0] &&*/ playerAttributes.stamina > 5)
         {
@@ -77,6 +76,15 @@ public class AttackCombo : MonoBehaviour {
 
     }
 
+
+    public void SwordAttacking()
+    {
+        playerAttributes.stamina -= staminaReduction;
+        anim.SetBool("Attacking", true);
+        isAttacking = true;
+        cMovement.isAttacking = true;
+    }
+    
     public void SwordObtained()
     {
         // hasWeapon = true;

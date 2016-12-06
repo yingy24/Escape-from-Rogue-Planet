@@ -36,6 +36,14 @@ public class AttackOne : MonoBehaviour {
             GamePad.SetVibration(PlayerIndex.One, 0, 0.75f);
             StartCoroutine(StopVibrate());
         }
+
+        if (col.transform.tag == "Boss" && characterMovement.isAttacking)
+        {
+
+            col.transform.GetComponent<BossAttribute>().health -= damageDealt;
+            GamePad.SetVibration(PlayerIndex.One, 0, 0.75f);
+            StartCoroutine(StopVibrate());
+        }
     }
 
     IEnumerator StopVibrate()
