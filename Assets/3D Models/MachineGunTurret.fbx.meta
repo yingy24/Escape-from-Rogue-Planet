@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: c7e1be7fdec99754cb2f1bee9fe3ff0d
+timeCreated: 1479224020
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BackWheel
+    100002: BackWheelCover
+    100004: Barrel1_L
+    100006: Barrel1_R
+    100008: Barrel2_L
+    100010: Barrel2_R
+    100012: BulletLoadSlot_L
+    100014: BulletLoadSlot_R
+    100016: BulletTube_L
+    100018: BulletTube_R
+    100020: EnergyTube_L
+    100022: EnergyTube_R
+    100024: FrontWheel_L
+    100026: FrontWheel_R
+    100028: FrontWheelCover_L
+    100030: FrontWheelCover_R
+    100032: GunAxl
+    100034: GunTip1_L
+    100036: GunTip1_R
+    100038: GunTip2_L
+    100040: GunTip2_R
+    100042: MachineGun_L
+    100044: MachineGun_R
+    100046: //RootNode
+    100048: Magazine_L
+    100050: Magazine_R
+    100052: MainBody
+    100054: Receiver_L
+    100056: Receiver_R
+    100058: WheelAxl
+    400000: BackWheel
+    400002: BackWheelCover
+    400004: Barrel1_L
+    400006: Barrel1_R
+    400008: Barrel2_L
+    400010: Barrel2_R
+    400012: BulletLoadSlot_L
+    400014: BulletLoadSlot_R
+    400016: BulletTube_L
+    400018: BulletTube_R
+    400020: EnergyTube_L
+    400022: EnergyTube_R
+    400024: FrontWheel_L
+    400026: FrontWheel_R
+    400028: FrontWheelCover_L
+    400030: FrontWheelCover_R
+    400032: GunAxl
+    400034: GunTip1_L
+    400036: GunTip1_R
+    400038: GunTip2_L
+    400040: GunTip2_R
+    400042: MachineGun_L
+    400044: MachineGun_R
+    400046: //RootNode
+    400048: Magazine_L
+    400050: Magazine_R
+    400052: MainBody
+    400054: Receiver_L
+    400056: Receiver_R
+    400058: WheelAxl
+    2300000: BackWheel
+    2300002: BackWheelCover
+    2300004: Barrel1_L
+    2300006: Barrel1_R
+    2300008: Barrel2_L
+    2300010: Barrel2_R
+    2300012: BulletLoadSlot_L
+    2300014: BulletLoadSlot_R
+    2300016: BulletTube_L
+    2300018: BulletTube_R
+    2300020: EnergyTube_L
+    2300022: EnergyTube_R
+    2300024: FrontWheel_L
+    2300026: FrontWheel_R
+    2300028: FrontWheelCover_L
+    2300030: FrontWheelCover_R
+    2300032: GunAxl
+    2300034: GunTip1_L
+    2300036: GunTip1_R
+    2300038: GunTip2_L
+    2300040: GunTip2_R
+    2300042: Magazine_L
+    2300044: Magazine_R
+    2300046: MainBody
+    2300048: Receiver_L
+    2300050: Receiver_R
+    2300052: WheelAxl
+    3300000: BackWheel
+    3300002: BackWheelCover
+    3300004: Barrel1_L
+    3300006: Barrel1_R
+    3300008: Barrel2_L
+    3300010: Barrel2_R
+    3300012: BulletLoadSlot_L
+    3300014: BulletLoadSlot_R
+    3300016: BulletTube_L
+    3300018: BulletTube_R
+    3300020: EnergyTube_L
+    3300022: EnergyTube_R
+    3300024: FrontWheel_L
+    3300026: FrontWheel_R
+    3300028: FrontWheelCover_L
+    3300030: FrontWheelCover_R
+    3300032: GunAxl
+    3300034: GunTip1_L
+    3300036: GunTip1_R
+    3300038: GunTip2_L
+    3300040: GunTip2_R
+    3300042: Magazine_L
+    3300044: Magazine_R
+    3300046: MainBody
+    3300048: Receiver_L
+    3300050: Receiver_R
+    3300052: WheelAxl
+    4300000: FrontWheelCover_R
+    4300002: FrontWheel_R
+    4300004: FrontWheelCover_L
+    4300006: FrontWheel_L
+    4300008: WheelAxl
+    4300010: BackWheelCover
+    4300012: BackWheel
+    4300014: MainBody
+    4300016: GunAxl
+    4300018: BulletLoadSlot_L
+    4300020: BulletTube_L
+    4300022: Magazine_L
+    4300024: Receiver_L
+    4300026: Barrel1_L
+    4300028: Barrel2_L
+    4300030: GunTip1_L
+    4300032: GunTip2_L
+    4300034: EnergyTube_L
+    4300036: EnergyTube_R
+    4300038: Magazine_R
+    4300040: Receiver_R
+    4300042: BulletLoadSlot_R
+    4300044: BulletTube_R
+    4300046: Barrel1_R
+    4300048: Barrel2_R
+    4300050: GunTip1_R
+    4300052: GunTip2_R
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
