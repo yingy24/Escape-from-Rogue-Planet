@@ -16,7 +16,8 @@ public class OptionMenu : MonoBehaviour {
     // Use this for initialization
 	void Awake () {
         paused = false;
-	}
+        invertY.image.color = Color.red;
+    }
 	
 	// Update is called once per frame
 	void LateUpdate () {

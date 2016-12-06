@@ -205,7 +205,7 @@ public class PlayerAttributes : MonoBehaviour {
         {
             GameControl.control.health = health;
             GameControl.control.stamina = stamina;
-            Application.LoadLevel(2);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("BossBattle");
         }
     }
 }
